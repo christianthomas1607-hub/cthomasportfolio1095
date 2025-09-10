@@ -48,13 +48,13 @@ body {
   margin-bottom: 1rem;
 }
 
-/* .buttonGrid {
-  
+.buttonGrid {
   display: grid;
-  grid-template-columns: auto;
-  gap: 5px; 
-  
-} */
+  grid-template-columns: 1;
+  gap: 5px;
+  justify-items: center;
+  align-items: center;
+}
 
 
 /* html,

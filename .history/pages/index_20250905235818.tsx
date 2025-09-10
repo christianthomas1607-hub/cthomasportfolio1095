@@ -6,12 +6,17 @@ import Controller from 'ecctrl'
 import { useRef, useState } from 'react'
 import TexturedBox from './TexturedBox'
 import Popup from './popup'
-import Respawn from './respawn'
 import { WordAndImage as WordAndImageType } from './data'
 
 // function simulateKeyEvent(key: string, type: 'keydown' | 'keyup') {
 //   window.dispatchEvent(new KeyboardEvent(type, { key }))
 // }
+
+
+
+
+
+
 
 
 function simulateKeyEvent( key: string, type: 'keydown' | 'keyup') {
@@ -27,24 +32,9 @@ export default function Page() {
     { name: 'jump', keys: ['Space'] },
     { name: 'run', keys: ['Shift'] },
   ]
-  
-  const [showPopup, setShowPopup] = useState(false)
-const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
-  // Handler to show popup with item data
-  function handleBoxClick(item: WordAndImageType) {
-    setSelectedItem(item)
-    setShowPopup(true)
-  }
-
-  // Handler to close popup
-  function handleClosePopup() {
-    setShowPopup(false)
-  }
-
 
   return (
     <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', margin: 0 }}>
-      {showPopup ? <Popup onClose={handleClosePopup}  item={selectedItem}  /> : null}
       <div style={{ position: "absolute", bottom: 20, left: 20, zIndex: 1000 }}>
         <button
           onPointerDown={() => { simulateKeyEvent('w', 'keydown'); simulateKeyEvent('ArrowUp', 'keydown') }}
@@ -87,8 +77,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
             </Controller>
           </KeyboardControls>
           <RigidBody type="fixed" colliders="trimesh">
-            <TexturedBox onClick={handleBoxClick} />
-            <Gltf castShadow receiveShadow position={[0, 2.85, 1.25]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" />
+            <Gltf castShadow receiveShadow position={[0, 2.85, 0]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" />
           </RigidBody>
         </Physics>
       </Canvas>

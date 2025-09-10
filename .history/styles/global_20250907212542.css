@@ -48,16 +48,8 @@ body {
   margin-bottom: 1rem;
 }
 
-/* .buttonGrid {
-  
-  display: grid;
-  grid-template-columns: auto;
-  gap: 5px; 
-  
-} */
 
-
-/* html,
+html,
 body {
   padding: 0;
   margin: 0;
@@ -93,5 +85,5 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
-} */
+}
 
