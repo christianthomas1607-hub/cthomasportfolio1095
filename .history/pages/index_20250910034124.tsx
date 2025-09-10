@@ -6,7 +6,7 @@ import Controller from 'ecctrl'
 import { useRef, useState } from 'react'
 import TexturedBox from './TexturedBox'
 import Popup from './popup'
-import { WordAndImage as WordAndImageType } from '../components/data'
+import { WordAndImage as WordAndImageType } from '../components//data'
 
 // function simulateKeyEvent(key: string, type: 'keydown' | 'keyup') {
 //   window.dispatchEvent(new KeyboardEvent(type, { key }))

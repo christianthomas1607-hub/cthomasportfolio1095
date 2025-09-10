@@ -1,5 +1,5 @@
 import { useTexture } from '@react-three/drei'
-import { WordAndImage } from '../components/data'
+import { WordAndImage as WordA} from '../components/data'
 
 export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImage[0]) => void }) {
   return (
