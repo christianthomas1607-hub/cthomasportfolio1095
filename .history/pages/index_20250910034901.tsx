@@ -4,7 +4,7 @@ import { Physics, RigidBody } from '@react-three/rapier'
 import { Gltf, KeyboardControls } from '@react-three/drei'
 import Controller from 'ecctrl'
 import { useRef, useState } from 'react'
-import TexturedBox from '../components/TexturedBox'
+import TexturedBox from './TexturedBox'
 import Popup from '../components/popup'
 import { WordAndImage as WordAndImageType } from '../components/data'
 
