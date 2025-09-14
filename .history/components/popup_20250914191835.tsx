@@ -1,6 +1,6 @@
 export default function Popup({ onClose, item }: { onClose: () => void, item: { title: string, imgPath: string } }) {
   return (
-  <div className="popup max-h-[80vh] overflow-y-auto rounded-lg shadow-lg">
+  <div className="popup">
     
       <div className="relative isolate overflow-hidden bg-white pl-6 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-10">
  
@@ -24,8 +24,8 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: { 
     </div>
   </div>
 </div>
-<img className="w-full object-cover" src="/images/stym-0.jpg" />
 
+<img className="w-full object-cover" src="/images/stym-0.jpg" />
   </div>
   )
 }

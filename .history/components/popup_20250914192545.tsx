@@ -24,7 +24,7 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: { 
     </div>
   </div>
 </div>
-<img className="w-full object-cover" src="/images/stym-0.jpg" />
+
 
   </div>
   )
