@@ -63,14 +63,14 @@ body {
 
 #popUpCloseButton {
   position: absolute;
-  top: 5.75%;
-  right: 11.75%;
+  top: 10%;
+  right: 12%;
   border: none;
   cursor: pointer;
-  z-index: 11;
+  z-index: 10;
    display: grid;
     grid-template-columns: auto 1fr;
-    grid-gap: 2px; /* Adjust the value to add space between the image and text */
+    grid-gap: px; /* Adjust the value to add space between the image and text */
     align-items: center;
 }
 

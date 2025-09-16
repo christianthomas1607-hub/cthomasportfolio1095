@@ -63,7 +63,7 @@ body {
 
 #popUpCloseButton {
   position: absolute;
-  top: 5.75%;
+  top: .75%;
   right: 11.75%;
   border: none;
   cursor: pointer;
