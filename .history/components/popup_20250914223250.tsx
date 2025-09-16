@@ -1,6 +1,5 @@
 export default function Popup({ onClose, item }: { onClose: () => void, item: { title: string, imgPath: string } }) {
   return (
-    
   <div className="popup max-h-[80vh] overflow-y-auto rounded-lg shadow-lg">
     
       <div className="relative isolate overflow-hidden bg-white pl-6 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-10">
@@ -18,12 +17,7 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: { 
         <p className="mt-6 text-xl text-gray-700">
           
         </p>
-        <button
-          onClick={onClose}
-          className="mt-6 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        >
-          Close
-        </button>
+        
       </div>
     </div>
   </div>

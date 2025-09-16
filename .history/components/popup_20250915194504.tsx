@@ -18,12 +18,7 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: { 
         <p className="mt-6 text-xl text-gray-700">
           
         </p>
-        <button
-          onClick={onClose}
-          className="mt-6 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        >
-          Close
-        </button>
+        <buttoNn 
       </div>
     </div>
   </div>

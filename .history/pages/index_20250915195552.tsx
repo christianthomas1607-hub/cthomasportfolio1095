@@ -97,8 +97,8 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
           </KeyboardControls>
           <RigidBody type="fixed" colliders="trimesh">
             <TexturedBox onClick={handleBoxClick} />
-              <mesh position={[0, .9, 12]}>
-                <boxGeometry args={[8, 0, 31]} />
+              <mesh position={[0, 2, 2.5]}>
+                <boxGeometry args={[8, 0, 1\3\\]} />
                 <meshStandardMaterial/>
                 </mesh>
             <Gltf castShadow receiveShadow position={[0, 2.85, 1.25]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" />
