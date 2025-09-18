@@ -1,4 +1,4 @@
-export default function Popup({ onClose, item }: { onClose: () => void, item: { title: string, imgPath: string } }) {
+export default function Popup({ onClose, item }: { onClose: () => void, item: { title: string, imgMain: string } }) {
   return (
   <div className="popup">
     <img class="h-48 w-96 object-cover ..." src="/img/mountains.jpg" />

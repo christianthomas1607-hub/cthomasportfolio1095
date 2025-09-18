@@ -1,17 +1,17 @@
 
 export interface WordAndImage {
   title: string;
-  imgPath: string;
+  imgMain: string;
 }
 
 
 export const WordAndImage: WordAndImage[] = [
   {  title: "Stym Protein Powder Instruction Manual", 
-    imgPath: "/stym.jpg" },
+    imgMain: "/stym.jpg" },
   { title: "Concepts", 
-    imgPath: "/mobilewebdesign.png" },
+    imgMain: "/mobilewebdesign.png" },
   { title: "Designs", 
-    imgPath: "/images/globe.svg" },
+    imgMain: "/images/globe.svg" },
   { title: "Code", 
-    imgPath: "/images/vercel.svg" },
+    imgMain: "/images/vercel.svg" },
 ];

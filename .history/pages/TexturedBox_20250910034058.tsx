@@ -11,7 +11,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
           onClick={() => onClick(item)}
         >
           <boxGeometry args={[0, 1, 1]} />
-          <meshStandardMaterial map={useTexture(item.imgPath)} />
+          <meshStandardMaterial map={useTexture(item.imgMain)} />
         </mesh>
       ))}
     </>

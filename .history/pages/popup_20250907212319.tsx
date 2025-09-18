@@ -1,4 +1,4 @@
-export default function Popup({ onClose, item }: { onClose: () => void, item: { title: string, imgPath: string } }) {
+export default function Popup({ onClose, item }: { onClose: () => void, item: { title: string, imgMain: string } }) {
   return (
   <div className="popup">
       <div className="relative isolate overflow-hidden bg-white pl-6 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-10">
@@ -23,7 +23,7 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: { 
       </div>
       <div className="mt-10 flex justify-center">
         <div className="flex max-w-lg flex-col items-center">
-          <img src={item.imgPath} alt={item.title} className="w-full h-auto rounded-lg shadow-lg" />
+          <img src={item.imgMain} alt={item.title} className="w-full h-auto rounded-lg shadow-lg" />
           <h2 className="mt-4 text-2xl font-semibold text-gray-900">{item.title}</h2>
       </div>
     </div>

@@ -99,7 +99,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
             <TexturedBox onClick={handleBoxClick} />
               <mesh position={[-3, 2.85, 2.5]}>
                 <boxGeometry args={[0, 1, 1]} />
-                <meshStandardMaterial map={useTexture(item.imgPath)} /></mesh>
+                <meshStandardMaterial map={useTexture(item.imgMain)} /></mesh>
             <Gltf castShadow receiveShadow position={[0, 2.85, 1.25]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" />
           </RigidBody>
         </Physics>

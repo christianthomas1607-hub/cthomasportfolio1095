@@ -1,4 +1,4 @@
-export default function Popup({ onClose, item }: { onClose: () => void, item: { title: string, imgPath: string } }) {
+export default function Popup({ onClose, item }: { onClose: () => void, item: { title: string, imgMain: string } }) {
   return (
     <div className="popup fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="relative isolate overflow-hidden bg-white pl-6 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-10 max-h-[80vh] overflow-y-auto rounded-lg shadow-lg">

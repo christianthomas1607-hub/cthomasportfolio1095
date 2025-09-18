@@ -1,0 +1,17 @@
+
+export interface WordAndImage {
+  title: string;
+  imgMain: string;
+}
+
+
+export const WordAndImage: WordAndImage[] = [
+  {  title: "ESIS", 
+    imgMain: "/images/stym.jpg" },
+  { title: "Concepts", 
+    imgMain: "/images/mobilewebdesign.png" },
+  { title: "Designs", 
+    imgMain: "/images/globe.svg" },
+  { title: "Code", 
+    imgMain: "/images/vercel.svg" },
+];
