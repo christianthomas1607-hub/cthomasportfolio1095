@@ -1,5 +1,11 @@
-import { useTexture } from '@react-three/drei'
+
+import * as THREE from 'three'
+import { useMemo, useContext, createContext, useRef } from 'react'
+import { useFrame } from '@react-three/fiber'
+import { useTexture, useGLTF, Merged, RenderTexture, PerspectiveCamera, Text } from '@react-three/drei'
 import { WordAndImage } from '../components/data'
+import { SpinningBox } from './SpinningBox'
+import { Canvas, useFrame } from '@react-three/fiber'
 
 export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImage[0]) => void }) {
   return (
@@ -11,7 +17,8 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
           onClick={() => onClick(item)}
         >
           <boxGeometry args={[0, 1, 1]} />
-          <meshStandardMaterial map={useTexture(item.imgMain)} />
+          <meshStandardMaterial map={useTexture(item.imgMain)}/>
+
         </mesh>
       ))}
     </>
