@@ -85,8 +85,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
         </button>
       </div>
       <Canvas>
-       {/*  .7 intensity for original glb setting */}
-        <directionalLight intensity={3} castShadow shadow-bias={-0.0004} position={[-20, 20, 20]}>
+        <directionalLight intensity={7} castShadow shadow-bias={-0.0004} position={[-20, 20, 20]}>
           <orthographicCamera attach="shadow-camera" args={[-20, 20, 20, -20]} />
         </directionalLight>
         <ambientLight intensity={0.2} />
@@ -103,7 +102,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
                 <meshStandardMaterial/>
                 </mesh>
             {/* <Gltf castShadow receiveShadow position={[0, 2.85, 1.25]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" /> */}
-            <Gltf castShadow receiveShadow position={[0, 2.85, 27]} rotation={[0, -Math.PI / 2, 0]} scale={1.5} src="/images/hall-transformed.glb" />
+            <Gltf castShadow receiveShadow position={[0, 2.85, 1.25]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/hall-transformed.glb" />
           </RigidBody>
         </Physics>
       </Canvas>

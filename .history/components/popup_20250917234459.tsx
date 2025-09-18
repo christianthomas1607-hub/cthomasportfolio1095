@@ -38,7 +38,7 @@ allowFullScreen>
 }
 
 
-{item.multipleImages?.map((img, index) => (
+{item?.multipleImages?.map((img, index) => (
   <img key={index} className="w-full object-cover" src={img} />
 ))}
   </div>

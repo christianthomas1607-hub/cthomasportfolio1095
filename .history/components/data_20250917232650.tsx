@@ -46,7 +46,7 @@ export const WordAndImage: WordAndImage[] = [
   { 
     title: "Stym Protein Powder Instruction Manual", 
     imgMain: "/images/stym.jpg",
-    multipleImages: ["/images/stym-0.jpg", "/images/stym-1.jpg", "/images/stym-2.jpg","/images/stym-3.jpg", "/images/stym-4.jpg", "/images/stym-5.jpg"]
+    multipleImages: ["/images/stym-0.jpg", "/images/stym-1.jpg", "/images/stym-2.jpg"]
   }
   
 ];
