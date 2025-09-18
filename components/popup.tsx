@@ -1,4 +1,14 @@
-export default function Popup({ onClose, item }: { onClose: () => void, item: { title: string, imgMain: string, imgChild?: string, description?: string, figma?: string, multipleImages?: string[]} }) {
+export default function Popup({ onClose, item }: { onClose: () => void, item: { 
+  title: string, 
+  imgMain: string, 
+  imgChild?: string, 
+  topDescription?: string, 
+  figma?: string, 
+  multipleImages?: string[], 
+  video?: string
+} 
+}) 
+{
   return (
     <>
     <button
@@ -11,9 +21,8 @@ Close
        </button>
   <div className="popup max-h-[80vh] overflow-y-auto rounded-lg shadow-lg">
     
-      <div className="relative isolate overflow-hidden bg-white pl-6 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-10">
+  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-10">
  
-
   {/* Outer container */}
   <div className="mx-auto max-w-7xl">
     {/* Inner content */}
@@ -23,24 +32,35 @@ Close
         <h1 className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
           {item ? item.title : ''}
         </h1>
-        <p className="mt-6 text-xl text-gray-700">
-        </p>
-        
+        {item?.topDescription && <p className="mt-6 text-xl text-gray-700">{item.topDescription}</p>}
       </div>
     </div>
   </div>
 </div>
-<img className="w-full object-cover" src={item.imgChild} />
+<img className="w-full object-cover" src={item.imgChild} alt={item.imgChild}/>
+
+{item.video && (
+  <iframe
+    style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
+    width="800"
+    height="450"
+    src={item.video}
+    allowFullScreen
+  />
+)}
 {item?.figma &&
-<iframe style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }} width="800" height="450" src="https://embed.figma.com/proto/W0r4eQk95RhVOoeFRxIx24/IDT535_Final_Project?node-id=20-353&starting-point-node-id=20%3A353&embed-host=share" 
+<iframe style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }} width="800" height="450" src={item.figma}
 allowFullScreen>
 </iframe>
 }
 
 
 {item.multipleImages?.map((img, index) => (
-  <img key={index} className="w-full object-cover" src={img} />
+  <img key={index} className="w-full object-cover" src={img} alt={img}/>
 ))}
+
+
+
   </div>
   </>
   )
