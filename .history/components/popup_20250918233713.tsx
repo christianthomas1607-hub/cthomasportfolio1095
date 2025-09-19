@@ -63,15 +63,7 @@ allowFullScreen>
 
 {item.twoColumn &&
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-    
-    {/* {Array.from(item.twoColumn.entries()).map(([img, desc], index) => (
-      <div key={index} className="flex flex-col items-center">
-        <img src={img} alt={`Image ${index + 1}`} className="mb-2 max-h-96 object-contain"/>
-        <p className="text-center text-gray-700">{desc}</p>
-      </div>
-    ))} */}
-    </div>
-}
+    {Array.from(item.twoColumn.entries()).map(([img, desc], index) => (}
 
 
   </div>

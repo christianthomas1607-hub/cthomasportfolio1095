@@ -98,7 +98,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
           </KeyboardControls>
           <RigidBody type="fixed" colliders="trimesh">
             <TexturedBox onClick={handleBoxClick} />
-              <mesh position={[0, .9, 12]}>
+              <mesh position={[0, .2, 12]}>
                 <boxGeometry args={[8, 0, 31]} />
                 <meshStandardMaterial/>
                 </mesh>

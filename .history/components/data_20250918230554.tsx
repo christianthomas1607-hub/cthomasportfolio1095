@@ -30,8 +30,8 @@ export const WordAndImage: WordAndImage[] = [
   { 
     title: "Resilence, Inc WordPress Development", 
     imgMain: "/images/resilence.jpg",
-    topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
-    twoColumn: new Map([["resilence-1.png", "Sharp Corners According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."],["resilence-2.png", "Title The large, bold, and yellow title or heading looks fairly hard to read. Yellow text on a white background has a very low contrast."]])
+    topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health."
+    twoColumn: [["apple", "red"],["banana", "yellow"],["cherry", "dark red"]]
     // twoColumn: new Map([["apple", "red"], ["banana", "yellow"], ["cherry", "dark red"]])
   },
   { 

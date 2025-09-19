@@ -5,8 +5,7 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: {
   topDescription?: string, 
   figma?: string, 
   multipleImages?: string[], 
-  video?: string,
-  twoColumn?: Map<string, string>
+  video?: string
 } 
 }) 
 {
@@ -61,17 +60,36 @@ allowFullScreen>
 ))}
 
 
-{item.twoColumn &&
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-    
-    {/* {Array.from(item.twoColumn.entries()).map(([img, desc], index) => (
-      <div key={index} className="flex flex-col items-center">
-        <img src={img} alt={`Image ${index + 1}`} className="mb-2 max-h-96 object-contain"/>
-        <p className="text-center text-gray-700">{desc}</p>
-      </div>
-    ))} */}
-    </div>
+// Iterate over entries
+for (const [key, value] of fruits.entries()) {
+  console.log(`${key}: ${value}`); // Output: apple: 5, banana: 10, cherry: 15
 }
+Advantages of Using Map
+Key Flexibility: Keys can be of any type (e.g., objects, numbers, strings).
+Order Preservation: Map maintains the order of insertion.
+Efficient Operations: Provides fast lookups, additions, and deletions.
+Alternative: Using Objects as HashMaps
+You can also use plain objects as a HashMap, but they are limited to string or symbol keys.
+
+Typescript
+
+Copy code
+const obj: { [key: string]: number } = {
+  apple: 5,
+  banana: 10,
+};
+
+// Access values
+console.log(obj["apple"]); // Output: 5
+
+// Add a new key-value pair
+obj["cherry"] = 15;
+
+// Delete a key-value pair
+delete obj["banana"];
+For most use cases, Map is preferred due to its flexibility and additional features.
+
+
 
 
   </div>
