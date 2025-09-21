@@ -98,10 +98,6 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
           </KeyboardControls>
           <RigidBody type="fixed" colliders="trimesh">
             <TexturedBox onClick={handleBoxClick} />
-                <mesh position={[0, -.03, 12]}>
-                <boxGeometry args={[8, 0, 31]} />
-                <meshStandardMaterial/>
-                </mesh>
                 {/* <mesh position={[0, .9, 12]}>
                 <boxGeometry args={[8, 0, 31]} />
                 <meshStandardMaterial/>

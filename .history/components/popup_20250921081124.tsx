@@ -22,7 +22,7 @@ Close
        </button>
   <div className="popup max-h-[80vh] overflow-y-auto rounded-lg shadow-lg">
     
-  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-10 pb-10 lg:overflow-visible lg:px-10">
+  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pb-10  lg:overflow-visible lg:px-10">
  
   {/* Outer container */}
   <div className="mx-auto max-w-7xl">

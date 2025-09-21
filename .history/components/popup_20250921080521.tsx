@@ -22,7 +22,7 @@ Close
        </button>
   <div className="popup max-h-[80vh] overflow-y-auto rounded-lg shadow-lg">
     
-  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-10 pb-10 lg:overflow-visible lg:px-10">
+  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-10">
  
   {/* Outer container */}
   <div className="mx-auto max-w-7xl">
@@ -65,14 +65,14 @@ allowFullScreen>
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
     
     {Array.from(item.twoColumn.entries()).map(([img, desc], index) => (
-      <>
-      <div className="flex flex-col items-center">
+      <div key={index} className="flex flex-col items-center">
         <img src={img} alt={`Image ${index + 1}`} className="mb-2 max-h-96 object-contain"/>
+       
       </div>
-      <div className="flex flex-col items-center">
-        <p className="text-black">{desc}</p>
+      <div key={index} className="flex flex-col items-center">
+        <img src={img} alt={`Image ${index + 1}`} className="mb-2 max-h-96 object-contain"/>
+        <p className="text-center text-gray-700">{desc}</p>
       </div>
-     </>
     ))}
     </div>
 }
