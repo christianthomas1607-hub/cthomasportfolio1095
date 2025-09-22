@@ -7,7 +7,6 @@ export interface WordAndImage {
   figma?: string;
   multipleImages?: string[];
   video?: string;
-}
   twoColumn?: Map<string, Map<string, string>>;
 }
 

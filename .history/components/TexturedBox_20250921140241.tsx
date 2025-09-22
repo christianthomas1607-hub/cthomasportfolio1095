@@ -7,7 +7,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
       {WordAndImage.map((item, index) => (
         <mesh
           key={index}
-          position={[-3, 1.5, index * 2.5]}
+          position={[-3, 3, index * 2.5]}
           onClick={() => onClick(item)}
         >
           <boxGeometry args={[0, 1, 1]} />

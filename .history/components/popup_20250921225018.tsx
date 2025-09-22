@@ -61,15 +61,14 @@ allowFullScreen>
 ))}
 
 {item.twoColumn && (
-  <div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
     {Array.from(item.twoColumn.entries()).map(([outerKey, innerMap], outerIndex) => (
-      <div key={outerIndex} className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
         <div className="flex flex-col items-center">
-        <img src={outerKey} alt={outerKey} className="mb-2 max-h-96 object-contain"/>
+        <img src={outerKey} className="mb-2 max-h-96 object-contain"/>
       </div>
         {Array.from(innerMap.entries()).map(([innerKey, innerValue], innerIndex) => (
           <div key={innerIndex} className="flex flex-col items-center">
-            <h3 className="text-xl font-semibold mb-1 text-black">{innerKey}</h3>
+            <h3 className="text-xl font-semibold mb-1">{innerKey}</h3>
             <p className="text-black">{innerValue}</p>
           </div>
         ))}

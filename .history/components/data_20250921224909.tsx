@@ -7,7 +7,6 @@ export interface WordAndImage {
   figma?: string;
   multipleImages?: string[];
   video?: string;
-}
   twoColumn?: Map<string, Map<string, string>>;
 }
 
@@ -43,7 +42,7 @@ export const WordAndImage: WordAndImage[] = [
         ])
       ],
       [
-        "/images/resilence-1.png",
+        "resilence-1.png",
         new Map([
           [
             "Donate Button",

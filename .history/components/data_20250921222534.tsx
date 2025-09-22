@@ -7,7 +7,6 @@ export interface WordAndImage {
   figma?: string;
   multipleImages?: string[];
   video?: string;
-}
   twoColumn?: Map<string, Map<string, string>>;
 }
 
@@ -34,7 +33,7 @@ export const WordAndImage: WordAndImage[] = [
     topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
     twoColumn: new Map([
       [
-        "/images/resilence-0.png",
+        "resilence-0.png",
         new Map([
           [
             "Sharp Corners",
@@ -43,7 +42,7 @@ export const WordAndImage: WordAndImage[] = [
         ])
       ],
       [
-        "/images/resilence-1.png",
+        "resilence-1.png",
         new Map([
           [
             "Donate Button",
