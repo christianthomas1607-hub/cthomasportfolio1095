@@ -83,11 +83,8 @@ allowFullScreen>
 
 
 {item.post && (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-    <div className="flex flex-col items-center">
-      
-    </div>
-    <h2>{item.post.title}</h2>
+  <div>
+    <h2item.post.title
     <div>
       {item.post.content}
     </div>

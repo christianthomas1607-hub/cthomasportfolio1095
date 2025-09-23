@@ -1,7 +1,7 @@
 import { useTexture } from '@react-three/drei'
 import { WordAndImageData } from '../components/data'
 
-export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImageData[0]) => void }) {
+export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImage[0]) => void }) {
   return (
     <>
       {WordAndImageData.map((item, index) => (

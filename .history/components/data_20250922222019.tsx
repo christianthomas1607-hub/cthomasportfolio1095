@@ -51,6 +51,7 @@ export const WordAndImageData: WordAndImage[] = [
         content: "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
       }
     ]
+      
     ,
     
     // twoColumn: new Map([

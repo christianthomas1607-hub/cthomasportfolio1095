@@ -1,25 +1,20 @@
-export interface Post {
-  img: string;
-  title: string;
-  content: string;
-}
-
-
 
 export interface WordAndImage {
-  title?: string;
-  imgMain?: string;
+  title: string;
+  imgMain: string;
   imgChild?: string;
   topDescription?: string;
   figma?: string;
   multipleImages?: string[];
   video?: string;
-  post?: Post[];
+  twoColumn?: Map<string, Map<string, string>>;
 }
 
+export interface MultiArray exteends WordAndImage {
 
 
-export const WordAndImageData: WordAndImage[] = [
+
+export const WordAndImage: WordAndImage[] = [
   {  
     title: "ESIS", 
     imgMain: "/images/esis.jpg",
@@ -29,7 +24,6 @@ export const WordAndImageData: WordAndImage[] = [
     title: "Akamai", 
     imgMain: "/images/akamai.jpg",
     imgChild: "/images/akamai-1.jpeg" 
-
   },
   { 
     title: "Boston Dynamics", 
@@ -40,39 +34,26 @@ export const WordAndImageData: WordAndImage[] = [
     title: "Resilence, Inc WordPress Development", 
     imgMain: "/images/resilence.jpg",
     topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
-    post: [{
-        img: "/images/resilence-0.png",
-        title: "Sharp Corners",
-        content: "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
-      },
-    {
-        img: "/images/resilence-0.png",
-        title: "Sharp Corners",
-        content: "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
-      }
-    ]
-    ,
-    
-    // twoColumn: new Map([
-    //   [
-    //     "/images/resilence-0.png",
-    //     new Map([
-    //       [
-    //         "Sharp Corners",
-    //         "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
-    //       ]
-    //     ])
-    //   ],
-    //   [
-    //     "/images/resilence-1.png",
-    //     new Map([
-    //       [
-    //         "Donate Button",
-    //         "Many company meetings were about how to receive donations to expand. The donate button used to require scrolling. I recommended we have it visible once the user enters. This caused an increase in donations."
-    //       ]
-    //     ])
-    //   ]
-    // ])
+    twoColumn: new Map([
+      [
+        "/images/resilence-0.png",
+        new Map([
+          [
+            "Sharp Corners",
+            "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
+          ]
+        ])
+      ],
+      [
+        "/images/resilence-1.png",
+        new Map([
+          [
+            "Donate Button",
+            "Many company meetings were about how to receive donations to expand. The donate button used to require scrolling. I recommended we have it visible once the user enters. This caused an increase in donations."
+          ]
+        ])
+      ]
+    ])
     // twoColumn: new Map([["/images/resilence-0.png", "test", "Sharp Corners According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."], ["/images/resilence-1.png", "test1", "Title The large, bold, and yellow title or heading looks fairly hard to read. Yellow text on a white background has a very low contrast."]])
     // twoColumn: new Map([["apple", "red"], ["banana", "yellow"], ["cherry", "dark red"]])
   },

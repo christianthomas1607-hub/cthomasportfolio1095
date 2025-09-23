@@ -1,5 +1,5 @@
 export interface Post {
-  img: string;
+  id: number;
   title: string;
   content: string;
 }
@@ -14,7 +14,7 @@ export interface WordAndImage {
   figma?: string;
   multipleImages?: string[];
   video?: string;
-  post?: Post[];
+  post?: Post;
 }
 
 
@@ -40,19 +40,7 @@ export const WordAndImageData: WordAndImage[] = [
     title: "Resilence, Inc WordPress Development", 
     imgMain: "/images/resilence.jpg",
     topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
-    post: [{
-        img: "/images/resilence-0.png",
-        title: "Sharp Corners",
-        content: "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
-      },
-    {
-        img: "/images/resilence-0.png",
-        title: "Sharp Corners",
-        content: "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
-      }
-    ]
-    ,
-    
+    post: { id: 1, title: "ESIS", content: "Some description here" },
     // twoColumn: new Map([
     //   [
     //     "/images/resilence-0.png",
@@ -137,5 +125,18 @@ export const WordAndImageData: WordAndImage[] = [
     title: "Interior Design", 
     imgMain: "/images/interior_design.jpg",
     imgChild: "/images/interior_design-0.jpg"
+  }
+];
+
+const posts: MultiArray[] = [
+  {
+    multiTitle: 'Hello World',
+    multiImg: '/images/hello.jpg',
+    multiDesc: 'Intro post with image'
+  },
+  {
+    multiTitle: 'Hello World',
+    multiImg: '/images/hello.jpg',
+    multiDesc: 'Intro post with image'
   }
 ];

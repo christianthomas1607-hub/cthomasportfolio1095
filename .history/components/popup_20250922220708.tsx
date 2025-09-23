@@ -1,4 +1,4 @@
-import { Post } from '../components/data'
+import { WordAndImageData } from '../components/data'
 
 export default function Popup({ onClose, item }: { onClose: () => void, item: { 
   title: string, 
@@ -83,14 +83,20 @@ allowFullScreen>
 
 
 {item.post && (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-    <div className="flex flex-col items-center">
-      
-    </div>
-    <h2>{item.post.title}</h2>
-    <div>
-      {item.post.content}
-    </div>
+  <div>
+    {Array.from(item.twoColumn.entries()).map(([outerKey, innerMap], outerIndex) => (
+      <div key={outerIndex} className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+        <div className="flex flex-col items-center">
+        <img src={outerKey} alt={outerKey} className="mb-2 max-h-96 object-contain"/>
+      </div>
+        {Array.from(innerMap.entries()).map(([innerKey, innerValue], innerIndex) => (
+          <div key={innerIndex} className="flex flex-col items-center">
+            <h3 className="text-xl font-semibold mb-1 text-black">{innerKey}</h3>
+            <p className="text-black">{innerValue}</p>
+          </div>
+        ))}
+      </div>
+    ))}
   </div>
 )}
 

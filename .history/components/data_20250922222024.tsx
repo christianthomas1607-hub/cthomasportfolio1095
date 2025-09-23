@@ -50,7 +50,7 @@ export const WordAndImageData: WordAndImage[] = [
         title: "Sharp Corners",
         content: "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
       }
-    ]
+    
     ,
     
     // twoColumn: new Map([
