@@ -6,7 +6,7 @@ import Controller from 'ecctrl'
 import { useRef, useState } from 'react'
 import TexturedBox from '../components/TexturedBox'
 import Popup from '../components/popup'
-import { WordAndImage as WordAndImageType } from '../components/data'
+import { WordAndImage } from '../components/data'
 
 // function simulateKeyEvent(key: string, type: 'keydown' | 'keyup') {
 //   window.dispatchEvent(new KeyboardEvent(type, { key }))
@@ -28,10 +28,10 @@ export default function Page() {
   ]
   
   const [showPopup, setShowPopup] = useState(false)
-const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
+  const [selectedItem, setSelectedItem] = useState<WordAndImage | null>(null)
   // Handler to show popup with item data
-  function handleBoxClick(item: WordAndImageType) {
-    setSelectedItem(item)
+    function handleBoxClick(item: WordAndImage) {
+      setSelectedItem(item)
     setShowPopup(true)
   }
 

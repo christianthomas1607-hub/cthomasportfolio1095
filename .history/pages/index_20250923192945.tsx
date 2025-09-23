@@ -30,7 +30,7 @@ export default function Page() {
   const [showPopup, setShowPopup] = useState(false)
 const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
   // Handler to show popup with item data
-  function handleBoxClick(item: WordAndImageType) {
+  function handleBoxClick(item: typeof WordAndImageType) {
     setSelectedItem(item)
     setShowPopup(true)
   }

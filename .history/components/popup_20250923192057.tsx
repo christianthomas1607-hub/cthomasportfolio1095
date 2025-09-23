@@ -1,12 +1,24 @@
-import { Post, WordAndImage } from './data'
+import { Post } from '../components/data'
 
-export default function Popup({ onClose, item }: { onClose: () => void, item: WordAndImage | null }) {
+export default function Popup({ onClose, item }: { onClose: () => void, item: { 
+  title?: string, 
+  imgMain: string, 
+  imgChild?: string, 
+  topDescription?: string, 
+  figma?: string, 
+  multipleImages?: string[], 
+  video?: string,
+  twoColumn?: Map<string, Map<string, string>>;
+  post?: Post;
+} 
+}) 
+{
   return (
     <>
     <button
         id="popUpCloseButton"
           onClick={onClose}
-          className="rounded-md bg-blue-800 px-3.5 py-2.5 text-4xl font-semibold text-white shadow-sm hover:bg-bg-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 shadow-xl/30 fixed top-4 right-4 z-50"
+          className="rounded-md bg-blue-800 px-3.5 py-2.5 text-4xl font-semibold text-white shadow-sm hover:bg-bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 shadow-xl/30 fixed top-4 right-4 z-50"
         >
      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="butt" stroke-linejoin="arcs"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
 Close
@@ -22,16 +34,16 @@ Close
       <div className="">
         <p className="text-base font-semibold text-blue-600">Deploy faster</p>
         <h1 className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-          {item?.title ?? ''}
+          {item ? item.title : ''}
         </h1>
         {item?.topDescription && <p className="mt-6 text-xl text-gray-700">{item.topDescription}</p>}
       </div>
     </div>
   </div>
 </div>
-{item?.imgChild && <img className="w-full object-cover" src={item.imgChild} alt={item.imgChild}/>}
+<img className="w-full object-cover" src={item.imgChild} alt={item.imgChild}/>
 
-{item?.video && (
+{item.video && (
   <iframe
     style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
     width="800"
@@ -40,18 +52,18 @@ Close
     allowFullScreen
   />
 )}
-{item?.figma && (
-  <iframe style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }} width="800" height="450" src={item.figma}
-  allowFullScreen>
-  </iframe>
-)}
+{item?.figma &&
+<iframe style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }} width="800" height="450" src={item.figma}
+allowFullScreen>
+</iframe>
+}
 
 
-{item?.multipleImages?.map((img, index) => (
+{item.multipleImages?.map((img, index) => (
   <img key={index} className="w-full object-cover" src={img} alt={img}/>
 ))}
 
-{item?.twoColumn && (
+{item.twoColumn && (
   <div>
     {Array.from(item.twoColumn.entries()).map(([outerKey, innerMap], outerIndex) => (
       <div key={outerIndex} className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
@@ -70,18 +82,14 @@ Close
 )}
 
 
-{item?.post && (
+{item.post && (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
     <div className="flex flex-col items-center">
+
     </div>
-    <div className="col-span-1 md:col-span-1">
-      {item.post.map((p, idx) => (
-        <div key={idx} className="mb-4">
-          <h3 className="text-xl font-semibold">{p.title}</h3>
-          <img src={p.img} alt={p.title} className="my-2 max-h-64 object-contain" />
-          <p>{p.content}</p>
-        </div>
-      ))}
+    <h2>{item.post.title}</h2>
+    <div>
+      {item.post.content}
     </div>
   </div>
 )}
