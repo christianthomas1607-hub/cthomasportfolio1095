@@ -74,16 +74,18 @@ Close
     
       {item.post.map((p, idx) => (
         <>    
-          <div className="flex flex-col items-center mt-5">
+          <div className="flex flex-col items-center">
             <img src={p.img} alt={p.img} className="my-2 max-h-64 object-contain" />
           </div>
-          <div className="flex flex-col items-center mt-5">
+          <div className="flex flex-col items-center mt-">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
                 <>
+             
                 <h3 className="text-xl font-semibold mb-1 text-black mt-3 ml-0 mr-auto">{title}</h3>
-                <p className="text-black">{desc}</p> 
-                </>
-            ))}
+                <p className="text-black">{desc}</p>
+    
+     </>
+    ))}
             
           </div>
           </>

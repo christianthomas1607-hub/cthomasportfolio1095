@@ -65,9 +65,6 @@ export const WordAndImageData: WordAndImage[] = [
           ],
           ["Logo",
             "The logo does not look as professional compared to many other logos. There is too much going on, causing less readability as this logo is scaled down."
-          ],
-          ["Explanation/Mission",
-            "Moving the explanation above the buttons lets possible customers know why they should be interested in this company. Scrolling down requires extra effort from the customer. The last sentence is also a list with grammatical errors."
           ]
         ])
       }

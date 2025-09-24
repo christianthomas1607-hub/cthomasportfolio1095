@@ -46,9 +46,9 @@ export const WordAndImageData: WordAndImage[] = [
           ["Sharp Corners",
             "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
           ],
-          ["Donate Button",
+        ["Donate Button",
             "Many company meetings were about how to receive donations to expand. The donate button used to require scrolling. I recommended we have it visible once the user enters. This caused an increase in donations."
-          ]
+        ]
         ])
       },
       {
@@ -59,15 +59,6 @@ export const WordAndImageData: WordAndImage[] = [
           ],
           ["Colors",
             "The colors have a very low contrast on white. Increasing the contrast also causes a very swampy look of colors. The yellow turns to dark brown and the green turns to a muddy dark green."
-          ],
-          ["Colors",
-            "The colors have a very low contrast on white. Increasing the contrast also causes a very swampy look of colors. The yellow turns to dark brown and the green turns to a muddy dark green."
-          ],
-          ["Logo",
-            "The logo does not look as professional compared to many other logos. There is too much going on, causing less readability as this logo is scaled down."
-          ],
-          ["Explanation/Mission",
-            "Moving the explanation above the buttons lets possible customers know why they should be interested in this company. Scrolling down requires extra effort from the customer. The last sentence is also a list with grammatical errors."
           ]
         ])
       }

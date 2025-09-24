@@ -20,7 +20,7 @@ Close
     {/* Inner content */}
     <div className="">
       <div className="">
-        <p className="text-base font-extrabold text-gray-600">CHRISTIAN THOMAS</p>
+        <p className="text-base font-semibold text-blue-600">Deploy faster</p>
         <h1 className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
           {item?.title ?? ''}
         </h1>
@@ -69,22 +69,19 @@ Close
   </div>
 )} */}
 
+
 {item?.post && (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
     
       {item.post.map((p, idx) => (
         <>    
-          <div className="flex flex-col items-center mt-5">
-            <img src={p.img} alt={p.img} className="my-2 max-h-64 object-contain" />
+          <div className="flex flex-col items-center">
+            <img src={p.img} alt={p.title} className="my-2 max-h-64 object-contain" />
           </div>
-          <div className="flex flex-col items-center mt-5">
-             {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
-                <>
-                <h3 className="text-xl font-semibold mb-1 text-black mt-3 ml-0 mr-auto">{title}</h3>
-                <p className="text-black">{desc}</p> 
-                </>
-            ))}
-            
+          <div className="flex flex-col items-center">
+            p.map((p, idx) => (
+            <h3 className="text-xl font-semibold text-black text-left ml-0 mr-auto">{p.title}</h3>
+            <p className="text-black text-left">{p.content}</p>
           </div>
           </>
       ))}
@@ -107,29 +104,6 @@ Close
     ))}
     </div>
 } */}
-
-{/* {item?.post && (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-    
-      {item.post.map((p, idx) => (
-        <>    
-          <div className="flex flex-col items-center">
-            <img src={p.img} alt={p.img} className="my-2 max-h-64 object-contain" />
-          </div>
-          <div className="flex flex-col items-center">
-            {p.title.map((p, idx) => (
-              <h3 className="text-xl font-semibold text-black text-left ml-0 mr-auto">{p}</h3>
-           
-            ))}
-            
-          </div>
-          </>
-      ))}
- 
-  </div>
-)} */}
-
-
   </div>
   </>
   )

@@ -80,10 +80,12 @@ Close
           <div className="flex flex-col items-center mt-5">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
                 <>
+             
                 <h3 className="text-xl font-semibold mb-1 text-black mt-3 ml-0 mr-auto">{title}</h3>
-                <p className="text-black">{desc}</p> 
-                </>
-            ))}
+                <p className="text-black">{desc}</p>
+    
+     </>
+    ))}
             
           </div>
           </>
