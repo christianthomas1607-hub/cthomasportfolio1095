@@ -12,7 +12,16 @@ import { WordAndImage as WordAndImageType } from '../components/data'
 //   window.dispatchEvent(new KeyboardEvent(type, { key }))
 // }
 
+ const modelRef = useRef();
 
+  // Set initial spawn position
+  const spawnPosition = [2, 0, 5];
+
+  useFrame(() => {
+    if (modelRef.current) {
+      modelRef.current.position.set(...spawnPosition);
+    }
+  });
 
 function simulateKeyEvent( key: string, type: 'keydown' | 'keyup') {
   window.dispatchEvent(new KeyboardEvent(type, {key}))
@@ -30,10 +39,6 @@ export default function Page() {
   
   const [showPopup, setShowPopup] = useState(false)
 const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
-  // spawn position for the player (x, y, z)
-  const spawnPosition: [number, number, number] = [0, .75, 0];
-  // ref to controller if we need to imperatively set translation later
-  const controllerRef = useRef<any>(null);
   // Handler to show popup with item data
   function handleBoxClick(item: WordAndImageType) {
     setSelectedItem(item)
@@ -97,7 +102,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
         <ambientLight intensity={0.2} />
         <Physics timeStep="vary">
           <KeyboardControls map={keyboardMap}>
-            <Controller ref={controllerRef} maxVelLimit={10} position={spawnPosition}>
+            <Controller maxVelLimit={10}>
               <Gltf castShadow receiveShadow scale={.005} position={[0, -.75, 0]} src="/images/r2d2.glb" />
             </Controller>
           </KeyboardControls>

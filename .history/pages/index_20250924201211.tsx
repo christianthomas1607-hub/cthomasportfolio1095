@@ -31,7 +31,7 @@ export default function Page() {
   const [showPopup, setShowPopup] = useState(false)
 const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
   // spawn position for the player (x, y, z)
-  const spawnPosition: [number, number, number] = [0, .75, 0];
+  const spawnPosition: [number, number, number] = [0, , 0];
   // ref to controller if we need to imperatively set translation later
   const controllerRef = useRef<any>(null);
   // Handler to show popup with item data

@@ -13,7 +13,6 @@ import { WordAndImage as WordAndImageType } from '../components/data'
 // }
 
 
-
 function simulateKeyEvent( key: string, type: 'keydown' | 'keyup') {
   window.dispatchEvent(new KeyboardEvent(type, {key}))
 }
@@ -30,10 +29,6 @@ export default function Page() {
   
   const [showPopup, setShowPopup] = useState(false)
 const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
-  // spawn position for the player (x, y, z)
-  const spawnPosition: [number, number, number] = [0, .75, 0];
-  // ref to controller if we need to imperatively set translation later
-  const controllerRef = useRef<any>(null);
   // Handler to show popup with item data
   function handleBoxClick(item: WordAndImageType) {
     setSelectedItem(item)
@@ -97,7 +92,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
         <ambientLight intensity={0.2} />
         <Physics timeStep="vary">
           <KeyboardControls map={keyboardMap}>
-            <Controller ref={controllerRef} maxVelLimit={10} position={spawnPosition}>
+            <Controller maxVelLimit={10}>
               <Gltf castShadow receiveShadow scale={.005} position={[0, -.75, 0]} src="/images/r2d2.glb" />
             </Controller>
           </KeyboardControls>
@@ -112,7 +107,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
                 <meshStandardMaterial/>
                 </mesh> */}
             {/* <Gltf castShadow receiveShadow position={[0, 2.85, 1.25]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" /> */}
-            <Gltf castShadow receiveShadow position={[0, 1.7, 27]} rotation={[0, -Math.PI / 2, 0]} scale={1.75} src="/images/hall-transformed.glb" />
+            <Gltf castShadow receiveShadow position={[0, 1.7, 27]} rotation={[0, -Math.PI / 2, 0]} scale={} src="/images/hall-transformed.glb" />
           </RigidBody>
         </Physics>
       </Canvas>
