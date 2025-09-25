@@ -128,24 +128,13 @@ export const WordAndImageData: WordAndImage[] = [
         ])
       },
       {
-        img: "/images/r6gamingguide-2.png",
+        img: "/images/r6gamingguide-1.png",
         titleDescription: new Map([
-          ["Key",
-            "I chose red as it is the most saturated color. Circles would be a good shape for me to hint locations. Adding shadows may help add more contrast to the circles, but may also add visual noise."
+          ["Name and GIF",
+            "The name helps identify the operator. The GIF shows how the operator's ability works."
           ],
-          ["Camera Location",
-            "Cameras are ways in which the enemy team who defends the building, spy on what the attacking team does. It is important to destroy these cameras by shooting them. If destroyed, the enemy team cannot spy on the attacking player."
-          ]
-        ])
-      },
-      {
-        img: "/images/r6gamingguide-3.png",
-        titleDescription: new Map([
-          ["Map Name",
-            "The map name helps clarify what map the GIF is on. This section is more for mid-level players because it is dangerous to peek through a window. An enemy could kill the player peeking a window easily, if not well trained."
-          ],
-          ["Spawn Peeks GIF",
-            "The GIF indicates quickly how to perform a peek at the best location on each map. It is a lot easier to use this website over searching through many YouTube videos, to find spawn peek locations for specific maps."
+          ["Operator Tip",
+            "The tip provides the recommended ways on how to use an operator's ability. There are many tips about how to use an operator, but this section covers the most used tips. "
           ]
         ])
       }

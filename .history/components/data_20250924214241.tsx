@@ -145,7 +145,7 @@ export const WordAndImageData: WordAndImage[] = [
             "The map name helps clarify what map the GIF is on. This section is more for mid-level players because it is dangerous to peek through a window. An enemy could kill the player peeking a window easily, if not well trained."
           ],
           ["Spawn Peeks GIF",
-            "The GIF indicates quickly how to perform a peek at the best location on each map. It is a lot easier to use this website over searching through many YouTube videos, to find spawn peek locations for specific maps."
+            ""
           ]
         ])
       }

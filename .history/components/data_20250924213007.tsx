@@ -102,54 +102,7 @@ export const WordAndImageData: WordAndImage[] = [
     title: "Front-End Development + Design", 
     imgMain: "/images/r6gamingguide.png",
     topDescription: "This project was coded, designed, and written by me. HTML 5, CSS 3, and Vanilla JavaScript were used to code this project. This website is supposed to be responsive to various screen sizes. The SEO and accessibility still needs to be worked on. This website was created to assist entry-level to mid-level gamers of a video game called Rainbow Six Siege. Certain data may be outdated, due to constant updates of the game."
-    ,post: [{
-        img: "/images/r6gamingguide-0.png",
-        titleDescription: new Map([
-          ["Dark Theme",
-            "Using a dark theme helps the user when gaming at night, while having this on their phone. Having a light theme is too distracting when multitasking. A theme switcher could be added to help the user choose. A light theme is although preferred by older populations and for reading. This website has a target audience of young adults and has light reading."
-          ],
-          ["Grabbing Attention",
-            "The illustrations are for grabbing attention but not too much. This was moreover recommended by my professor. It is something different to see over the actual images of the operators."
-          ],
-          ["Top 3",
-            "This is more for knowing the top 3 operators and guns because of constant patch notes. Patch notes tend to be about balancing certain operators and guns."
-          ]
-        ])
-      },
-      {
-        img: "/images/r6gamingguide-1.png",
-        titleDescription: new Map([
-          ["Name and GIF",
-            "The name helps identify the operator. The GIF shows how the operator's ability works."
-          ],
-          ["Operator Tip",
-            "The tip provides the recommended ways on how to use an operator's ability. There are many tips about how to use an operator, but this section covers the most used tips. "
-          ]
-        ])
-      },
-      {
-        img: "/images/r6gamingguide-2.png",
-        titleDescription: new Map([
-          ["Key",
-            "I chose red as it is the most saturated color. Circles would be a good shape for me to hint locations. Adding shadows may help add more contrast to the circles, but may also add visual noise."
-          ],
-          ["Camera Location",
-            "Cameras are ways in which the enemy team who defends the building, spy on what the attacking team does. It is important to destroy these cameras by shooting them. If destroyed, the enemy team cannot spy on the attacking player."
-          ]
-        ])
-      },
-      {
-        img: "/images/r6gamingguide-3.png",
-        titleDescription: new Map([
-          ["Map Name",
-            "The map name helps clarify what map the GIF is on. This section is more for mid-level players because it is dangerous to peek through a window. An enemy could kill the player peeking a window easily, if not well trained."
-          ],
-          ["Spawn Peeks GIF",
-            "The GIF indicates quickly how to perform a peek at the best location on each map. It is a lot easier to use this website over searching through many YouTube videos, to find spawn peek locations for specific maps."
-          ]
-        ])
-      }
-    ]
+    
   },
   { 
     title: "Mobile Web Design", 
