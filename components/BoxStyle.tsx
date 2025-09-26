@@ -12,7 +12,7 @@ type BoxStyleProps = {
   
 };
 
-export default function BoxStyle({ x, y, z, rotationY = 0, image, title, index, onClick}: BoxStyleProps) {
+export default function BoxStyle({ x, y, z, rotationY, image, title, index, onClick}: BoxStyleProps) {
   return (
     <>
         <>
@@ -27,7 +27,7 @@ export default function BoxStyle({ x, y, z, rotationY = 0, image, title, index, 
           color="white"
           anchorX="center"
           anchorY="bottom"
-          rotation={[0, rotationY, 0]}
+          rotation={[0, Math.PI / rotationY, 0]}
           >
             {title}
           </Text>

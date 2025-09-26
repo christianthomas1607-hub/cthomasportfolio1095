@@ -9,6 +9,10 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
      {WordAndImageData.map((item, index) => {
         let positionX = 0;
         let rotationY = 0;
+        let customIndex = 0;
+
+        // if (index % 2 === 0) customIndex = 0; // Reset index conditionally
+        
         switch(item.category) {
           case 'Web Design':
             positionX = -2.75;
@@ -16,7 +20,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             break;
           case 'Print Design':
             positionX = 2.75;
-            rotationY = -2;
+            rotationY = 2;
             break;
           case 'Motion Design':
             positionX = 2.75;
@@ -24,13 +28,15 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             break;
           default:
             positionX = 2;
+            rotationY = 2;
         }
         return (
           <BoxStyle
             x={positionX}
             y={1.5}
+            
             z={index * 3.75}
-            rotationY = {Math.PI / rotationY}
+            rotationY = {rotationY}
             image={item.imgMain}
             title={item.title}
             index={index}

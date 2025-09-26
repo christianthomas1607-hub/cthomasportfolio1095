@@ -31,7 +31,7 @@ export default function Page() {
   const [showPopup, setShowPopup] = useState(false)
 const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
   // spawn position for the player (x, y, z)
-  const spawnPosition: [number, number, number] = [0, 1.3, 0];
+  // const spawnPosition: [number, number, number] = [0, 1.3, 0];
   // ref to controller if we need to imperatively set translation later
   const controllerRef = useRef<any>(null);
   // Handler to show popup with item data
@@ -97,7 +97,9 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
         <ambientLight intensity={0.2} />
         <Physics timeStep="vary">
           <KeyboardControls map={keyboardMap}>
-            <Controller ref={controllerRef} maxVelLimit={10} position={spawnPosition}>
+            <Controller ref={controllerRef} maxVelLimit={10} 
+            // position={spawnPosition}
+            >
               <Gltf castShadow receiveShadow scale={.005} position={[0, -.75, 0]} src="/images/r2d2.glb" />
             </Controller>
           </KeyboardControls>
@@ -111,8 +113,9 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
                 <boxGeometry args={[8, 0, 31]} />
                 <meshStandardMaterial/>
                 </mesh> */}
-            <Gltf castShadow receiveShadow position={[0, 2.85, 1.25]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" />
-            {/* <Gltf castShadow receiveShadow position={[0, 1, 27]} rotation={[0, -Math.PI / 2, 0]} scale={3} src="/images/hall-transformed.glb" /> */}
+            {/* <Gltf castShadow receiveShadow position={[0, 2.85, 1.25]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" /> */}
+            {/* <Gltf castShadow receiveShadow position={[0, 1, 27]} rotation={[0, -Math.PI / 2, 0]} scale={2} src="/images/hall-transformed.glb" /> */}
+            <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, 0]} scale={0.11} src="/images/fantasy_game_inn2-transformed.glb" />
           </RigidBody>
         </Physics>
       </Canvas>
