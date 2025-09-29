@@ -90,7 +90,6 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
         </button>
       </div>
       <Canvas>
-         <color attach="background" args={["white"]} />
        {/*  .7 intensity for original glb setting */}
         <directionalLight intensity={3} castShadow shadow-bias={-0.0004} position={[-20, 20, 20]}>
           <orthographicCamera attach="shadow-camera" args={[-20, 20, 20, -20]} />
@@ -106,14 +105,12 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
           </KeyboardControls>
           <RigidBody type="fixed" colliders="trimesh">
             <TexturedBox onClick={handleBoxClick} />
-            {/* Use -2 for /images/hall-transformed.glb */}
-            {/* Use .89 for /images/star_destroyer_hallway.glb*/}
-                <mesh position={[0, .89, 12]}>
+                <mesh position={[0, -.9, 12]}>
                 <boxGeometry args={[8, 0, 31]} />
                   <meshBasicMaterial>
                     <GradientTexture
-                    stops={[0, .5, 1]} // Define the positions of the color stops (0 to 1)
-                    colors={['#d8d8d8','#bababa', '#838383']} // Define the colors at each stop (red to blue)
+                    stops={[0, 1]} // Define the positions of the color stops (0 to 1)
+                    colors={['#ff0000', '#871515']} // Define the colors at each stop (red to blue)
                     size={1024} // Optional: texture resolution (default is 1024)
                     />
                   </meshBasicMaterial>
@@ -122,8 +119,8 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
                 <boxGeometry args={[8, 0, 31]} />
                 <meshStandardMaterial/>
                 </mesh> */}
-            <Gltf castShadow receiveShadow position={[0, 2.85, 1.25]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" />
-            {/* <Gltf castShadow receiveShadow position={[0, 1.5, 27]} rotation={[0, -Math.PI / 2, 0]} scale={2} src="/images/hall-transformed.glb" /> */}
+            {/* <Gltf castShadow receiveShadow position={[0, 2.85, 1.25]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" /> */}
+            {/* <Gltf castShadow receiveShadow position={[0, 1, 27]} rotation={[0, -Math.PI / 2, 0]} scale={2} src="/images/hall-transformed.glb" /> */}
             {/* <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, 0]} scale={0.11} src="/images/fantasy_game_inn2-transformed.glb" /> */}
           </RigidBody>
         </Physics>

@@ -1,74 +1,57 @@
-import { useTexture, Text  } from '@react-three/drei'
+import { useTexture, Text, Box  } from '@react-three/drei'
+import { WordAndImageData } from '../components/data'
 
-type BoxStyleProps = {
-  x: number;
-  y: number;
-  z: number;
-  rotationY: number;
-  image: string;
-  title: string;
-  index: number;
-  onClick: () => void;
-  
-};
+import BoxStyle from '../components/BoxStyle'
 
-export default function BoxStyle({ x, y, z, rotationY, image, title, index, onClick}: BoxStyleProps) {
+export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImageData[0]) => void }) {
   return (
     <>
-        <>
-        <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
-          <mesh>
-            <boxGeometry args={[0, 1, 1]} />
-            <meshStandardMaterial map={useTexture(image)} />
-          </mesh>
-        <Text
-          position={[0, .75, 0]} // above the image
-          fontSize={0.2}
-          lineHeight={1}
-          maxWidth={3}
-          color="white"
-          textAlign="center"
-          anchorX="center"
-          anchorY="bottom"
-          rotation={[0, Math.PI / rotationY, 0]}
-          >
-            {title}
-          </Text>
-        </group>
-        </>
-     
+     {WordAndImageData.map((item, index) => {
+        let positionX = 0;
+        let rotationY = 0;
+        let customIndex = 0;
+
+        // if (index % 2 === 0) customIndex = 0; // Reset index conditionally
+        
+        switch(item.category) {
+          case 'Web Design':
+            positionX = -2.75;
+            rotationY = 2;
+            break;
+          case 'Print Design':
+            positionX = 2.75;
+            rotationY = -2;
+            break;
+          case 'Motion Design':
+            positionX = 2.75;
+            rotationY = 2;
+            break;
+          default:
+            positionX = 2;
+            rotationY = 2;
+        }
+        return (
+          <BoxStyle
+            x={positionX}
+            y={1.5}
+            z={
+              if(item.category === 'Web Design') return index * 3;
+              else if(item.category === 'Print Design') return index * 3.5;
+              else if(item.category === 'Motion Design') return index * 4;
+              else return
+              
+            }
+            rotationY = {rotationY}
+            image={item.imgMain}
+            title={item.title}
+            index={index}
+            onClick={() => onClick(item)}
+          />
+        );
+      })}
     </>
   )
 }
-
-
-
-// export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImageData[0]) => void }) {
-//   return (
-//     <>
-//       {WordAndImageData.map((item, index) => (
-//         <>
-//         <group position={[-3, 1.25, index * 3.75]} onClick={() => onClick(item)}>
-//           <mesh>
-//             <boxGeometry args={[0, 1, 1]} />
-//             <meshStandardMaterial map={useTexture(item.imgMain)} />
-//           </mesh>
-//         <Text
-//           position={[0, .75, 0]} // above the image
-//           fontSize={0.2}
-//           color="white"
-//           anchorX="center"
-//           anchorY="bottom"
-//           rotation={[0, Math.PI / 2, 0]}
-//           >
-//             {item.title}
-//           </Text>
-// </group>
-//         </>
-//       ))}
-//     </>
-//   )
-// }
 
 // export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImageData[0]) => void }) {
 //   return (

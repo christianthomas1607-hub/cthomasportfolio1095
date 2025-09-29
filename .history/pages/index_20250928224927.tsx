@@ -107,7 +107,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
           <RigidBody type="fixed" colliders="trimesh">
             <TexturedBox onClick={handleBoxClick} />
             {/* Use -2 for /images/hall-transformed.glb */}
-            {/* Use .89 for /images/star_destroyer_hallway.glb*/}
+            {/* Use -4 for /images/star_destroyer_hallway.glb*/}
                 <mesh position={[0, .89, 12]}>
                 <boxGeometry args={[8, 0, 31]} />
                   <meshBasicMaterial>

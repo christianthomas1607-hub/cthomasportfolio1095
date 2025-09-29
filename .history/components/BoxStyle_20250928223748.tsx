@@ -24,7 +24,7 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, index, onCl
         <Text
           position={[0, .75, 0]} // above the image
           fontSize={0.2}
-          lineHeight={1}
+          lineHeight={1.2}
           maxWidth={3}
           color="white"
           textAlign="center"

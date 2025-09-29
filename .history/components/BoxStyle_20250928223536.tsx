@@ -23,11 +23,10 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, index, onCl
           </mesh>
         <Text
           position={[0, .75, 0]} // above the image
+          anchorX="center"
           fontSize={0.2}
-          lineHeight={1}
           maxWidth={3}
           color="white"
-          textAlign="center"
           anchorX="center"
           anchorY="bottom"
           rotation={[0, Math.PI / rotationY, 0]}

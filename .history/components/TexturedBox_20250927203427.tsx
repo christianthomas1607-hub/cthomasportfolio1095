@@ -1,74 +1,63 @@
-import { useTexture, Text  } from '@react-three/drei'
+import { useTexture, Text, Box  } from '@react-three/drei'
+import { WordAndImageData } from '../components/data'
 
-type BoxStyleProps = {
-  x: number;
-  y: number;
-  z: number;
-  rotationY: number;
-  image: string;
-  title: string;
-  index: number;
-  onClick: () => void;
-  
-};
+import BoxStyle from '../components/BoxStyle'
 
-export default function BoxStyle({ x, y, z, rotationY, image, title, index, onClick}: BoxStyleProps) {
+export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImageData[0]) => void }) {
+  // Keep a counter per category so we can reset the index for each group
+  const categoryCounts: Record<string, number> = {};
+
   return (
     <>
-        <>
-        <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
-          <mesh>
-            <boxGeometry args={[0, 1, 1]} />
-            <meshStandardMaterial map={useTexture(image)} />
-          </mesh>
-        <Text
-          position={[0, .75, 0]} // above the image
-          fontSize={0.2}
-          lineHeight={1}
-          maxWidth={3}
-          color="white"
-          textAlign="center"
-          anchorX="center"
-          anchorY="bottom"
-          rotation={[0, Math.PI / rotationY, 0]}
-          >
-            {title}
-          </Text>
-        </group>
-        </>
-     
+     {WordAndImageData.map((item, index) => {
+        // increment and read the per-category index
+        const cat = item.category ?? 'default';
+        if (!categoryCounts[cat]) categoryCounts[cat] = 0;
+        let perCategoryIndex = categoryCounts[cat]++;
+
+        let positionX = 0;
+        let rotationY = 0;
+        let positionZ = 0;
+
+        switch(item.category) {
+          case 'Web Design':
+            positionX = -2.75;
+            rotationY = 2;
+            positionZ = perCategoryIndex * 3;
+            break;
+          case 'Print Design':
+            positionX = 2.75;
+            rotationY = -2;
+            positionZ = perCategoryIndex * 3.5;
+            break;
+          case 'Motion Design':
+            positionX = 3;
+            rotationY = 2;
+            positionZ = perCategoryIndex * 4;
+            break;
+          default:
+            positionX = 2;
+            rotationY = -2;
+            positionZ = perCategoryIndex * 3;
+        }
+
+        return (
+          <BoxStyle
+            key={`${cat}-${perCategoryIndex}-${index}`}
+            x={positionX}
+            y={1.5}
+            z={positionZ}
+            rotationY={rotationY}
+            image={item.imgMain}
+            title={item.title}
+            index={perCategoryIndex}
+            onClick={() => onClick(item)}
+          />
+        );
+      })}
     </>
   )
 }
-
-
-
-// export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImageData[0]) => void }) {
-//   return (
-//     <>
-//       {WordAndImageData.map((item, index) => (
-//         <>
-//         <group position={[-3, 1.25, index * 3.75]} onClick={() => onClick(item)}>
-//           <mesh>
-//             <boxGeometry args={[0, 1, 1]} />
-//             <meshStandardMaterial map={useTexture(item.imgMain)} />
-//           </mesh>
-//         <Text
-//           position={[0, .75, 0]} // above the image
-//           fontSize={0.2}
-//           color="white"
-//           anchorX="center"
-//           anchorY="bottom"
-//           rotation={[0, Math.PI / 2, 0]}
-//           >
-//             {item.title}
-//           </Text>
-// </group>
-//         </>
-//       ))}
-//     </>
-//   )
-// }
 
 // export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImageData[0]) => void }) {
 //   return (
