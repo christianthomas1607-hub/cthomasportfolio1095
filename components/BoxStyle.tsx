@@ -21,7 +21,7 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, index, onCl
           <mesh>
             <boxGeometry args={[0, 1, 1]} />
             {/* Replace meshStandardMaterial with HolographicMaterial as the material  */}
-              <HolographicMaterial
+              {/* <HolographicMaterial
                 fresnelAmount={0.2}
                 fresnelOpacity={0.15}
                 hologramBrightness={0.7}
@@ -30,9 +30,9 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, index, onCl
                 hologramColor={"#ff0000"}
                 enableBlinking={false}
                 map={useTexture(image)}
-              />
+              /> */}
   
-            {/* <meshStandardMaterial map={useTexture(image)} /> */}
+            <meshStandardMaterial map={useTexture(image)} />
           </mesh>
         <Text
           position={[0, .75, 0]} // above the image
