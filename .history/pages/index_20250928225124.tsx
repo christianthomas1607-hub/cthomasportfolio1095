@@ -108,7 +108,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
             <TexturedBox onClick={handleBoxClick} />
             {/* Use -2 for /images/hall-transformed.glb */}
             {/* Use .89 for /images/star_destroyer_hallway.glb*/}
-                <mesh position={[0, .89, 12]}>
+                <mesh position={[0, .9, 12]}>
                 <boxGeometry args={[8, 0, 30]} />
                   <meshBasicMaterial>
                     <GradientTexture
