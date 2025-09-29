@@ -1,4 +1,5 @@
 import { useTexture, Text  } from '@react-three/drei'
+import HolographicMaterial from "../components/HolographicMaterial";
 
 type BoxStyleProps = {
   x: number;
@@ -19,7 +20,19 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, index, onCl
         <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
           <mesh>
             <boxGeometry args={[0, 1, 1]} />
-            <meshStandardMaterial map={useTexture(image)} />
+            {/* Replace meshStandardMaterial with HolographicMaterial as the material  */}
+              <HolographicMaterial
+                fresnelAmount={0.2}
+                fresnelOpacity={0.15}
+                hologramBrightness={0.7}
+                scanlineSize={6}
+                signalSpeed={2.3}
+                hologramColor={"#ff0000"}
+                enableBlinking={false}
+                map={useTexture(image)}
+              />
+  
+            {/* <meshStandardMaterial map={useTexture(image)} /> */}
           </mesh>
         <Text
           position={[0, .75, 0]} // above the image
