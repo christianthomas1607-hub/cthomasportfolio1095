@@ -1,0 +1,26 @@
+ <group position={[x, y, z]} rotation={[0, rotationY, 0]} onClick={onClick}>
+      {/* thin box for bezel or plane for a flat screen */}
+      <mesh>
+        <boxGeometry args={[1.2, 0.8, 0.05]} /> {/* bezel/body */}
+        <meshStandardMaterial color={'#111'} />
+      </mesh>
+
+      {/* front plane with the image (slightly forward inside bezel) */}
+      <mesh position={[0, 0, 0.028]}>
+        <planeGeometry args={[1.0, 0.6]} />
+        <meshBasicMaterial map={useTexture(image)} toneMapped={false} />
+      </mesh>
+
+      {/* 3D text in front of screen; small z to avoid z-fighting */}
+      <Text
+        position={[0, 0.38, 0.031]}
+        fontSize={0.08}
+        lineHeight={1}
+        maxWidth={1.0}
+        color="white"
+        anchorX="center"
+        anchorY="top"
+      >
+        {title}
+      </Text>
+    </group>

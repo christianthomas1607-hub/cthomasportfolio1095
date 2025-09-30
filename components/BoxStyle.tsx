@@ -1,5 +1,9 @@
 import { useTexture, Text  } from '@react-three/drei'
 import HolographicMaterial from "../components/HolographicMaterial";
+import * as THREE from 'three';
+
+// npm install three @react-three/fiber @react-three/drei
+
 
 type BoxStyleProps = {
   x: number;
@@ -10,29 +14,25 @@ type BoxStyleProps = {
   title: string;
   index: number;
   onClick: () => void;
-  
+
 };
 
 export default function BoxStyle({ x, y, z, rotationY, image, title, index, onClick}: BoxStyleProps) {
+
+// const tex = useTexture(image);
+//   tex.encoding = THREE.sRGBEncoding;
+
   return (
     <>
         <>
         <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
           <mesh>
             <boxGeometry args={[0, 1, 1]} />
-            {/* Replace meshStandardMaterial with HolographicMaterial as the material  */}
-              {/* <HolographicMaterial
-                fresnelAmount={0.2}
-                fresnelOpacity={0.15}
-                hologramBrightness={0.7}
-                scanlineSize={6}
-                signalSpeed={2.3}
-                hologramColor={"#ff0000"}
-                enableBlinking={false}
-                map={useTexture(image)}
-              /> */}
-  
-            <meshStandardMaterial map={useTexture(image)} />
+            <meshStandardMaterial map={useTexture(image)} 
+        //     emissive={'white'}
+        // emissiveIntensity={2}
+        // toneMapped={false}
+            />
           </mesh>
         <Text
           position={[0, .75, 0]} // above the image
