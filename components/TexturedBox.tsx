@@ -21,7 +21,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
 
         switch(item.category) {
           case 'Web Design':
-            positionX = -2.75;
+            positionX = -3.25;
             rotationY = 2;
             positionZ = perCategoryIndex * 3;
             break;
@@ -46,7 +46,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
           <BoxStyle
             key={`${cat}-${perCategoryIndex}-${index}`}
             x={positionX}
-            y={2.5}
+            y={2.75}
             z={positionZ}
             rotationY={rotationY}
             image={item.imgMain}

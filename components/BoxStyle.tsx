@@ -1,6 +1,9 @@
 import { useTexture, Text  } from '@react-three/drei'
 import HolographicMaterial from "../components/HolographicMaterial";
 import * as THREE from 'three';
+import { useLoader } from "@react-three/fiber";
+import { TextureLoader } from "three";
+import GlowMaterial from '../components/GlowMaterial';
 
 // npm install three @react-three/fiber @react-three/drei
 
@@ -21,6 +24,7 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, index, onCl
 
 // const tex = useTexture(image);
 //   tex.encoding = THREE.sRGBEncoding;
+const texture = useLoader(TextureLoader, image); // 
 
   return (
     <>
@@ -28,7 +32,7 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, index, onCl
         <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
           <mesh>
             <boxGeometry args={[0, 1, 1]} />
-            <meshStandardMaterial map={useTexture(image)} 
+            <meshStandardMaterial map={texture} 
         //     emissive={'white'}
         // emissiveIntensity={2}
         // toneMapped={false}
@@ -47,6 +51,11 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, index, onCl
           >
             {title}
           </Text>
+
+          <mesh>
+        <boxGeometry args={[0, 1, 1]} /> {/* Slightly larger box for glow */}
+        <GlowMaterial />
+      </mesh>
         </group>
         </>
      
