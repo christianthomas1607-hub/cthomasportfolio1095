@@ -7,7 +7,7 @@
   position: absolute;
   bottom: 20px;
   left: 20px;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .controls-button {
@@ -58,7 +58,7 @@ body {
         background: white;
         border: 1px solid #ccc;
         z-index: 10;
-        width: 60%;
+        width: 90%;
 }
 
 #popUpCloseButton {
