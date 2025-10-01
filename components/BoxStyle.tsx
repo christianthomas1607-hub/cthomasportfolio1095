@@ -29,7 +29,7 @@ const texture = useLoader(TextureLoader, image); //
   return (
     <>
         <>
-        <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
+        <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick} scale={[.75, .75, .75]}>
           <mesh>
             <boxGeometry args={[0, 1, 1]} />
             <meshStandardMaterial map={texture} 
@@ -39,7 +39,7 @@ const texture = useLoader(TextureLoader, image); //
             />
           </mesh>
         <Text
-          position={[0, .75, 0]} // above the image
+          position={[0, .6, 0]} // above the image
           fontSize={0.2}
           lineHeight={1}
           maxWidth={3}

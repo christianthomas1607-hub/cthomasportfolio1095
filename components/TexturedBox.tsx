@@ -23,7 +23,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
           case 'Web Design':
             positionX = -3.25;
             rotationY = 2;
-            positionZ = perCategoryIndex * 3;
+            positionZ = perCategoryIndex * 2.5;
             break;
           case 'Print Design':
             positionX = 2.75;
