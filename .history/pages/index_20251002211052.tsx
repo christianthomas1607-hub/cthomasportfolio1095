@@ -108,7 +108,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
             <TexturedBox onClick={handleBoxClick} />
             {/* Use -2 for /images/hall-transformed.glb */}
             {/* Use .89 for /images/star_destroyer_hallway.glb*/}
-                <mesh position={[0, .6, 12]}>
+                <mesh position={[0, .89, 12]}>
                 <boxGeometry args={[8, 0, 30]} />
                   <meshBasicMaterial>
                     <GradientTexture
@@ -122,7 +122,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
                 <boxGeometry args={[8, 0, 31]} />
                 <meshStandardMaterial/>
                 </mesh> */}
-            {/* <Gltf castShadow receiveShadow position={[0, 2.85, 0]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" /> */}
+            <Gltf castShadow receiveShadow position={[0, 2.85, 0]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" />
             {/* <Gltf castShadow receiveShadow position={[0, 1.5, 27]} rotation={[0, -Math.PI / 2, 0]} scale={2} src="/images/hall-transformed.glb" /> */}
             {/* <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, 0]} scale={0.11} src="/images/fantasy_game_inn2-transformed.glb" /> */}
           </RigidBody>
