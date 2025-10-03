@@ -1,4 +1,4 @@
-import { useTexture, Text, Gltf  } from '@react-three/drei'
+import { useTexture, Text, Gltf, GradientTexture  } from '@react-three/drei'
 import HolographicMaterial from "../components/HolographicMaterial";
 import * as THREE from 'three';
 import { useLoader } from "@react-three/fiber";
@@ -75,7 +75,7 @@ const triangleArray = new Float32Array([-1, -2, 0, 0, 0, 0, -2, 0, 0]);
         <GlowMaterial />
       </mesh>
       <Gltf castShadow receiveShadow position={[0, -1.75, 0]}  scale={.06} src="/images/holo-puck-transformed.glb" />
-  <mesh position={[0, -.69, 0]} rotation={[0, Math.PI / 2, 0]}>
+  <mesh position={[0, -.76, 0]} rotation={[0, Math.PI / 2, 0]} >
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
@@ -83,14 +83,17 @@ const triangleArray = new Float32Array([-1, -2, 0, 0, 0, 0, -2, 0, 0]);
             count={3}
             itemSize={3}
           />
-          <bufferAttribute
-            attach="attributes-normal"
-            array={new Float32Array([0, -1, 0,  -0.5, 1, 0,  0.5, 1, 0])}
-            count={3}
-            itemSize={3}
-          />
+              {/* Normals should be unit vectors. The triangle sits in the XY plane (z=0),
+                  so use a Z normal for all vertices. */}
+              <bufferAttribute
+                attach="attributes-normal"
+                array={new Float32Array([0, 0, 1, 0, 0, 1, 0, 0, 1])}
+                count={3}
+                itemSize={3}
+              />
         </bufferGeometry>
-        <GlowMaterial />
+            {/* render both sides so the triangle is visible from either side */}
+            <meshBasicMaterial color="red" side={THREE.DoubleSide} />
       </mesh>
       
         </group>
