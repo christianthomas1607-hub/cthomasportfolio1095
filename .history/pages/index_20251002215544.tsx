@@ -104,10 +104,10 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
         >
           <KeyboardControls map={keyboardMap}>
             <Controller ref={controllerRef}
-            linearDamping={5}
+            linearDamping={10}
              //No gravity 
             type="kinematic"
-            maxVelLimit={30} 
+            maxVelLimit={10} 
             position={spawnPosition}
             >
               {/* <Gltf castShadow receiveShadow scale={.1} position={[0, -.75, 0]} src="/images/probe-transformed.glb" /> */}

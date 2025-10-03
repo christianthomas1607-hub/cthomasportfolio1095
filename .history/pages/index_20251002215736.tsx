@@ -104,7 +104,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
         >
           <KeyboardControls map={keyboardMap}>
             <Controller ref={controllerRef}
-            linearDamping={5}
+            linearDamping={}
              //No gravity 
             type="kinematic"
             maxVelLimit={30} 

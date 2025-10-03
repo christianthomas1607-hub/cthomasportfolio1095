@@ -32,7 +32,7 @@ export default function Page() {
 const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
   // spawn position for the player (x, y, z)
   // const spawnPosition: [number, number, number] = [0, 1.3, 0];
-  const spawnPosition: [number, number, number] = [0, 1, 0];
+  const spawnPosition: [number, number, number] = [0, 1.5, 0];
   // ref to controller if we need to imperatively set translation later
   const controllerRef = useRef<any>(null);
   // Handler to show popup with item data
@@ -104,10 +104,10 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
         >
           <KeyboardControls map={keyboardMap}>
             <Controller ref={controllerRef}
-            linearDamping={5}
+            linearDamping={10}
              //No gravity 
             type="kinematic"
-            maxVelLimit={30} 
+            maxVelLimit={60} 
             position={spawnPosition}
             >
               {/* <Gltf castShadow receiveShadow scale={.1} position={[0, -.75, 0]} src="/images/probe-transformed.glb" /> */}
