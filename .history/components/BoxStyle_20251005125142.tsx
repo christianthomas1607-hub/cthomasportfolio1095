@@ -26,23 +26,18 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, index, onCl
 const texture = useLoader(TextureLoader, image); // 
 
 // inside component, near other hooks
-const triTopY = .26;         // vertical position of the two top points
+const triTopY = 1.0;         // vertical position of the two top points
 const triBottomY = -1.0;     // vertical position of the bottom apex
-const halfWidth = 0.5;       // how far left/right the top points are
+const halfWidth = 0.9;       // how far left/right the top points are
 const triZ = 0;              // z-position of vertices (0 for XY plane)
-
-const trianglePositionArray = useMemo(() => {
-  // bottom apex, top-left, top-right
-  return new Float32Array([
-    0, triBottomY, triZ,      // bottom apex
-    -halfWidth, triTopY, triZ,// top-left
-    +halfWidth, triTopY, triZ // top-right
-  ]);
-}, [triTopY, triBottomY, halfWidth, triZ]);
-
 
   return (
     <>
+
+
+
+
+    
         <>
         <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
           <mesh>
@@ -76,7 +71,7 @@ const trianglePositionArray = useMemo(() => {
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            array={trianglePositionArray}
+            array={new Float32Array([0, -1, 0,  -0.5, 1, 0,  0.5, 1, 0])}
             count={3}
             itemSize={3}
           />
@@ -84,7 +79,7 @@ const trianglePositionArray = useMemo(() => {
                   so use a Z normal for all vertices. */}
               <bufferAttribute
                 attach="attributes-normal"
-                array={trianglePositionArray}
+                array={new Float32Array([0, 0, 1, -9, 0, 1, 9, 0, 1])}
                 count={3}
                 itemSize={3}
               />
