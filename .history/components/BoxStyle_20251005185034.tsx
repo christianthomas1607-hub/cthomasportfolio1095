@@ -90,8 +90,7 @@ const trianglePositionArray = useMemo(() => {
               />
         </bufferGeometry>
             {/* render both sides so the triangle is visible from either side */}
-            <meshBasicMaterial transparent opacity={.85} color="red" side={THREE.DoubleSide} />
-      </mesh>
+            <meshBasicMaterial transparent opacity={.5} color="red" side={THREE.DoubleSide} />
       
         </group>
         </>
