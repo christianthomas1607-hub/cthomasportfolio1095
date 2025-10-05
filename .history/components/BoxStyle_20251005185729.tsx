@@ -1,4 +1,4 @@
-import { useTexture, Text, Gltf, GradientTexture, Edges   } from '@react-three/drei'
+import { useTexture, Text, Gltf, GradientTexture  } from '@react-three/drei'
 import HolographicMaterial from "../components/HolographicMaterial";
 import * as THREE from 'three';
 import { useLoader } from "@react-three/fiber";
@@ -66,7 +66,6 @@ const trianglePositionArray = useMemo(() => {
           >
             {title}
           </Text>
-          
           <mesh>
         <boxGeometry args={[0, 1, 1]} /> {/* Slightly larger box for glow */}
         <GlowMaterial />
