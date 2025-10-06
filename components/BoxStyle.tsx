@@ -76,10 +76,13 @@ const borderSizes = () => {
             <meshBasicMaterial transparent opacity={.85} color="red" />
             </mesh> */}
         <Text
-          position={[0, .75, 0]} // above the image
-          fontSize={0.2}
+          position={[0, .64, 0]} // above the image
           lineHeight={1}
-          maxWidth={3}
+          maxWidth={2.5}
+          fontSize={0.2}
+           font="/MavenPro-Bold.ttf"
+          fontWeight={'800'}
+          
           color="white"
           textAlign="center"
           anchorX="center"
