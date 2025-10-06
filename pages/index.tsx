@@ -1,7 +1,7 @@
 "use client"
 import { Canvas } from '@react-three/fiber'
 import { Physics, RigidBody } from '@react-three/rapier'
-import { Gltf, KeyboardControls, GradientTexture } from '@react-three/drei'
+import { Gltf, KeyboardControls, GradientTexture, Environment } from '@react-three/drei'
 import Controller from 'ecctrl'
 import { useRef, useState } from 'react'
 import TexturedBox from '../components/TexturedBox'
@@ -91,6 +91,12 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
         </button>
       </div>
       <Canvas>
+        <Environment 
+        files="/images/ice_planet_close.jpg" 
+        ground={{ scale: 100 }}
+        backgroundRotation={[0, Math.PI / 1, 0]} 
+        // environmentRotation={[0, Math.PI / 2, 0]}
+        />
          <color attach="background" args={["white"]} />
        {/*  .7 intensity for original glb setting */}
         <directionalLight intensity={3} castShadow shadow-bias={-0.0004} position={[-20, 20, 20]}>
@@ -131,8 +137,8 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
                 <boxGeometry args={[8, 0, 31]} />
                 <meshStandardMaterial/>
                 </mesh> */}
-            <Gltf castShadow receiveShadow position={[-.14, 2.85, 0]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" />
-            {/* <Gltf castShadow receiveShadow position={[0, 1.5, 27]} rotation={[0, -Math.PI / 2, 0]} scale={2} src="/images/hall-transformed.glb" /> */}
+            {/* <Gltf castShadow receiveShadow position={[-.14, 2.85, 0]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" /> */}
+            <Gltf castShadow receiveShadow position={[0, 3.65, 35]} rotation={[0, -Math.PI / 2, 0]} scale={2} src="/images/hall-transformed.glb" />
             {/* <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, 0]} scale={0.11} src="/images/fantasy_game_inn2-transformed.glb" /> */}
           </RigidBody>
         </Physics>
