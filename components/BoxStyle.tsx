@@ -1,4 +1,4 @@
-import { useTexture, Text, Gltf, GradientTexture, Edges   } from '@react-three/drei'
+import { useTexture, Text, Gltf, GradientTexture, Edges, Outlines   } from '@react-three/drei'
 import HolographicMaterial from "../components/HolographicMaterial";
 import * as THREE from 'three';
 import { useLoader } from "@react-three/fiber";
@@ -40,10 +40,28 @@ const trianglePositionArray = useMemo(() => {
 }, [triTopY, triBottomY, halfWidth, triZ]);
 
 
+const maxBorderSize: number = 40;
+
+const borderSizes = () => {
+  const edgesArray = [];
+  for (let i = 1; i <= maxBorderSize; i++) {
+    edgesArray.push(
+      <Edges key={i} scale={1 + i * 0.001} color="red" transparent opacity={.85} />
+    );
+  }
+  return edgesArray;
+};
+
+// let decimal: number = 6;
+
   return (
     <>
         <>
         <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
+          {/* <mesh scale={1.1}>
+        <boxGeometry args={[0, 1, 1]} />
+        <meshBasicMaterial color="red" transparent opacity={0.5} />
+      </mesh> */}
           <mesh>
             <boxGeometry args={[0, 1, 1]} />
             <meshStandardMaterial map={texture} 
@@ -51,13 +69,7 @@ const trianglePositionArray = useMemo(() => {
         // emissiveIntensity={2}
         // toneMapped={false}
             />
-            <Edges
-            transparent opacity={.85}
-            linewidth={6}
-            scale={1}
-            threshold={40} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
-            color="red"
-          />
+            {borderSizes()}
           </mesh>
           {/* <mesh>
             <boxGeometry args={[0, 1.1, 1.1]} />
