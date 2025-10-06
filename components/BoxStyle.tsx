@@ -25,9 +25,9 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, index, onCl
 const texture = useLoader(TextureLoader, image); // 
 
 // inside component, near other hooks
-const triTopY = .26;         // vertical position of the two top points
+const triTopY = .24;         // vertical position of the two top points
 const triBottomY = -1.0;     // vertical position of the bottom apex
-const halfWidth = 0.506;       // how far left/right the top points are
+const halfWidth = 0.522;       // how far left/right the top points are
 const triZ = 0;              // z-position of vertices (0 for XY plane)
 
 const trianglePositionArray = useMemo(() => {
