@@ -59,10 +59,6 @@ const trianglePositionArray = useMemo(() => {
             color="red"
           />
           </mesh>
-          {/* <mesh>
-            <boxGeometry args={[0, 1.1, 1.1]} />
-            <meshBasicMaterial transparent opacity={.85} color="red" />
-            </mesh> */}
         <Text
           position={[0, .75, 0]} // above the image
           fontSize={0.2}

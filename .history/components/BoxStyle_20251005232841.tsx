@@ -28,7 +28,7 @@ const texture = useLoader(TextureLoader, image); //
 const triTopY = .26;         // vertical position of the two top points
 const triBottomY = -1.0;     // vertical position of the bottom apex
 const halfWidth = 0.506;       // how far left/right the top points are
-const triZ = 0;              // z-position of vertices (0 for XY plane)
+const triZ = 1;              // z-position of vertices (0 for XY plane)
 
 const trianglePositionArray = useMemo(() => {
   // bottom apex, top-left, top-right

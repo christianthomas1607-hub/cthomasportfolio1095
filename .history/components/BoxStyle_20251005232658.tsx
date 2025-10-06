@@ -45,24 +45,24 @@ const trianglePositionArray = useMemo(() => {
         <>
         <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
           <mesh>
-            <boxGeometry args={[0, 1, 1]} />
-            <meshStandardMaterial map={texture} 
+            <boxGeometry args={[-01, 1, 1]} />
+            <meshStandardMaterial map={texture} side={THREE.DoubleSide}
         //     emissive={'white'}
         // emissiveIntensity={2}
         // toneMapped={false}
             />
-            <Edges
+            {/* <Edges
             transparent opacity={.85}
             linewidth={6}
             scale={1}
             threshold={40} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
             color="red"
-          />
+          /> */}
           </mesh>
-          {/* <mesh>
+          <mesh>
             <boxGeometry args={[0, 1.1, 1.1]} />
             <meshBasicMaterial transparent opacity={.85} color="red" />
-            </mesh> */}
+            </mesh>
         <Text
           position={[0, .75, 0]} // above the image
           fontSize={0.2}

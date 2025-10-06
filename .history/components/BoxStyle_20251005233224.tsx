@@ -44,25 +44,35 @@ const trianglePositionArray = useMemo(() => {
     <>
         <>
         <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
-          <mesh>
-            <boxGeometry args={[0, 1, 1]} />
-            <meshStandardMaterial map={texture} 
-        //     emissive={'white'}
-        // emissiveIntensity={2}
-        // toneMapped={false}
+          {/* Outline: render first as a slightly larger back-face mesh so it appears as a border */}
+          <mesh
+            renderOrder={0}
+            // scale slightly larger on Y/Z so the back-side peeks out as an outline
+            scale={[1, 1.1, 1.1]}
+          >
+            {/* use a very small width instead of 0 to avoid degenerate geometry */}
+            <boxGeometry args={[0.001, 1, 1]} />
+            <meshBasicMaterial
+              color="red"
+              transparent
+              opacity={0.85}
+              side={THREE.BackSide}
+              // don't write to the depth buffer so the main mesh can render on top
+              depthWrite={false}
             />
-            <Edges
-            transparent opacity={.85}
-            linewidth={6}
-            scale={1}
-            threshold={40} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
-            color="red"
-          />
           </mesh>
-          {/* <mesh>
-            <boxGeometry args={[0, 1.1, 1.1]} />
-            <meshBasicMaterial transparent opacity={.85} color="red" />
-            </mesh> */}
+
+          {/* Main textured mesh: render after the outline */}
+          <mesh renderOrder={1}>
+            <boxGeometry args={[0.001, 1, 1]} />
+            <meshStandardMaterial
+              map={texture}
+              // polygonOffset helps reduce z-fighting against the outline
+              polygonOffset
+              polygonOffsetFactor={1}
+              polygonOffsetUnits={1}
+            />
+          </mesh>
         <Text
           position={[0, .75, 0]} // above the image
           fontSize={0.2}

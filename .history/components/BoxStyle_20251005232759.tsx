@@ -51,13 +51,13 @@ const trianglePositionArray = useMemo(() => {
         // emissiveIntensity={2}
         // toneMapped={false}
             />
-            <Edges
+            {/* <Edges
             transparent opacity={.85}
             linewidth={6}
             scale={1}
             threshold={40} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
             color="red"
-          />
+          /> */}
           </mesh>
           {/* <mesh>
             <boxGeometry args={[0, 1.1, 1.1]} />
