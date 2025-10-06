@@ -21,23 +21,24 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
 
         switch(item.category) {
           case 'Web Design':
-            positionX = -3.25;
+            positionX = -2.8;
             rotationY = 2;
+            perCategoryIndex += -1.25;
             positionZ = perCategoryIndex * 2.5;
             break;
           case 'Print Design':
-            positionX = 2.75;
+            positionX = 2.65;
             rotationY = -2;
-            // perCategoryIndex += 2;
+            perCategoryIndex += -1.25;
             positionZ = perCategoryIndex * 2.5;
             break;
           case 'Motion Design':
-            positionX = 2.75;
+            positionX = 2.65;
             rotationY = -2;
-            positionZ = 17;
+            positionZ = 18;
             break;
           case 'Interior Design':
-            positionX = 2.75;
+            positionX = 2.65;
             rotationY = -2;
             positionZ = 21;
             break;
