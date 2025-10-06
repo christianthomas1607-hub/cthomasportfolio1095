@@ -76,6 +76,7 @@ const trianglePositionArray = useMemo(() => {
             {title}
           </Text>
           
+          
       <Gltf castShadow receiveShadow position={[0, -1.75, 0]}  scale={.06} src="/images/holo-puck-transformed.glb" />
   <mesh position={[0, -.76, 0]} rotation={[0, Math.PI / 2, 0]} >
         <bufferGeometry>
