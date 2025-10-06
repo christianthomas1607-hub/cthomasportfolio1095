@@ -8,7 +8,7 @@
   bottom: 20px;
   left: 20px;
   z-index: 1;
-  user-select: none;
+    user-select: none;
   /* For older Safari versions, you might need the vendor prefix */
   -webkit-user-select: none;
   /* For older IE versions (IE 10 and 11), you might need the vendor prefix */

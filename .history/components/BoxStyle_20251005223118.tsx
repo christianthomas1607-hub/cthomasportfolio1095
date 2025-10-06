@@ -27,7 +27,7 @@ const texture = useLoader(TextureLoader, image); //
 // inside component, near other hooks
 const triTopY = .26;         // vertical position of the two top points
 const triBottomY = -1.0;     // vertical position of the bottom apex
-const halfWidth = 0.506;       // how far left/right the top points are
+const halfWidth = 0.5;       // how far left/right the top points are
 const triZ = 0;              // z-position of vertices (0 for XY plane)
 
 const trianglePositionArray = useMemo(() => {
@@ -52,11 +52,10 @@ const trianglePositionArray = useMemo(() => {
         // toneMapped={false}
             />
             <Edges
-            transparent opacity={.85}
-            linewidth={6}
-            scale={1}
-            threshold={40} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
-            color="red"
+            linewidth={4}
+          scale={1.1}
+    threshold={15} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
+    color="white"
             // scale={3} // Keep scale at 1 to match the box size
             // threshold={40} // Adjust threshold for edge detection (in degrees)
             // color="white" // Color of the border
@@ -76,7 +75,10 @@ const trianglePositionArray = useMemo(() => {
             {title}
           </Text>
           
-          
+          <mesh>
+        <boxGeometry args={[0, 1, 1]} /> {/* Slightly larger box for glow */}
+        <GlowMaterial />
+      </mesh>
       <Gltf castShadow receiveShadow position={[0, -1.75, 0]}  scale={.06} src="/images/holo-puck-transformed.glb" />
   <mesh position={[0, -.76, 0]} rotation={[0, Math.PI / 2, 0]} >
         <bufferGeometry>

@@ -53,7 +53,7 @@ const trianglePositionArray = useMemo(() => {
             />
             <Edges
             transparent opacity={.85}
-            linewidth={6}
+            // linewidth={0}
             scale={1}
             threshold={40} // Display edges only when the angle between two faces exceeds this value (default=15 degrees)
             color="red"
