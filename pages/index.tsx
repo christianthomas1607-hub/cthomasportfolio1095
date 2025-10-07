@@ -32,7 +32,7 @@ export default function Page() {
 const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
   // spawn position for the player (x, y, z)
   // const spawnPosition: [number, number, number] = [0, 1.3, 0];
-  const spawnPosition: [number, number, number] = [0, 1, 0];
+  const spawnPosition: [number, number, number] = [0, 4, 0];
   // ref to controller if we need to imperatively set translation later
   const controllerRef = useRef<any>(null);
   // Handler to show popup with item data
@@ -106,17 +106,18 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
         <Physics 
         timeStep="vary"
          //No gravity
-        gravity={[0, 0, 0]}
+        // gravity={[0, 0, 0]}
         >
           <KeyboardControls map={keyboardMap}>
             <Controller ref={controllerRef}
-            linearDamping={5}
+            // linearDamping={5}
              //No gravity 
-            maxVelLimit={30} 
+            // maxVelLimit={30} 
+            maxVelLimit={10} 
             position={spawnPosition}
             >
               {/* <Gltf castShadow receiveShadow scale={.1} position={[0, -.75, 0]} src="/images/probe-transformed.glb" /> */}
-              <Gltf castShadow receiveShadow scale={.005} position={[0, -.75, 0]} src="/images/r2d2.glb" />
+              <Gltf castShadow receiveShadow scale={.005} position={[0, -.8, 0]} src="/images/r2d2.glb" />
             </Controller>
           </KeyboardControls>
           <RigidBody type="fixed" colliders="trimesh">
