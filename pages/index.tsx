@@ -20,26 +20,19 @@ function simulateKeyEvent( key: string, type: 'keydown' | 'keyup') {
 
 
 
-function PreventFall() {
-const [pos, setPos] = useState<[number, number, number]>([0, 5, 0])
-const velocity = useRef(0)
+function PreventFall(b : { controllerRef: React.RefObject<any> }) {
 
 
-useFrame((_, dt) => {
-  velocity.current += -9.8 * dt
-  const nextY = pos[1] + velocity.current * dt
-  if (nextY <= 0) {
-    velocity.current = 0
-    setPos(p => [p[0], 0, p[2]])
-  } else {
-    setPos(p => [p[0], nextY, p[2]])
+useFrame(() => {
+  const c = b.controllerRef.current
+  if (!c) return
+  const minY = 0    // world floor height
+  const t = c.translation() // or c.rigidBody.translation()
+  if (t.y < minY) {
+   return c.setTranslation({ x: t.x, y: minY, z: t.z }, true)
   }
 })
 
-
-return (
-<Gltf castShadow receiveShadow scale={.005} position={pos} src="/images/r2d2.glb" />
-);
 }
 
 
@@ -140,7 +133,10 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
             // maxVelLimit={30} 
             maxVelLimit={10} 
             position={spawnPosition}
+            
+
             >
+              <PreventFall controllerRef={controllerRef} />
               {/* <PreventFall /> */}
               {/* <Gltf castShadow receiveShadow scale={.1} position={[0, -.75, 0]} src="/images/probe-transformed.glb" /> */}
               <Gltf castShadow receiveShadow scale={.005} position={[0, -.75, 0]} src="/images/r2d2.glb" />
