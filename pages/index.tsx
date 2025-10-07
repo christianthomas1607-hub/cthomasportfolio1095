@@ -1,5 +1,5 @@
 "use client"
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { Physics, RigidBody } from '@react-three/rapier'
 import { Gltf, KeyboardControls, GradientTexture, Environment } from '@react-three/drei'
 import Controller from 'ecctrl'
@@ -17,6 +17,31 @@ import { WordAndImage as WordAndImageType } from '../components/data'
 function simulateKeyEvent( key: string, type: 'keydown' | 'keyup') {
   window.dispatchEvent(new KeyboardEvent(type, {key}))
 }
+
+
+
+function PreventFall() {
+const [pos, setPos] = useState<[number, number, number]>([0, 5, 0])
+const velocity = useRef(0)
+
+
+useFrame((_, dt) => {
+  velocity.current += -9.8 * dt
+  const nextY = pos[1] + velocity.current * dt
+  if (nextY <= 0) {
+    velocity.current = 0
+    setPos(p => [p[0], 0, p[2]])
+  } else {
+    setPos(p => [p[0], nextY, p[2]])
+  }
+})
+
+
+return (
+<Gltf castShadow receiveShadow scale={.005} position={pos} src="/images/r2d2.glb" />
+);
+}
+
 
 export default function Page() {
   const keyboardMap = [
@@ -116,15 +141,16 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
             maxVelLimit={10} 
             position={spawnPosition}
             >
+              {/* <PreventFall /> */}
               {/* <Gltf castShadow receiveShadow scale={.1} position={[0, -.75, 0]} src="/images/probe-transformed.glb" /> */}
-              <Gltf castShadow receiveShadow scale={.005} position={[0, -.8, 0]} src="/images/r2d2.glb" />
+              <Gltf castShadow receiveShadow scale={.005} position={[0, -.75, 0]} src="/images/r2d2.glb" />
             </Controller>
           </KeyboardControls>
           <RigidBody type="fixed" colliders="trimesh">
             <TexturedBox onClick={handleBoxClick} />
             {/* Use -2 for /images/hall-transformed.glb */}
             {/* Use .89 for /images/star_destroyer_hallway.glb*/}
-                <mesh position={[0, .6, 12]}>
+                <mesh position={[0, 1, 12]}>
                 <boxGeometry args={[8, 0, 30]} />
                   <meshBasicMaterial>
                     <GradientTexture
