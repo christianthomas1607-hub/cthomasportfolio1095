@@ -77,8 +77,6 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
             // maxVelLimit={30} 
             maxVelLimit={10} 
             position={spawnPosition}
-            
-
             >
               
               {/* <PreventFall /> */}
@@ -91,13 +89,13 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
             {/* Use -2 for /images/hall-transformed.glb */}
             {/* Use .89 for /images/star_destroyer_hallway.glb*/}
                 <mesh position={[0, 1, 12]}>
-                <boxGeometry args={[8, 0, 30]} />
-                  <meshBasicMaterial>
-                    <GradientTexture
+                <boxGeometry args={[5000, 0, 5000]} />
+                  <meshBasicMaterial transparent opacity={0} color={"#000000"}>
+                    {/* <GradientTexture
                     stops={[0, .5, 1]} // Define the positions of the color stops (0 to 1)
                     colors={['#d8d8d8','#bababa', '#838383']} // Define the colors at each stop (red to blue)
                     size={1024} // Optional: texture resolution (default is 1024)
-                    />
+                    /> */}
                   </meshBasicMaterial>
                 </mesh>
                 {/* <mesh position={[0, .9, 12]}>
@@ -105,7 +103,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
                 <meshStandardMaterial/>
                 </mesh> */}
             {/* <Gltf castShadow receiveShadow position={[-.14, 2.85, 0]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" /> */}
-            <Gltf castShadow receiveShadow position={[0, 3.65, 35]} rotation={[0, -Math.PI / 2, 0]} scale={2} src="/images/hall-transformed.glb" />
+            {/* <Gltf castShadow receiveShadow position={[0, 3.65, 35]} rotation={[0, -Math.PI / 2, 0]} scale={2} src="/images/hall-transformed.glb" /> */}
             {/* <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, 0]} scale={0.11} src="/images/fantasy_game_inn2-transformed.glb" /> */}
           </RigidBody>
         </Physics>
