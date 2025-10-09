@@ -1,7 +1,7 @@
 "use client"
 import { Canvas } from '@react-three/fiber'
 import { Physics, RigidBody } from '@react-three/rapier'
-import { Gltf, KeyboardControls, GradientTexture, Environment } from '@react-three/drei'
+import { Gltf, KeyboardControls, GradientTexture } from '@react-three/drei'
 import Controller from 'ecctrl'
 import { useRef, useState } from 'react'
 import TexturedBox from '../components/TexturedBox'

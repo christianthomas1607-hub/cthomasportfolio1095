@@ -1,7 +1,7 @@
 "use client"
 import { Canvas } from '@react-three/fiber'
 import { Physics, RigidBody } from '@react-three/rapier'
-import { Gltf, KeyboardControls, GradientTexture, Environment } from '@react-three/drei'
+import { Gltf, KeyboardControls, GradientTexture } from '@react-three/drei'
 import Controller from 'ecctrl'
 import { useRef, useState } from 'react'
 import TexturedBox from '../components/TexturedBox'
@@ -91,12 +91,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
         </button>
       </div>
       <Canvas>
-         <Environment 
-        files="/images/ice_planet_close.jpg" 
-        ground={{ scale: 100 }}
-        backgroundRotation={[0, Math.PI / 1, 0]} 
-        // environmentRotation={[0, Math.PI / 2, 0]}
-        />
+        
          <color attach="background" args={["white"]} />
        {/*  .7 intensity for original glb setting */}
         <directionalLight intensity={3} castShadow shadow-bias={-0.0004} position={[-20, 20, 20]}>
