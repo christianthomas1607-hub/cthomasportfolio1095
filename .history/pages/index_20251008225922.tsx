@@ -123,7 +123,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
             {/* Use .89 for /images/star_destroyer_hallway.glb*/}
                 <mesh position={[0, .6, 12]}>
                 <boxGeometry args={[8, 0, 30]} />
-                  <meshBasicMaterial transparent opacity={0} color={"black"}>
+                  <meshBasicMaterial>
                     {/* <GradientTexture
                     stops={[0, .5, 1]} // Define the positions of the color stops (0 to 1)
                     colors={['#d8d8d8','#bababa', '#838383']} // Define the colors at each stop (red to blue)

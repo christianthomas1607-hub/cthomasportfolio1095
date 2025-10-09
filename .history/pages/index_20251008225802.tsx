@@ -123,19 +123,19 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
             {/* Use .89 for /images/star_destroyer_hallway.glb*/}
                 <mesh position={[0, .6, 12]}>
                 <boxGeometry args={[8, 0, 30]} />
-                  <meshBasicMaterial transparent opacity={0} color={"black"}>
-                    {/* <GradientTexture
+                  <meshBasicMaterial>
+                    <GradientTexture
                     stops={[0, .5, 1]} // Define the positions of the color stops (0 to 1)
                     colors={['#d8d8d8','#bababa', '#838383']} // Define the colors at each stop (red to blue)
                     size={1024} // Optional: texture resolution (default is 1024)
-                    /> */}
+                    />
                   </meshBasicMaterial>
                 </mesh>
                 {/* <mesh position={[0, .9, 12]}>
                 <boxGeometry args={[8, 0, 31]} />
                 <meshStandardMaterial/>
                 </mesh> */}
-                 <Gltf castShadow receiveShadow position={[-.18, -8, 27.14]} scale={.78} src="/images/star_wars_imperial_door.glb" />
+                 <Gltf castShadow receiveShadow position={[-.18, -8, 27.]} scale={.78} src="/images/star_wars_imperial_door.glb" />
             <Gltf castShadow receiveShadow position={[-.14, 2.85, 0]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" />
             {/* <Gltf castShadow receiveShadow position={[0, 1.5, 27]} rotation={[0, -Math.PI / 2, 0]} scale={2} src="/images/hall-transformed.glb" /> */}
             {/* <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, 0]} scale={0.11} src="/images/fantasy_game_inn2-transformed.glb" /> */}

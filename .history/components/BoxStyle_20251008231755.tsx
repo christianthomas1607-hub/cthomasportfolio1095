@@ -46,7 +46,7 @@ const borderSizes = () => {
   const edgesArray = [];
   for (let i = 1; i <= maxBorderSize; i++) {
     edgesArray.push(
-      <Edges key={i} scale={1 + i * 0.001} color="red" transparent opacity={.75} />
+      <Edges key={i} scale={1 + i * 0.001} color="red" transparent opacity={.85} />
     );
   }
   return edgesArray;
@@ -111,7 +111,7 @@ const borderSizes = () => {
               />
         </bufferGeometry>
             {/* render both sides so the triangle is visible from either side */}
-            <meshBasicMaterial transparent opacity={.75} color="red" side={THREE.DoubleSide} />
+            <meshBasicMaterial transparent opacity={.5} color="red" side={THREE.DoubleSide} />
       </mesh>
       
         </group>

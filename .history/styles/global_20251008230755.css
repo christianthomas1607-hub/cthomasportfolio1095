@@ -68,8 +68,8 @@ body {
 
 #popUpCloseButton {
   position: absolute;
-  top: 5.75%;
-  right: 1.75%;
+  top: 6.75%;
+  right: 11.75%;
   border: none;
   cursor: pointer;
   z-index: 11;
