@@ -3,7 +3,8 @@ import { Canvas } from '@react-three/fiber'
 import { Physics, RigidBody } from '@react-three/rapier'
 import { Gltf, KeyboardControls, GradientTexture, Environment } from '@react-three/drei'
 import Controller from 'ecctrl'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
+import { useFrame } from '@react-three/fiber'
 import TexturedBox from '../components/TexturedBox'
 import Popup from '../components/popup'
 import { WordAndImage as WordAndImageType } from '../components/data'
@@ -23,7 +24,9 @@ export default function Page() {
     { name: 'forward', keys: ['ArrowUp', 'KeyW'] },
     { name: 'backward', keys: ['ArrowDown', 'KeyS'] },
     { name: 'leftward', keys: ['ArrowLeft', 'KeyA'] },
-    { name: 'rightward', keys: ['ArrowRight', 'KeyD'] }
+    { name: 'rightward', keys: ['ArrowRight', 'KeyD'] },
+    { name: 'jump', keys: ['Space'] },
+    { name: 'run', keys: ['Shift'] },
   ]
   
   const [showPopup, setShowPopup] = useState(false)
@@ -33,6 +36,91 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
   const spawnPosition: [number, number, number] = [0, 1, 0];
   // ref to controller if we need to imperatively set translation later
   const controllerRef = useRef<any>(null);
+  // Axis bounds (change these to restrict where the player can move)
+  // X axis limits (left/right)
+  const X_MIN = -6
+  const X_MAX = 6
+  // Z axis limits (forward/back)
+  const Z_MIN = -2
+  const Z_MAX = 30
+
+  // Clamp the controller's position every frame. Ecctrl exposes a ref and
+  // sometimes a translation/position or helper methods; we defensively attempt
+  // a few common approaches to read/write the position.
+  useFrame(() => {
+    const ctrl = controllerRef.current
+    if (!ctrl) return
+
+    // 1) If ecctrl exposes a plain translation vector
+    if (ctrl.translation && typeof ctrl.translation === 'object') {
+      const t = ctrl.translation
+      const clampedX = Math.max(X_MIN, Math.min(X_MAX, t.x ?? t[0] ?? 0))
+      const clampedZ = Math.max(Z_MIN, Math.min(Z_MAX, t.z ?? t[2] ?? 0))
+      if (t.x !== undefined) {
+        if (t.x !== clampedX || t.z !== clampedZ) {
+          // try to set via setTranslation if available
+          if (typeof ctrl.setTranslation === 'function') {
+            ctrl.setTranslation({ x: clampedX, y: t.y ?? 0, z: clampedZ })
+          } else {
+            // mutate in-place as a fallback
+            if (t.x !== undefined) t.x = clampedX
+            if (t.z !== undefined) t.z = clampedZ
+          }
+        }
+      } else {
+        // array style
+        const xIdx = 0
+        const zIdx = 2
+        const curX = t[xIdx] ?? 0
+        const curZ = t[zIdx] ?? 0
+        const newX = Math.max(X_MIN, Math.min(X_MAX, curX))
+        const newZ = Math.max(Z_MIN, Math.min(Z_MAX, curZ))
+        if (newX !== curX || newZ !== curZ) {
+          if (typeof ctrl.setTranslation === 'function') {
+            ctrl.setTranslation([newX, t[1] ?? 0, newZ])
+          } else {
+            t[xIdx] = newX
+            t[zIdx] = newZ
+          }
+        }
+      }
+      return
+    }
+
+    // 2) If controller wraps a React ref to an Object3D or to a RigidBody
+    // it might expose `ref.current.position` or `ref.current.translation()`
+    const innerRef = ctrl.ref?.current ?? ctrl.current ?? null
+    if (innerRef) {
+      // three.js Object3D position
+      if (innerRef.position) {
+        const px = innerRef.position.x
+        const pz = innerRef.position.z
+        const nx = Math.max(X_MIN, Math.min(X_MAX, px))
+        const nz = Math.max(Z_MIN, Math.min(Z_MAX, pz))
+        if (nx !== px || nz !== pz) {
+          innerRef.position.x = nx
+          innerRef.position.z = nz
+        }
+        return
+      }
+
+      // rapier rigid body: translation() / setTranslation()
+      if (typeof innerRef.translation === 'function') {
+        try {
+          const t = innerRef.translation()
+          const nx = Math.max(X_MIN, Math.min(X_MAX, t.x))
+          const nz = Math.max(Z_MIN, Math.min(Z_MAX, t.z))
+          if (nx !== t.x || nz !== t.z) {
+            if (typeof innerRef.setTranslation === 'function') {
+              innerRef.setTranslation({ x: nx, y: t.y, z: nz })
+            }
+          }
+        } catch (e) {
+          // ignore safely
+        }
+      }
+    }
+  })
   // Handler to show popup with item data
   function handleBoxClick(item: WordAndImageType) {
     setSelectedItem(item)
