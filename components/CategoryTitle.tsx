@@ -1,93 +1,29 @@
 import { useTexture, Text, Gltf, GradientTexture, Edges, Outlines   } from '@react-three/drei'
-import HolographicMaterial from "../components/HolographicMaterial";
+import HolographicMaterial from "./HolographicMaterial";
 import * as THREE from 'three';
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
-import GlowMaterial from '../components/GlowMaterial';
+import GlowMaterial from './GlowMaterial';
 import React, { useMemo } from "react";
 
 
-type BoxStyleProps = {
+type CategoryTitle = {
   x: number;
   y: number;
   z: number;
   rotationY: number;
-  image: string;
   title: string;
-  index: number;
-  onClick: () => void;
 };
 
-export default function BoxStyle({ x, y, z, rotationY, image, title, index, onClick}: BoxStyleProps) {
-
-// const tex = useTexture(image);
-//   tex.encoding = THREE.sRGBEncoding;
-const texture = useLoader(TextureLoader, image); // 
-
-
-
-
-// inside component, near other hooks
-const triTopY = .24;         // vertical position of the two top points
-const triBottomY = -1.0;     // vertical position of the bottom apex
-const halfWidth = 0.522;       // how far left/right the top points are
-const triZ = 0;              // z-position of vertices (0 for XY plane)
-
-const trianglePositionArray = useMemo(() => {
-  // bottom apex, top-left, top-right
-  return new Float32Array([
-    0, triBottomY, triZ,      // bottom apex
-    -halfWidth, triTopY, triZ,// top-left
-    +halfWidth, triTopY, triZ // top-right
-  ]);
-}, [triTopY, triBottomY, halfWidth, triZ]);
-
-
-const maxBorderSize: number = 40;
-
-const borderSizes = () => {
-  const edgesArray = [];
-  for (let i = 1; i <= maxBorderSize; i++) {
-    edgesArray.push(
-      <Edges key={i} scale={1 + i * 0.001} color="red" transparent opacity={.75} />
-    );
-  }
-  return edgesArray;
-};
-
-// let decimal: number = 6;
+export default function CategoryTitle({ x, y, z, rotationY, title}: CategoryTitle) {
 
   return (
     <>
-        <>
-        <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
-          {/* <mesh scale={1.1}>
-        <boxGeometry args={[0, 1, 1]} />
-        <meshBasicMaterial color="red" transparent opacity={0.5} />
-      </mesh> */}
-      {/* <ambientLight intensity={0.5} />
-      <directionalLight position={[5, 5, 5]} /> */}
-          <mesh>
-            <boxGeometry args={[0, 1, 1]} />
-            <meshStandardMaterial map={texture} 
-            transparent={true} // Allows transparency if the PNG has it
-        opacity={1} // Fully opaque
-        color="#ffffff" // White background
-        //     emissive={'white'}
-        // emissiveIntensity={2}
-        // toneMapped={false}
-            />
-            {borderSizes()}
-          </mesh>
-          {/* <mesh>
-            <boxGeometry args={[0, 1.1, 1.1]} />
-            <meshBasicMaterial transparent opacity={.85} color="red" />
-            </mesh> */}
         <Text
-          position={[0, .64, 0]} // above the image
+          position={[x, y, z]} // above the image
           lineHeight={1}
           maxWidth={2.5}
-          fontSize={0.2}
+          fontSize={0.275}
            font="/MavenPro-Bold.ttf"
           fontWeight={'800'}
           
@@ -99,32 +35,6 @@ const borderSizes = () => {
           >
             {title}
           </Text>
-          
-      <Gltf castShadow receiveShadow position={[0, -1.75, 0]}  scale={.06} src="/images/holo-puck-transformed.glb" />
-  <mesh position={[0, -.76, 0]} rotation={[0, Math.PI / 2, 0]} >
-        <bufferGeometry>
-          <bufferAttribute
-            attach="attributes-position"
-            array={trianglePositionArray}
-            count={3}
-            itemSize={3}
-          />
-              {/* Normals should be unit vectors. The triangle sits in the XY plane (z=0),
-                  so use a Z normal for all vertices. */}
-              <bufferAttribute
-                attach="attributes-normal"
-                array={trianglePositionArray}
-                count={3}
-                itemSize={3}
-              />
-        </bufferGeometry>
-            {/* render both sides so the triangle is visible from either side */}
-            <meshBasicMaterial transparent opacity={.75} color="red" side={THREE.DoubleSide} />
-      </mesh>
-      
-        </group>
-        </>
-     
     </>
   )
 }

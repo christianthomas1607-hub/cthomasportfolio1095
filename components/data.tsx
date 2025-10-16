@@ -229,10 +229,9 @@ export const WordAndImageData: WordAndImage[] = [
   }
   ,
   { 
-    category: "Print Design",
-    title: "Tumbler",
-    imgMain: "/images/interior_design.jpg", 
-    topDescription: "This project was coded, designed, and written by me. HTML 5, CSS 3, and Vanilla JavaScript were used to code this project. This website is supposed to be responsive to various screen sizes. The SEO and accessibility still needs to be worked on. This website was created to assist entry-level to mid-level gamers of a video game called Rainbow Six Siege. Certain data may be outdated, due to constant updates of the game."
-    ,HTMLFile:"/images/8_11_back_to_school_V2_V3.html"
+    category: "Email Design",
+    title: "Back to School",
+    imgMain: "/images/backtoschool.png"
+    ,HTMLFile:"/emails/8_11_back_to_school_V2_V3.html"
   }
 ];

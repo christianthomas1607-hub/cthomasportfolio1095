@@ -2,10 +2,13 @@ import { useTexture, Text, Box  } from '@react-three/drei'
 import { WordAndImageData } from '../components/data'
 
 import BoxStyle from '../components/BoxStyle'
+import CategoryTitle from './CategoryTitle';
 
 export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImageData[0]) => void }) {
   // Keep a counter per category so we can reset the index for each group
   const categoryCounts: Record<string, number> = {};
+
+  let startingCategoryPosition = 0;
 
   return (
     <>
@@ -23,13 +26,15 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
           case 'Web Design':
             positionX = -2.8;
             rotationY = 2;
-            perCategoryIndex += -1.25;
+            startingCategoryPosition = -1.25;
+            perCategoryIndex += startingCategoryPosition;
             positionZ = perCategoryIndex * 2.75;
             break;
           case 'Print Design':
             positionX = 2.65;
             rotationY = -2;
-            perCategoryIndex += -1.25;
+            startingCategoryPosition = -1.25;
+            perCategoryIndex += startingCategoryPosition;
             positionZ = perCategoryIndex * 2.5;
             break;
           case 'Motion Design':
@@ -42,6 +47,11 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             rotationY = -2;
             positionZ = 21;
             break;
+          case 'Email Design':
+            positionX = 2.65;
+            rotationY = -2;
+            positionZ = 25;
+            break;
           default:
             positionX = 2;
             rotationY = -2;
@@ -49,6 +59,8 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
         }
 
         return (
+          <>
+          
           <BoxStyle
             key={`${cat}-${perCategoryIndex}-${index}`}
             x={positionX}
@@ -60,8 +72,66 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             index={perCategoryIndex}
             onClick={() => onClick(item)}
           />
+          </>
         );
       })}
+
+      {Object.keys(categoryCounts).map((category, idx) => {
+        let titleX = 0;
+        let titleY = 0;
+        let titleRotationY = 0;
+        let titleZ = 0;
+
+        switch (category) {
+          case 'Web Design':
+            titleX = -2.8;
+            titleY = 3.65;
+            titleRotationY = -1;
+            titleZ = startingCategoryPosition;
+            break;
+          case 'Print Design':
+            titleX = 2;
+            titleY = 3.65;
+            titleRotationY = 1;
+            titleZ = startingCategoryPosition;
+            break;
+          case 'Motion Design':
+            titleX = 2;
+            titleY = 4;
+            titleRotationY = 1;
+            titleZ = 18;
+            break;
+          case 'Interior Design':
+            titleX = 2;
+            titleY = 4;
+            titleRotationY =1;
+            titleZ = 21;
+            break;
+          case 'Email Design':
+            titleX = 2;
+            titleY = 4;
+            titleRotationY = 1;
+            titleZ = 25;
+            break;
+          default:
+            titleX = 2;
+            titleY = 4;
+            titleRotationY = -2;
+            titleZ = startingCategoryPosition;
+        }
+
+        return (
+          <CategoryTitle
+            key={`${category}-${idx}`}
+            x={titleX}
+            y={titleY}
+            z={titleZ}
+            rotationY={titleRotationY}
+            title={category}
+          />
+        );
+      })}
+
     </>
   )
 }
