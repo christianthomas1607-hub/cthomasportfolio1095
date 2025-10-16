@@ -11,6 +11,7 @@ export interface WordAndImage {
   imgMain?: string;
   imgChild?: string;
   topDescription?: string;
+  HTMLFile?: string;
   figma?: string;
   multipleImages?: string[];
   video?: string;
@@ -225,5 +226,13 @@ export const WordAndImageData: WordAndImage[] = [
     title: "Interior Design", 
     imgMain: "/images/interior_design.jpg",
     imgChild: "/images/interior_design-0.jpg"
+  }
+  ,
+  { 
+    category: "Print Design",
+    title: "Tumbler",
+    imgMain: "/images/interior_design.jpg", 
+    topDescription: "This project was coded, designed, and written by me. HTML 5, CSS 3, and Vanilla JavaScript were used to code this project. This website is supposed to be responsive to various screen sizes. The SEO and accessibility still needs to be worked on. This website was created to assist entry-level to mid-level gamers of a video game called Rainbow Six Siege. Certain data may be outdated, due to constant updates of the game."
+    ,HTMLFile:"/images/8_11_back_to_school_V2_V3.html"
   }
 ];

@@ -1,6 +1,37 @@
 import { Post, WordAndImage } from './data'
+import { useEffect, useRef } from 'react'
 
 export default function Popup({ onClose, item }: { onClose: () => void, item: WordAndImage | null }) {
+  const contentRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    let canceled = false
+    const loadHTML = async () => {
+      if (!item?.HTMLFile) return
+      try {
+        const response = await fetch(item.HTMLFile)
+        if (response.ok) {
+          const html = await response.text()
+          if (!canceled && contentRef.current) {
+            contentRef.current.innerHTML = html
+          }
+        } else {
+          console.error("Failed to load HTML file.")
+        }
+      } catch (error) {
+        console.error("Error fetching HTML:", error)
+      }
+    }
+    loadHTML()
+    return () => {
+      canceled = true
+      if (contentRef.current) {
+        contentRef.current.innerHTML = ''
+      }
+    }
+  }, [item?.HTMLFile])
+  
+  
   return (
     <>
     <button
@@ -29,6 +60,15 @@ Close
     </div>
   </div>
 </div>
+
+{item?.HTMLFile && (
+  <div
+    id="content"
+    ref={contentRef}
+    className="w-full"
+  />
+)}
+
 {item?.imgChild && <img className="w-full object-cover" src={item.imgChild} alt={item.imgChild}/>}
 
 {item?.video && (
