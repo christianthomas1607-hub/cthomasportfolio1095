@@ -91,7 +91,7 @@ const borderSizes = () => {
            <mesh position={[0, boxPositionY, 0]}>
             <boxGeometry args={boxGeometryArgs} />
             <meshStandardMaterial map={texture} 
-            transparent={false} // Allows transparency if the PNG has it
+            transparent={true} // Allows transparency if the PNG has it
         opacity={1} // Fully opaque
         color="#ffffff" // White background
         //     emissive={'white'}
@@ -100,7 +100,15 @@ const borderSizes = () => {
             />
             {borderSizes()}
           </mesh>
-          
+          {category && (
+            <mesh position={[0, boxPositionY, 0]}>
+            <boxGeometry args={boxGeometryArgs} />
+            <meshStandardMaterial 
+              color="#ffffff" // White background
+            />
+
+          </mesh>
+          )}
         <Text
           position={textPosition} // above the image
           lineHeight={1}
