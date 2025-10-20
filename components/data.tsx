@@ -170,31 +170,33 @@ export const WordAndImageData: WordAndImage[] = [
     imgMain: "/images/captains.jpg",
     multipleImages: ["/images/captains-1.jpg", "/images/captains-2.jpg", "/images/captains-3.jpg"],
     figma:"https://embed.figma.com/proto/K1COfsd3YbRV25TEvviRCq/Captains_Homepage?kind=proto&node-id=1-13&page-id=0%3A1&scaling=min-zoom&embed-host=share"
-  },
-  { 
-    category: "Print Design", 
-    title: "Stym Instruction Manual", 
-    imgMain: "/images/stym.jpg",
-    multipleImages: ["/images/stym-0.jpg", "/images/stym-1.jpg", "/images/stym-2.jpg","/images/stym-3.jpg", "/images/stym-4.jpg", "/images/stym-5.jpg"]
-  },
-  { 
-    category: "Print Design",
-    title: "Magazine", 
-    imgMain: "/images/magazine.jpg",
-    imgChild: "/images/magazine-0.jpg" 
-  },
-  { 
-    category: "Print Design",
-    title: "Infographic Poster", 
-    imgMain: "/images/infographic-poster.jpg",
-    imgChild: "/images/infographic-poster.jpg" 
-  },
-  { 
-    category: "Print Design",
-    title: "Inter Type Specimen Poster", 
-    imgMain: "/images/Inter Type Specimen Poster.jpg",
-    imgChild: "/images/Inter Type Specimen Poster-0.jpg" 
-  },
+  }
+  // ,
+  // { 
+  //   category: "Print Design", 
+  //   title: "Stym Instruction Manual", 
+  //   imgMain: "/images/stym.jpg",
+  //   multipleImages: ["/images/stym-0.jpg", "/images/stym-1.jpg", "/images/stym-2.jpg","/images/stym-3.jpg", "/images/stym-4.jpg", "/images/stym-5.jpg"]
+  // },
+  // { 
+  //   category: "Print Design",
+  //   title: "Magazine", 
+  //   imgMain: "/images/magazine.jpg",
+  //   imgChild: "/images/magazine-0.jpg" 
+  // },
+  // { 
+  //   category: "Print Design",
+  //   title: "Infographic Poster", 
+  //   imgMain: "/images/infographic-poster.jpg",
+  //   imgChild: "/images/infographic-poster.jpg" 
+  // },
+  // { 
+  //   category: "Print Design",
+  //   title: "Inter Type Specimen Poster", 
+  //   imgMain: "/images/Inter Type Specimen Poster.jpg",
+  //   imgChild: "/images/Inter Type Specimen Poster-0.jpg" 
+  // }
+  ,
   { 
     category: "Web Design",
     title: "Digital Card Game Prototype", 
@@ -208,19 +210,21 @@ export const WordAndImageData: WordAndImage[] = [
     title: "\"Ice & Fire\" Kinetic Lettering", 
     imgMain: "/images/ice-&-fire-kinetic-lettering-0.gif",
     multipleImages: ["/images/ice-&-fire-kinetic-lettering-0.gif", "/images/ice-&-fire-kinetic-lettering-1.gif"]
-  },
-  { 
-    category: "Print Design",
-    title: "Roberson Museum Wayfinding", 
-    imgMain: "/images/roberson-museum-wayfinding.jpg",
-    imgChild: "/images/roberson-museum-wayfinding-0.jpg"
-  },
-  { 
-    category: "Print Design",
-    title: "Spread Page Designs", 
-    imgMain: "/images/spread-page-designs.jpg",
-    multipleImages: ["/images/spread-page-designs-0.jpg", "/images/spread-page-designs-1.jpg", "/images/spread-page-designs-2.jpg"]
-  },
+  }
+  // ,
+  // { 
+  //   category: "Print Design",
+  //   title: "Roberson Museum Wayfinding", 
+  //   imgMain: "/images/roberson-museum-wayfinding.jpg",
+  //   imgChild: "/images/roberson-museum-wayfinding-0.jpg"
+  // },
+  // { 
+  //   category: "Print Design",
+  //   title: "Spread Page Designs", 
+  //   imgMain: "/images/spread-page-designs.jpg",
+  //   multipleImages: ["/images/spread-page-designs-0.jpg", "/images/spread-page-designs-1.jpg", "/images/spread-page-designs-2.jpg"]
+  // }
+  ,
   { 
     category: "Interior Design",
     title: "Interior Design", 
@@ -233,5 +237,12 @@ export const WordAndImageData: WordAndImage[] = [
     title: "Back to School",
     imgMain: "/images/backtoschool.png"
     ,HTMLFile:"/emails/8_11_back_to_school_V2_V3.html"
+  }
+  ,
+  { 
+    category: "Email Design",
+    title: "Trick or Treat Events 10/18 & 10/19 🎃, October Events 🗓️, 30% Off Fall Encounters 🍂",
+    imgMain: "/images/halloween-first_image.jpg"
+    ,HTMLFile:"/emails/9_24_AAP_trick_or_treat_tickets_V16.html"
   }
 ];

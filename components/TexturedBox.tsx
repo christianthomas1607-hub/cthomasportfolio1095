@@ -31,17 +31,17 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
           case 'Web Design':
             positionX = -2.8;
             rotationY = 2;
-            startingCategoryPosition = -1.25;
+            startingCategoryPosition = -.25;
             perCategoryIndex += startingCategoryPosition;
             positionZ = perCategoryIndex * 2.75;
             break;
-          case 'Print Design':
-            positionX = 2.65;
-            rotationY = -2;
-            startingCategoryPosition = -1.25;
-            perCategoryIndex += startingCategoryPosition;
-            positionZ = perCategoryIndex * 2.5;
-            break;
+          // case 'Print Design':
+          //   positionX = 2.65;
+          //   rotationY = -2;
+          //   startingCategoryPosition = -1.25;
+          //   perCategoryIndex += startingCategoryPosition;
+          //   positionZ = perCategoryIndex * 2.5;
+          //   break;
           case 'Motion Design':
             positionX = 2.65;
             rotationY = -2;
@@ -55,7 +55,9 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
           case 'Email Design':
             positionX = 2.65;
             rotationY = -2;
-            positionZ = 25;
+            startingCategoryPosition = -.25;
+            perCategoryIndex += startingCategoryPosition;
+            positionZ = perCategoryIndex * 2.5;
             break;
           default:
             positionX = 2;
@@ -108,16 +110,16 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
         switch (category) {
           case 'Web Design':
             titleX = -2.8;
-            titleY = 3.65;
+            titleY = 4;
             titleRotationY = -1;
             titleZ = startingCategoryPosition;
             break;
-          case 'Print Design':
-            titleX = 2;
-            titleY = 3.65;
-            titleRotationY = 1;
-            titleZ = startingCategoryPosition;
-            break;
+          // case 'Print Design':
+          //   titleX = 2;
+          //   titleY = 3.65;
+          //   titleRotationY = 1;
+          //   titleZ = startingCategoryPosition;
+          //   break;
           case 'Motion Design':
             titleX = 2;
             titleY = 4;
@@ -130,12 +132,18 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             titleRotationY =1;
             titleZ = 21;
             break;
-          case 'Email Design':
+            case 'Email Design':
             titleX = 2;
             titleY = 4;
             titleRotationY = 1;
-            titleZ = 25;
+            titleZ = startingCategoryPosition;
             break;
+          // case 'Email Design':
+          //   titleX = 2;
+          //   titleY = 4;
+          //   titleRotationY = 1;
+          //   titleZ = 25;
+          //   break;
           default:
             titleX = 2;
             titleY = 4;
