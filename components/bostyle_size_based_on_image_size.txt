@@ -17,17 +17,23 @@ type BoxStyleProps = {
   category: string;
   index: number;
   onClick: () => void;
-  boxPositionY: number;
-  triangleWidth: number;
-  boxGeometryArgs: [number, number, number];
-  textPosition: [number, number, number];
 };
 
-export default function BoxStyle({ x, y, z, rotationY, image, title, category, index, onClick, boxPositionY, triangleWidth, boxGeometryArgs, textPosition }: BoxStyleProps) {
+export default function BoxStyle({ x, y, z, rotationY, image, title, category, index, onClick}: BoxStyleProps) {
 
 // const tex = useTexture(image);
 //   tex.encoding = THREE.sRGBEncoding;
 const texture = useLoader(TextureLoader, image); // 
+
+// Compute non-uniform scale so the image fits inside a 1x1 container on the YZ plane
+// For boxGeometry [0, 1, 1], Y is vertical and Z is horizontal. Keep the longest side at 1.
+const [scaleY, scaleZ] = useMemo<[number, number]>(() => {
+  const img = (texture as any)?.image as { width: number; height: number } | undefined
+  if (!img || !img.width || !img.height) return [1, 1]
+  const aspect = img.width / img.height
+  // If image is wider than tall, reduce Y; if taller than wide, reduce Z
+  return aspect >= 1 ? [1 / aspect, 1] : [1, aspect]
+}, [texture])
 
 const calculateScaleFactors = (texture, containerSize) => {
   const containerAspect = containerSize.x / containerSize.y
@@ -51,7 +57,7 @@ const calculateScaleFactors = (texture, containerSize) => {
 // inside component, near other hooks
 const triTopY = .24;         // vertical position of the two top points
 const triBottomY = -1.0;     // vertical position of the bottom apex
-const halfWidth = triangleWidth;       // how far left/right the top points are
+const halfWidth = 0.522;       // how far left/right the top points are
 const triZ = 0;              // z-position of vertices (0 for XY plane)
 
 const trianglePositionArray = useMemo(() => {
@@ -88,8 +94,15 @@ const borderSizes = () => {
       </mesh> */}
       {/* <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} /> */}
-           <mesh position={[0, boxPositionY, 0]}>
-            <boxGeometry args={boxGeometryArgs} />
+          <mesh scale={[1, scaleY, scaleZ]}>
+            {/* {category !== 'Email Design' ? (
+            <boxGeometry args={[0, 1, 1]} />
+          )
+          : (
+            <boxGeometry args={[0, .5, 1]} />
+          )} */}
+        
+            <boxGeometry args={[0, 1, 1]} />
             <meshStandardMaterial map={texture} 
             transparent={true} // Allows transparency if the PNG has it
         opacity={1} // Fully opaque
@@ -100,9 +113,12 @@ const borderSizes = () => {
             />
             {borderSizes()}
           </mesh>
-          
+          {/* <mesh>
+            <boxGeometry args={[0, 1.1, 1.1]} />
+            <meshBasicMaterial transparent opacity={.85} color="red" />
+            </mesh> */}
         <Text
-          position={textPosition} // above the image
+          position={[0, .64, 0]} // above the image
           lineHeight={1}
           maxWidth={2.5}
           fontSize={0.2}
@@ -117,7 +133,8 @@ const borderSizes = () => {
           >
             {title}
           </Text>
-          <Gltf castShadow receiveShadow position={[0, -1.75, 0]}  scale={.06} src="/images/holo-puck-transformed.glb" />
+          
+      <Gltf castShadow receiveShadow position={[0, -1.75, 0]}  scale={.06} src="/images/holo-puck-transformed.glb" />
   <mesh position={[0, -.76, 0]} rotation={[0, Math.PI / 2, 0]} >
         <bufferGeometry>
           <bufferAttribute
@@ -138,8 +155,10 @@ const borderSizes = () => {
             {/* render both sides so the triangle is visible from either side */}
             <meshBasicMaterial transparent opacity={.75} color="red" side={THREE.DoubleSide} />
       </mesh>
+      
         </group>
         </>
+     
     </>
   )
 }

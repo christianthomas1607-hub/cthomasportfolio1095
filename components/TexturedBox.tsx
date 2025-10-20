@@ -22,6 +22,11 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
         let rotationY = 0;
         let positionZ = 0;
 
+        let boxPositionY = 0;
+        let triangleWidth = 0;
+        let boxGeometryArgs: [number, number, number] = [0, 0, 0];
+        let textPosition: [number, number, number] = [0, 0, 0];
+
         switch(item.category) {
           case 'Web Design':
             positionX = -2.8;
@@ -58,6 +63,19 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             positionZ = perCategoryIndex * 3;
         }
 
+        if (item.category !== 'Email Design') {
+          boxPositionY = 0;
+          triangleWidth = 0.522;
+          boxGeometryArgs = [0, 1, 1];
+          textPosition = [0, .64, 0];
+        }
+        else {
+          boxPositionY = 0;
+          triangleWidth = 1.044; 
+          boxGeometryArgs = [0, 1, 2];
+          textPosition = [0, .64, 0];
+        }
+
         return (
           <>
           
@@ -69,8 +87,13 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             rotationY={rotationY}
             image={item.imgMain}
             title={item.title}
+            category={item.category}
             index={perCategoryIndex}
             onClick={() => onClick(item)}
+            boxPositionY={boxPositionY}
+            triangleWidth={triangleWidth}
+            boxGeometryArgs={boxGeometryArgs}
+            textPosition={textPosition}
           />
           </>
         );
