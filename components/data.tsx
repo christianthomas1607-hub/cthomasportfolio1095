@@ -245,4 +245,32 @@ export const WordAndImageData: WordAndImage[] = [
     imgMain: "/images/halloween-first_image.jpg"
     ,HTMLFile:"/emails/9_24_AAP_trick_or_treat_tickets_V16.html"
   }
+  ,
+  { 
+    category: "Email Design",
+    title: "Save Your Cords w/ Heavy Duty Promos",
+    imgMain: "/images/Cordsemail.jpg"
+    ,HTMLFile:"/emails/09_08_HDP_Cable_Verified_By_Henry.html"
+  }
+  ,
+  { 
+    category: "Email Design",
+    title: "Wine for Wolves 🐺",
+    imgMain: "/images/Wine for Wolves.jpg"
+    ,HTMLFile:"/emails/8_21_AAP_wine_for_wolves_tickets_V31.html"
+  }
+  ,
+  { 
+    category: "Email Design",
+    title: "Get Cool-er with Heavy Duty Promos",
+    imgMain: "/images/Get Cool-er with Heavy Duty Promos.jpg"
+    ,HTMLFile:"/emails/7_21_cooler_HDP_V5.html"
+  }
+  ,
+  { 
+    category: "Email Design",
+    title: "Summer Events",
+    imgMain: "/images/summerevents.jpg"
+    ,HTMLFile:"/emails/8_13_summer_events_V14.html"
+  }
 ];

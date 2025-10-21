@@ -51,7 +51,7 @@ Close
     {/* Inner content */}
     <div className="">
       <div className="">
-        <p className="text-base font-extrabold text-gray-600">CHRISTIAN THOMAS</p>
+        <p className="text-base font-extrabold text-gray-600">{item.category}</p>
         <h1 className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
           {item?.title ?? ''}
         </h1>
