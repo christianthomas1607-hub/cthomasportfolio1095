@@ -241,7 +241,7 @@ export const WordAndImageData: WordAndImage[] = [
   ,
   { 
     category: "Email Design",
-    title: "Trick or Treat Events 10/18 & 10/19 🎃, October Events 🗓️, 30% Off Fall Encounters 🍂",
+    title: "October Events 🎃",
     imgMain: "/images/halloween-first_image.jpg"
     ,HTMLFile:"/emails/9_24_AAP_trick_or_treat_tickets_V16.html"
   }
