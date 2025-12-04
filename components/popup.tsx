@@ -69,7 +69,7 @@ Close
   />
 )}
 
-{item?.imgChild && <img className="w-full object-cover" src={item.imgChild} alt={item.imgChild}/>}
+{item?.imgChild && <img className="w-full object-cover" src={"/images/" + item.imgChild} alt={item.imgChild}/>}
 
 {item?.video && (
   <iframe
@@ -88,7 +88,7 @@ Close
 
 
 {item?.multipleImages?.map((img, index) => (
-  <img key={index} className="w-full object-cover" src={img} alt={img}/>
+  <img key={index} className="w-full object-cover" src={"/images/" + img} alt={img}/>
 ))}
 
 {/* {item?.twoColumn && (
@@ -115,7 +115,7 @@ Close
       {item.post.map((p, idx) => (
         <>    
           <div className="flex flex-col items-center mt-5">
-            <img src={p.img} alt={p.img} className="my-2 max-h-64 object-contain" />
+            <img src={"/images/" + p.img} alt={p.img} className="my-2 max-h-64 object-contain" />
           </div>
           <div className="flex flex-col items-center mt-5">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (

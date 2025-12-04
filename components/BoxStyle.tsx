@@ -27,7 +27,7 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, category, i
 
 // const tex = useTexture(image);
 //   tex.encoding = THREE.sRGBEncoding;
-const texture = useLoader(TextureLoader, image); // 
+const texture = useLoader(TextureLoader, "/images/" + image); // 
 
 const calculateScaleFactors = (texture, containerSize) => {
   const containerAspect = containerSize.x / containerSize.y

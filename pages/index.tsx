@@ -160,6 +160,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
                 <meshStandardMaterial/>
                 </mesh> */}
                  <Gltf castShadow receiveShadow position={[-.18, -7.8, 27.14]} scale={.78} src="/images/star_wars_imperial_door.glb" />
+                 {/* <Gltf castShadow receiveShadow position={[-.14, 2.85, 52.1]}  scale={1.5} src="/images/star_destroyer_hallway.glb" /> */}
             <Gltf castShadow receiveShadow position={[-.14, 2.85, 0]} rotation={[0, -Math.PI / 1, 0]} scale={1.5} src="/images/star_destroyer_hallway.glb" />
             {/* <Gltf castShadow receiveShadow position={[0, 1.5, 27]} rotation={[0, -Math.PI / 2, 0]} scale={2} src="/images/hall-transformed.glb" /> */}
             {/* <Gltf castShadow receiveShadow rotation={[-Math.PI / 2, 0, 0]} scale={0.11} src="/images/fantasy_game_inn2-transformed.glb" /> */}
