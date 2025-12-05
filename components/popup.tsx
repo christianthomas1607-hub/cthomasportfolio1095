@@ -44,18 +44,18 @@ Close
        </button>
   <div className="popup max-h-[80vh] overflow-y-auto rounded-lg shadow-lg">
     
-  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-10 pb-10 lg:overflow-visible lg:px-10">
+  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-3 lg:pt-10 pb-10 lg:overflow-visible lg:px-10">
  
   {/* Outer container */}
   <div className="mx-auto max-w-7xl">
     {/* Inner content */}
     <div className="">
-      <div className="">
-        <p className="text-base font-extrabold text-gray-600">{item.category}</p>
-        <h1 className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+      <div className="flex flex-col items-center">
+        <p className="text-2xl font-extrabold text-gray-600">{item.category}</p>
+        <h1 className="mt-1 font-semibold tracking-tight text-gray-900 text-4xl sm:text-9xl text-center">
           {item?.title ?? ''}
         </h1>
-        {item?.topDescription && <p className="mt-6 text-xl text-gray-700">{item.topDescription}</p>}
+        {item?.topDescription && <p className="mt-7 text-xl text-gray-700">{item.topDescription}</p>}
       </div>
     </div>
   </div>
@@ -68,6 +68,43 @@ Close
     className="w-full"
   />
 )}
+
+{/*
+&& explantion:
+
+Using && is a quicker way:
+item?.figma → This uses optional chaining. It safely checks if item exists and has a figma property.
+
+If item is null or undefined, item?.figma will evaluate to undefined instead of throwing an error.
+
+
+With &&:
+{
+item?.video && (
+    <iframe
+    style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
+    width="800"
+    height="450"
+    src={item.video}
+    allowFullScreen
+    />
+  )
+}
+
+Without &&: 
+{
+item?.video ? (
+    <iframe
+    style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
+    width="800"
+    height="450"
+    src={item.video}
+    allowFullScreen
+    />
+  ): null
+}
+
+*/}
 
 {item?.imgChild && <img className="w-full object-cover" src={"/images/" + item.imgChild} alt={item.imgChild}/>}
 
@@ -109,10 +146,35 @@ Close
   </div>
 )} */}
 
-{item?.post && (
+
+{item?.OneColumnImgandDescription && (
+  <div className="">
+    
+      {item.OneColumnImgandDescription.map((p, idx) => (
+        <>
+          <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-5 px-3 lg:px-0">
+             {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
+                <>
+                <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{title}</h3>
+                <p className="text-xl text-black">{desc}</p> 
+                </>
+            ))}  
+          </div>
+          <div className="flex flex-col items-center mt-5">
+            <img src={"/images/" + p.img} alt={p.img} className="my-2" />
+          </div>
+        </>
+      ))}
+ 
+  </div>
+)}
+
+
+
+{item?.twoColumnImgandDescription && (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
     
-      {item.post.map((p, idx) => (
+      {item.twoColumnImgandDescription.map((p, idx) => (
         <>    
           <div className="flex flex-col items-center mt-5">
             <img src={"/images/" + p.img} alt={p.img} className="my-2 max-h-64 object-contain" />

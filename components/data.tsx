@@ -1,7 +1,14 @@
-export interface Post {
+export interface TwoColumnImgandDescription {
   img?: string;
   titleDescription?: Map<string, string>;
 }
+
+
+export interface OneColumnImgandDescription {
+  img?: string;
+  titleDescription?: Map<string, string>;
+}
+
 
 
 
@@ -15,8 +22,9 @@ export interface WordAndImage {
   figma?: string;
   multipleImages?: string[];
   video?: string;
-  post?: Post[];
+  twoColumnImgandDescription?: TwoColumnImgandDescription[];
   twoColumn?: Map<string, Map<string[], string[]>>;
+  OneColumnImgandDescription?: OneColumnImgandDescription[];
 }
 
 
@@ -34,20 +42,43 @@ export const WordAndImageData: WordAndImage[] = [
     imgMain: "akamai.jpg",
     imgChild: "akamai-1.jpeg" 
 
-  },
-  { 
+  }
+  // ,{ 
+  //   category: "Web Design", 
+  //   title: "Boston Dynamics", 
+  //   imgMain: "boston-dynamics.jpg",
+  //   // multipleImages: ["holiday-2025-boston-dynamics.jpeg", "holiday-2025-products-boston-dynamics.jpeg"]
+  //   imgChild: "holiday-2025-boston-dynamics.jpeg"
+  // }
+  ,{ 
     category: "Web Design", 
     title: "Boston Dynamics", 
     imgMain: "boston-dynamics.jpg",
-    // multipleImages: ["holiday-2025-boston-dynamics.jpeg", "holiday-2025-products-boston-dynamics.jpeg"]
-    imgChild: "holiday-2025-boston-dynamics.jpeg"
+    // topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
+    OneColumnImgandDescription: [{
+        img: "holiday-2025-boston-dynamics.jpeg",
+        titleDescription: new Map([
+          ["2025 Holiday Sale Setup",
+            "A banner, 5 new products, and 2 discounts were set up. Boston Dynamics promoted the sale on social media."
+          ]
+        ])
+      },
+      {
+        img: "holiday-2025-products-boston-dynamics.jpeg",
+        titleDescription: new Map([
+          ["2025 Complete List of Products",
+            "Much of the web content was added by me. Some images were provided by Boston Dynamics. Content was formatted to have proper performance, SEO, and verified for accuracy."
+          ]
+        ])
+      }
+    ]
   },
   { 
     category: "Web Design", 
-    title: "Resilence, Inc WordPress Development", 
+    title: "Resilence, Inc", 
     imgMain: "resilence.jpg",
-    // topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
-    post: [{
+    topDescription: "My primary responsibility of the internship involved solving bugs through WordPress. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
+    twoColumnImgandDescription: [{
         img: "resilence-0.png",
         titleDescription: new Map([
           ["Sharp Corners",
@@ -104,10 +135,10 @@ export const WordAndImageData: WordAndImage[] = [
   
   { 
     category: "Web Design", 
-    title: "Front-End Development + Design", 
+    title: "Rainbow Six Siege Gaming Guide", 
     imgMain: "r6gamingguide.png",
     topDescription: "This project was coded, designed, and written by me. HTML 5, CSS 3, and Vanilla JavaScript were used to code this project. This website is supposed to be responsive to various screen sizes. The SEO and accessibility still needs to be worked on. This website was created to assist entry-level to mid-level gamers of a video game called Rainbow Six Siege. Certain data may be outdated, due to constant updates of the game."
-    ,post: [{
+    ,twoColumnImgandDescription: [{
         img: "r6gamingguide-0.png",
         titleDescription: new Map([
           ["Dark Theme",
@@ -158,13 +189,13 @@ export const WordAndImageData: WordAndImage[] = [
   },
   { 
     category: "Web Design", 
-    title: "Mobile Web Design", 
+    title: "Prime One", 
     imgMain: "mobilewebdesign.png",
     figma:"https://embed.figma.com/proto/W0r4eQk95RhVOoeFRxIx24/IDT535_Final_Project?node-id=20-353&starting-point-node-id=20%3A353&embed-host=share"
   },
   { 
     category: "Web Design", 
-    title: "Captains Mobile Homepage & Branding Guidelines", 
+    title: "The Captains", 
     imgMain: "captains.jpg",
     multipleImages: ["captains-1.jpg", "captains-2.jpg", "captains-3.jpg"],
     figma:"https://embed.figma.com/proto/K1COfsd3YbRV25TEvviRCq/Captains_Homepage?kind=proto&node-id=1-13&page-id=0%3A1&scaling=min-zoom&embed-host=share"
