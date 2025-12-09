@@ -156,7 +156,7 @@ item?.video ? (
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
                 <>
                 <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{title}</h3>
-                <p className="text-xl text-black">{desc}</p> 
+                <p className="text-xl text-black">{desc}</p>
                 </>
             ))}  
           </div>

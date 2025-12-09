@@ -70,7 +70,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
           </div>
         </button>
         <div className="controls-middle-row">
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 px-4 w-24 rounded text-center"
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 pl-5 w-24 rounded text-center"
           onPointerDown={() => { simulateKeyEvent('a', 'keydown'); simulateKeyEvent('ArrowLeft', 'keydown') }}
           onPointerUp={() => { simulateKeyEvent('a', 'keyup'); simulateKeyEvent('ArrowLeft', 'keyup') }}
           onPointerLeave={() => { simulateKeyEvent('a', 'keyup'); simulateKeyEvent('ArrowLeft', 'keyup') }}
