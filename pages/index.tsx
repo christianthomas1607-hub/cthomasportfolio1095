@@ -56,7 +56,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
     <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', margin: 0 }}>
       {showPopup ? <Popup onClose={handleClosePopup} item={selectedItem}  /> : null}
       <div className="controls">
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 px-6 w-37 rounded text-center"
+        <button className="controls-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 px-6 w-37 rounded text-center"
           onPointerDown={() => { simulateKeyEvent('w', 'keydown'); simulateKeyEvent('ArrowUp', 'keydown') }}
           onPointerUp={() => { simulateKeyEvent('w', 'keyup'); simulateKeyEvent('ArrowUp', 'keyup') }}
           onPointerLeave={() => { simulateKeyEvent('w', 'keyup'); simulateKeyEvent('ArrowUp', 'keyup') }}
@@ -70,7 +70,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
           </div>
         </button>
         <div className="controls-middle-row">
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 pl-5 w-24 rounded text-center"
+        <button className="controls-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 pl-5 w-24 rounded text-center"
           onPointerDown={() => { simulateKeyEvent('a', 'keydown'); simulateKeyEvent('ArrowLeft', 'keydown') }}
           onPointerUp={() => { simulateKeyEvent('a', 'keyup'); simulateKeyEvent('ArrowLeft', 'keyup') }}
           onPointerLeave={() => { simulateKeyEvent('a', 'keyup'); simulateKeyEvent('ArrowLeft', 'keyup') }}
@@ -84,7 +84,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
           </div>
            
         </button>
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 px-4 w-24 rounded text-center"
+        <button className="controls-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 px-4 w-24 rounded text-center"
           onPointerDown={() => { simulateKeyEvent('d', 'keydown'); simulateKeyEvent('ArrowRight', 'keydown') }}
           onPointerUp={() => { simulateKeyEvent('d', 'keyup'); simulateKeyEvent('ArrowRight', 'keyup') }}
           onPointerLeave={() => { simulateKeyEvent('d', 'keyup'); simulateKeyEvent('ArrowRight', 'keyup') }}
@@ -98,7 +98,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
           </div>
         </button>
         </div>
-        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 px-4 w-37 rounded text-center"
+        <button className="controls-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 px-4 w-37 rounded text-center"
           onPointerDown={() => { simulateKeyEvent('s', 'keydown'); simulateKeyEvent('ArrowDown', 'keydown') }}
           onPointerUp={() => { simulateKeyEvent('s', 'keyup'); simulateKeyEvent('ArrowDown', 'keyup') }}
           onPointerLeave={() => { simulateKeyEvent('s', 'keyup'); simulateKeyEvent('ArrowDown', 'keyup') }}
