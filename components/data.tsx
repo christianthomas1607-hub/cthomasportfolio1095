@@ -24,7 +24,7 @@ export interface WordAndImage {
 export const WordAndImageData: WordAndImage[] = [
   { 
     category: "Web Design", 
-    title: "Chubb/ESIS", 
+    title: "ESIS", 
     imgMain: "esis.jpg",
     imgChild: "esis-1.jpeg"
   },
