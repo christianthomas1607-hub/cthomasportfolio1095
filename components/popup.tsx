@@ -2,6 +2,7 @@ import { WordAndImage } from './data'
 import { useEffect, useRef } from 'react'
 
 export default function Popup({ onClose, item }: { onClose: () => void, item: WordAndImage | null }) {
+  
   const contentRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -44,7 +45,7 @@ Close
        </button>
   <div className="popup max-h-[80vh] overflow-y-auto rounded-lg shadow-lg">
     
-  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-3 lg:pt-10 pb-10 lg:overflow-visible lg:px-10">
+  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-3 lg:pt-10 pb-5 lg:overflow-visible lg:px-10">
  
   {/* Outer container */}
   <div className="mx-auto max-w-7xl">
@@ -55,7 +56,29 @@ Close
         <h1 className="mt-1 font-semibold tracking-tight text-gray-900 text-4xl sm:text-9xl text-center">
           {item?.title ?? ''}
         </h1>
-        {item?.topDescription && <p className="mt-7 text-xl text-gray-700">{item.topDescription}</p>}
+
+          {item?.video && (
+  <iframe
+    style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
+    width="800"
+    height="450"
+    src={item.video}
+    allowFullScreen
+  />
+)}
+
+        <div id="noteInfo">
+        <p id="noteTop">
+          <i className='fas fa-exclamation-circle' style={{fontSize: "3rem", color: 'red'}}></i>
+          <strong id="notetitle">International Donations and/or Donations Only</strong>
+        </p>
+        <p id="noteText"><strong>Gift Shipping charges are included for domestic shipping only.</strong></p>
+        </div>
+
+        {item?.topNote && <h2 className="text-xl text-gray-700" id="topNote"><strong>Note:</strong> {item.topNote}</h2>}
+        
+        {item?.topNote && <h2 className="text-xl text-gray-700" id="topNote"><strong>Note:</strong> {item.topNote}</h2>}
+        {item?.topDescription && <p className="text-xl text-gray-700" id="topDescription">{item.topDescription}</p>}
       </div>
     </div>
   </div>
@@ -63,7 +86,7 @@ Close
 
 {item?.HTMLFile && (
   <div
-    id="content"
+    id="emailCode"
     ref={contentRef}
     className="w-full"
   />

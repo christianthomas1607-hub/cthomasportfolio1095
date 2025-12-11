@@ -34,6 +34,11 @@ export default function Layout({ children, home }) {
           console.log(`script loaded correctly, window.FB has been populated`)
         }
       />
+      <Script 
+      src="https://kit.fontawesome.com/a076d05399.js" 
+      crossorigin="anonymous"
+      defer
+      />
       <header className={styles.header}>
         {home ? (
           <>

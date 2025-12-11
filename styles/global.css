@@ -63,6 +63,51 @@ h1, h2, h3, h4, h5 {
   line-height: 1;
 }
 
+h2, h3, h4, h5 {
+  max-width: 32ch;
+}
+
+#topNote {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+
+#topDescription {
+  margin-top: 2rem;
+}
+
+
+#noteInfo {
+  background-color: #f7f0e3; border-radius: 16px; border-top: 4px solid #809047; color: black; margin-top: 2rem;
+}
+
+
+#noteTop {
+text-align: left; padding: .5rem 1rem 0 1rem;
+}
+
+
+#noteEmIcon {
+font-size: 1.25rem; color: #809047; padding-right: .5em;
+}
+
+
+#notetitle {
+font-size: 1.25rem; color: #809047; font-weight: 650;
+}
+
+
+#noteText {
+  text-align: left; padding: 0 1rem 1rem 1rem; font-size: 1rem;
+}
+
+
+#emailCode {
+  margin-top: 1rem;
+}
+
+
 p {
   max-width: 65ch;
   line-height: 1.5;
@@ -72,6 +117,23 @@ p {
   p {
     font-size: 0.875rem;
   }
+
+
+  #topNote {
+  margin-top: 1rem;
+  }
+
+
+  #topDescription {
+  margin-top: 1rem;
+  }
+  
+
+
+  #emailCode {
+  margin-top: .25rem;
+  }
+
 }
 
 
