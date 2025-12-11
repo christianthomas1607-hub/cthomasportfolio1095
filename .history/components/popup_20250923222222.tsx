@@ -1,4 +1,4 @@
-import { Post, WordAndImage } from './data'
+import { WordAndImage } from './data'
 
 export default function Popup({ onClose, item }: { onClose: () => void, item: WordAndImage | null }) {
   return (

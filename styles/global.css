@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
+
 
 .controls {
   display: flex;
@@ -15,13 +17,12 @@
   -ms-user-select: none;
 }
 
-.controls-button {
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
-  margin: 5px;
-  cursor: pointer;
-}
+/* .controls-button {
+  color: #1e2939;
+  background-color: #d1d5dc;
+  border-radius: 0.25rem;
+  font-weight: 800;
+} */
 
 .controls-middle-row {
   display: flex;
@@ -52,15 +53,35 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Helvetica, Arial, sans-serif; */
+  font-family: "Maven Pro", "Helvetica", "Arial", sans-serif;
 }
+
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  line-height: 1;
+}
+
+p {
+  max-width: 65ch;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 600px) {
+  p {
+    font-size: 0.875rem;
+  }
+}
+
+
 
 .popup {
   position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: white;
+        background: none;
         border: 1px solid #ccc;
         z-index: 10;
         width: 90%;

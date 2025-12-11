@@ -1,4 +1,4 @@
-import { Post, WordAndImage } from './data'
+import { WordAndImage } from './data'
 
 export default function Controls() {
   function simulateKeyEvent( key: string, type: 'keydown' | 'keyup') {
