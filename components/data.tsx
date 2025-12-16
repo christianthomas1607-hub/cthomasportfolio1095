@@ -287,6 +287,7 @@ export const WordAndImageData: WordAndImage[] = [
   { 
     category: "Email Design",
     title: "Wine for Wolves 🐺",
+    topNote: "None of the images were designed by me, except the encounters image.",
     imgMain: "Wine for Wolves.jpg"
     ,HTMLFile:"/emails/8_21_AAP_wine_for_wolves_tickets_V31.html"
   }
@@ -301,6 +302,7 @@ export const WordAndImageData: WordAndImage[] = [
   { 
     category: "Email Design",
     title: "Summer Events",
+    topNote: "None of the images were designed by me, except the “Oh Baby! Animal Meet & Greet” image.",
     imgMain: "summerevents.jpg"
     ,HTMLFile:"/emails/8_13_summer_events_V14.html"
   }

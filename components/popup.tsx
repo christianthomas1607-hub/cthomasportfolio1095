@@ -1,5 +1,14 @@
 import { WordAndImage } from './data'
 import { useEffect, useRef } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+/* import all the icons in Free Solid, Free Regular, and Brands styles */
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fas, far, fab)
 
 export default function Popup({ onClose, item }: { onClose: () => void, item: WordAndImage | null }) {
   
@@ -67,17 +76,16 @@ Close
   />
 )}
 
+  
+        {item?.topNote && 
         <div id="noteInfo">
         <p id="noteTop">
-          <i className='fas fa-exclamation-circle' style={{fontSize: "3rem", color: 'red'}}></i>
-          <strong id="notetitle">International Donations and/or Donations Only</strong>
+          <FontAwesomeIcon icon={['fas', 'exclamation-circle']}/> <strong id="notetitle">Note</strong>
         </p>
-        <p id="noteText"><strong>Gift Shipping charges are included for domestic shipping only.</strong></p>
+        <p id="noteText">{item.topNote}</p>
         </div>
+        }
 
-        {item?.topNote && <h2 className="text-xl text-gray-700" id="topNote"><strong>Note:</strong> {item.topNote}</h2>}
-        
-        {item?.topNote && <h2 className="text-xl text-gray-700" id="topNote"><strong>Note:</strong> {item.topNote}</h2>}
         {item?.topDescription && <p className="text-xl text-gray-700" id="topDescription">{item.topDescription}</p>}
       </div>
     </div>

@@ -79,27 +79,33 @@ h2, h3, h4, h5 {
 
 
 #noteInfo {
-  background-color: #f7f0e3; border-radius: 16px; border-top: 4px solid #809047; color: black; margin-top: 2rem;
+  background-color: #f5f5f5; border-radius: 16px; border-top: 4px solid #193cb8; color: black; margin-top: 2rem;
 }
 
 
 #noteTop {
 text-align: left; padding: .5rem 1rem 0 1rem;
+color: #193cb8;
 }
 
 
 #noteEmIcon {
-font-size: 1.25rem; color: #809047; padding-right: .5em;
+font-size: 1.25rem; color: #193cb8; padding-right: .5em;
 }
 
 
 #notetitle {
-font-size: 1.25rem; color: #809047; font-weight: 650;
+font-size: 1.25rem; color: #193cb8; font-weight: 650;
 }
 
 
 #noteText {
-  text-align: left; padding: 0 1rem 1rem 1rem; font-size: 1rem;
+  text-align: left; 
+  padding: 0 1rem 1rem 1rem; 
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  max-width: 32ch;
 }
 
 
