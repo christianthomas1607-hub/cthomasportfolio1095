@@ -84,7 +84,8 @@ h2, h3, h4, h5 {
 
 
 #noteTop {
-text-align: left; padding: .5rem 1rem 0 1rem;
+text-align: left; 
+padding: .5rem 1rem 0 1rem;
 color: #193cb8;
 }
 
@@ -120,6 +121,23 @@ p {
 }
 
 @media screen and (max-width: 600px) {
+
+#noteTop {
+padding: .25rem 1rem 0 1rem;
+}
+
+
+#notetitle {
+font-size: 1.25rem; color: #193cb8; font-weight: 650;
+}
+
+
+#noteText {
+  font-size: 1.25rem;
+  text-align: left; 
+  padding: 0 1rem .25rem 1rem; 
+}
+
   p {
     font-size: 0.875rem;
   }
