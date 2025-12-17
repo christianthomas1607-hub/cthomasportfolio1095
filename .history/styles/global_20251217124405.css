@@ -117,7 +117,7 @@ font-size: 1.25rem; color: #193cb8; font-weight: 650;
 }
 
 .bg {
-  border-radius: 0 !important;
+  border-radius: 12px;
 }
 
 
