@@ -212,7 +212,7 @@ item?.video ? (
           <div className="flex flex-col items-center mt-5">
             <img src={"/images/" + p.img} alt={p.img} className="my-2 object-contain" />
           </div>
-          <div className="flex flex-col items-left mt-5 mx-13">
+          <div className="flex flex-col items-left mt-5 lg:mx-13">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
                 <>
                 <h3 className="text-xl font-semibold mb-1 text-black mt-3 ml-0 mr-auto">{title}</h3>
