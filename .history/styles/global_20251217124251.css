@@ -116,10 +116,6 @@ font-size: 1.25rem; color: #193cb8; font-weight: 650;
   margin-top: 1rem;
 }
 
-.bg {
-  border-radius: 0 !important;
-}
-
 
 p {
   max-width: 65ch;
