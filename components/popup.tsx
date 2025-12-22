@@ -66,15 +66,6 @@ Close
           {item?.title ?? ''}
         </h1>
 
-          {item?.video && (
-  <iframe
-    style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
-    width="800"
-    height="450"
-    src={item.video}
-    allowFullScreen
-  />
-)}
 
   
         {item?.topNote && 
@@ -91,6 +82,17 @@ Close
     </div>
   </div>
 </div>
+
+          {item?.video && (
+  <iframe
+    style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
+    width="800"
+    height="450"
+    src={item.video}
+    allowFullScreen
+  />
+)}
+
 
 {item?.HTMLFile && (
   <div
