@@ -24,8 +24,10 @@ export interface WordAndImage {
   multipleImages?: string[];
   video?: string;
   twoColumnImgandDescription?: TwoColumnImgandDescription[];
-  twoColumn?: Map<string, Map<string[], string[]>>;
+  twoColumn?: Map<string, string>;
   OneColumnImgandDescription?: OneColumnImgandDescription[];
+
+  twoColumnImages?: string[][];
 }
 
 
@@ -35,7 +37,10 @@ export const WordAndImageData: WordAndImage[] = [
     category: "Web Design", 
     title: "ESIS", 
     imgMain: "esis.jpg",
-    imgChild: "esis-1.jpeg"
+    imgChild: "esis-1.jpeg",
+    twoColumnImages: [
+      ["akamai-1.jpeg", "esis-1.jpeg", "boston-dynamics.jpg"]
+    ]
   },
   { 
     category: "Web Design",
