@@ -83,32 +83,7 @@ Close
   </div>
 </div>
 
-{/* {item?.twoColumnImages?.map((img, index) => (
-  <div className='grid'>
-    {
-    img.map((imgchild, index) =>
-    {
-      if(index % 2 === 0) {
-     return (
-      <>
-      <img src={"/images/" + imgchild} alt={index.toString()} className="mb-2 max-h-96 object-contain"/>
-      <p className="text-xl text-gray-700" id="topDescription">{imgchild}</p>
-      </>
-     ) 
-    }
-      else {
-        return (
-        <>
-        <img src={"/images/" + imgchild} alt={index.toString()} className="mb-1 max-h-96 object-contain"/>
-        </>
-        )
-      }
-    }
-    )
-  }
-</div>
-)
-)} */}
+
 
 {item?.twoColumn && (
   <div>
@@ -248,6 +223,36 @@ item?.video ? (
   </div>
 )}
 
+
+{item?.twoColumnImages?.map((img, index) => (
+  <div className="parent-2-col-images">
+    {
+    img.map((imgchild, index) =>
+    {
+      if(index % 2 === 0) {
+     return (
+      <>
+      {/* <div className="child-2-col-images-1"> */}
+      <img src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1"/>
+      {/* </div> */}
+      </>
+     ) 
+    }
+      else {
+        return (
+        <>
+        {/* <div className="child-2-col-images-2"> */}
+        <img src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-2" />
+        {/* </div> */}
+        </>
+        )
+      }
+    }
+    )
+  }
+</div>
+)
+)}
 
 
 {item?.twoColumnImgandDescription && (

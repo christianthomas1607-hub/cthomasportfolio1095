@@ -39,7 +39,7 @@ export const WordAndImageData: WordAndImage[] = [
     imgMain: "esis.jpg",
     imgChild: "esis-1.jpeg",
     twoColumnImages: [
-      ["akamai-1.jpeg", "esis-1.jpeg", "boston-dynamics.jpg"]
+      ["Chubb-Special-Gift Store-3-edge.jpeg", "Chubb-Special-Gift Store-3-mobile-edge.png"]
     ]
   },
   { 
