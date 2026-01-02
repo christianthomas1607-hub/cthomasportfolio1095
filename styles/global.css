@@ -24,6 +24,34 @@
   font-weight: 800;
 } */
 
+.controls-button {
+  background-color: #193cb8;
+  color: #ffffff;
+}
+
+
+
+.controls-button:hover {
+  background-color: #214be0;
+  outline: 2px solid #ffffff !important;
+  /* background-color: lighten(#193cb8, 50%); */
+  color: #ffffff;
+}
+
+.controls-button:focus {
+  background-color: #214be0;
+   /* background-color: lighten(#193cb8, 50%); */
+  color: #ffffff;
+}
+
+.controls-button:active {
+  background-color: #214be0;
+  
+  /* background-color: lighten(#193cb8, 50%); */
+  color: #ffffff;
+}
+
+
 .controls-middle-row {
   display: flex;
   justify-content: center;
