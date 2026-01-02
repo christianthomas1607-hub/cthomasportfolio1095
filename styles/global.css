@@ -30,7 +30,8 @@
 } */
 
 .controls-button {
-  background-color: #fcfcfc;
+  background-color: #ffffff;
+
   color: #193cb8;
   &:hover {
     box-shadow: 0 0 0.5em 0em #ff0000;
