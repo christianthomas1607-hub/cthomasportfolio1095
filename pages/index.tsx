@@ -6,6 +6,7 @@ import Controller from 'ecctrl'
 import { useRef, useState } from 'react'
 import TexturedBox from '../components/TexturedBox'
 import Popup from '../components/popup'
+import Controls from '../components/Controls'
 import { WordAndImage as WordAndImageType } from '../components/data'
 
 // function simulateKeyEvent(key: string, type: 'keydown' | 'keyup') {
@@ -55,7 +56,8 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
   return (
     <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', margin: 0 }}>
       {showPopup ? <Popup onClose={handleClosePopup} item={selectedItem}  /> : null}
-      <div className="controls">
+      <Controls />
+      {/* <div className="controls">
         <button className="controls-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 px-6 w-37 rounded text-center"
           onPointerDown={() => { simulateKeyEvent('w', 'keydown'); simulateKeyEvent('ArrowUp', 'keydown') }}
           onPointerUp={() => { simulateKeyEvent('w', 'keyup'); simulateKeyEvent('ArrowUp', 'keyup') }}
@@ -93,7 +95,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
           right
           </div>
           <div style={{float: 'left', paddingTop: '4px'}}>
-          <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="3.25" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M5 12h13M12 5l7 7-7 7"/>
+          <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3.25" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M5 12h13M12 5l7 7-7 7"/>
           </svg>
           </div>
         </button>
@@ -104,14 +106,14 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
           onPointerLeave={() => { simulateKeyEvent('s', 'keyup'); simulateKeyEvent('ArrowDown', 'keyup') }}
         >
           <div style={{float: 'left', paddingTop: '4px'}}>
-           <svg className="mr-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="3.25" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M12 5v13M5 12l7 7 7-7"/>
+           <svg className="mr-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3.25" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M12 5v13M5 12l7 7 7-7"/>
            </svg>
            </div>
            <div style={{float: 'left'}}>
           backward
           </div>
         </button>
-      </div>
+      </div> */}
       <Canvas>
          <Environment 
         files="/images/ice_planet_close.jpg" 
