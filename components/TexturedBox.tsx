@@ -28,7 +28,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
         let textPosition: [number, number, number] = [0, 0, 0];
 
         switch(item.category) {
-          case 'Web Design':
+          case 'Websites':
             positionX = -2.8;
             rotationY = 2;
             startingCategoryPosition = -.25;
@@ -108,7 +108,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
         let titleZ = 0;
 
         switch (category) {
-          case 'Web Design':
+          case 'Websites':
             titleX = -2.8;
             titleY = 4;
             titleRotationY = -1;

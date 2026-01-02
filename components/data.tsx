@@ -34,7 +34,7 @@ export interface WordAndImage {
 
 export const WordAndImageData: WordAndImage[] = [
   { 
-    category: "Web Design", 
+    category: "Websites", 
     title: "ESIS", 
     imgMain: "esis.jpg",
     imgChild: "esis-1.jpeg",
@@ -43,21 +43,21 @@ export const WordAndImageData: WordAndImage[] = [
     ]
   },
   { 
-    category: "Web Design",
+    category: "Websites",
     title: "Akamai", 
     imgMain: "akamai.jpg",
     imgChild: "akamai-1.jpeg" 
 
   }
   // ,{ 
-  //   category: "Web Design", 
+  //   category: "Websites", 
   //   title: "Boston Dynamics", 
   //   imgMain: "boston-dynamics.jpg",
   //   // multipleImages: ["holiday-2025-boston-dynamics.jpeg", "holiday-2025-products-boston-dynamics.jpeg"]
   //   imgChild: "holiday-2025-boston-dynamics.jpeg"
   // }
   ,{ 
-    category: "Web Design", 
+    category: "Websites", 
     title: "Boston Dynamics", 
     imgMain: "boston-dynamics.jpg",
     // topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
@@ -80,7 +80,7 @@ export const WordAndImageData: WordAndImage[] = [
     ]
   },
   { 
-    category: "Web Design", 
+    category: "Websites", 
     title: "Resilence, Inc", 
     imgMain: "resilence.jpg",
     topDescription: "My primary responsibility of the internship involved solving bugs through WordPress. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
@@ -140,7 +140,7 @@ export const WordAndImageData: WordAndImage[] = [
   // }
   
   { 
-    category: "Web Design", 
+    category: "Websites", 
     title: "Rainbow Six Siege Gaming Guide", 
     imgMain: "r6gamingguide.png",
     topDescription: "This project was coded, designed, and written by me. HTML 5, CSS 3, and Vanilla JavaScript were used to code this project. This website is supposed to be responsive to various screen sizes. The SEO and accessibility still needs to be worked on. This website was created to assist entry-level to mid-level gamers of a video game called Rainbow Six Siege. Certain data may be outdated, due to constant updates of the game."
@@ -194,13 +194,13 @@ export const WordAndImageData: WordAndImage[] = [
     ]
   },
   { 
-    category: "Web Design", 
+    category: "Websites", 
     title: "Prime One", 
     imgMain: "mobilewebdesign.png",
     figma:"https://embed.figma.com/proto/W0r4eQk95RhVOoeFRxIx24/IDT535_Final_Project?node-id=20-353&starting-point-node-id=20%3A353&embed-host=share"
   },
   { 
-    category: "Web Design", 
+    category: "Websites", 
     title: "The Captains", 
     imgMain: "captains.jpg",
     multipleImages: ["captains-1.jpg", "captains-2.jpg", "captains-3.jpg"],
@@ -233,7 +233,7 @@ export const WordAndImageData: WordAndImage[] = [
   // }
   ,
   { 
-    category: "Web Design",
+    category: "Websites",
     title: "Digital Card Game Prototype", 
     imgMain: "Digital Card Game Prototype.gif",
     topDescription: "This project is a digital card game that involves graphic design theories. The topics covered are typefaces, color theory, and poster grid theory. To win the game, the first player to have no cards left over, wins.",
