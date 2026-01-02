@@ -36,7 +36,7 @@ export const WordAndImageData: WordAndImage[] = [
   { 
     category: "Websites", 
     title: "ESIS", 
-    imgMain: "esis.jpg",
+    imgMain: "esis-chubblogo.jpg",
     imgChild: "esis-1.jpeg",
     twoColumnImages: [
       ["Chubb-Special-Gift Store-3-edge.jpeg", "Chubb-Special-Gift Store-3-mobile-edge.png"]
