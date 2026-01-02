@@ -15,7 +15,7 @@ export default function Controls() {
           onPointerUp={() => { simulateKeyEvent('w', 'keyup'); simulateKeyEvent('ArrowUp', 'keyup') }}
           onPointerLeave={() => { simulateKeyEvent('w', 'keyup'); simulateKeyEvent('ArrowUp', 'keyup') }}
         >
-          <svg className="mr-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="3.25" strokeLinecap="butt" strokeLinejoin="miter"><path d="M12 19V6M5 12l7-7 7 7"/>
+          <svg className="mr-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#193cb8" strokeWidth="3.25" strokeLinecap="butt" strokeLinejoin="miter"><path d="M12 19V6M5 12l7-7 7 7"/>
           </svg>
           forward
         </button>
@@ -25,7 +25,7 @@ export default function Controls() {
           onPointerUp={() => { simulateKeyEvent('a', 'keyup'); simulateKeyEvent('ArrowLeft', 'keyup') }}
           onPointerLeave={() => { simulateKeyEvent('a', 'keyup'); simulateKeyEvent('ArrowLeft', 'keyup') }}
         >
-           <svg className="mr-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="3.25" strokeLinecap="butt" strokeLinejoin="miter"><path d="M19 12H6M12 5l-7 7 7 7"/>
+           <svg className="mr-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#193cb8" strokeWidth="3.25" strokeLinecap="butt" strokeLinejoin="miter"><path d="M19 12H6M12 5l-7 7 7 7"/>
            </svg>
           left
         </button>
@@ -35,7 +35,7 @@ export default function Controls() {
           onPointerLeave={() => { simulateKeyEvent('d', 'keyup'); simulateKeyEvent('ArrowRight', 'keyup') }}
         >
           right
-          <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="3.25" strokeLinecap="butt" strokeLinejoin="miter"><path d="M5 12h13M12 5l7 7-7 7"/>
+          <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#193cb8" strokeWidth="3.25" strokeLinecap="butt" strokeLinejoin="miter"><path d="M5 12h13M12 5l7 7-7 7"/>
           </svg>
         </button>
         </div>
@@ -44,7 +44,7 @@ export default function Controls() {
           onPointerUp={() => { simulateKeyEvent('s', 'keyup'); simulateKeyEvent('ArrowDown', 'keyup') }}
           onPointerLeave={() => { simulateKeyEvent('s', 'keyup'); simulateKeyEvent('ArrowDown', 'keyup') }}
         >
-           <svg className="mr-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="3.25" strokeLinecap="butt" strokeLinejoin="miter"><path d="M12 5v13M5 12l7 7 7-7"/>
+           <svg className="mr-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#193cb8" strokeWidth="3.25" strokeLinecap="butt" strokeLinejoin="miter"><path d="M12 5v13M5 12l7 7 7-7"/>
            </svg>
           backward
         </button>
