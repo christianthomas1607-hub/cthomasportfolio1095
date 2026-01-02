@@ -129,7 +129,7 @@ Close
 )}
 
 
-          {item?.video && (
+          {/* {item?.video && (
   <iframe
     style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
     width="800"
@@ -137,7 +137,7 @@ Close
     src={item.video}
     allowFullScreen
   />
-)}
+)} */}
 
 
 {item?.HTMLFile && (
