@@ -7,8 +7,9 @@ export default function Controls() {
   window.dispatchEvent(new KeyboardEvent(type, {key}))
 }
   
-  return (
-    <>
+return (
+<>
+  <div className="controls-parent">
     <div className="controls">
         <button className="controls-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-black mx-2 py-2 px-4 rounded inline-flex items-center"
           onPointerDown={() => { simulateKeyEvent('w', 'keydown'); simulateKeyEvent('ArrowUp', 'keydown') }}
@@ -49,6 +50,7 @@ export default function Controls() {
           backward
         </button>
       </div>
-    </>
+  </div>
+</>
   )
 }

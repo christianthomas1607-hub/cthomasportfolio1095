@@ -2,13 +2,18 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap'); */
 
 
+.controls-parent {
+  display: flex;
+  justify-content: center;
+}
+
 .controls {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  /* left: 20px; */
   z-index: 1;
   user-select: none;
   /* For older Safari versions, you might need the vendor prefix */
