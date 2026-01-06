@@ -151,20 +151,20 @@ p {
 /* Container for images */
 .parent-2-col-images {
     display: flex;              /* Arrange images in a row */
-    gap: 10px;                  /* Space between images */
+    gap: 8px;                  /* Space between images */
     align-items: flex-start;
 }
 
 /* First image takes most of the space */
 .child-2-col-images-1 {
-    flex: 3;                    /* Larger portion */
+    flex: 95%;                    /* Larger portion */
     width: 10%;
     object-fit: cover;          /* Maintain aspect ratio */
 }
 
 /* Second image smaller */
 .child-2-col-images-2  {
-    flex: 1;                    /* Smaller portion */
+    flex: 5%;                    /* Smaller portion */
     object-fit: cover;
 }
 

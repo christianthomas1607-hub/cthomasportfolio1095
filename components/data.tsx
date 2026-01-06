@@ -35,11 +35,11 @@ export interface WordAndImage {
 export const WordAndImageData: WordAndImage[] = [
   { 
     category: "Websites", 
-    title: "ESIS", 
-    imgMain: "esis-chubblogo.jpg",
-    imgChild: "esis-1.jpeg",
+    title: "Chubb", 
+    imgMain: "chubb.jpg",
+    // imgChild: "esis-1.jpeg",
     twoColumnImages: [
-      ["Chubb-Special-Gift Store-3-edge.jpeg", "Chubb-Special-Gift Store-3-mobile-edge.png"]
+      ["Chubb-Special-Gift Store-3-edge.jpeg", "chubb-mobilev2.png"]
     ]
   },
   { 
