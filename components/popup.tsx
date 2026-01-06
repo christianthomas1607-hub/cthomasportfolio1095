@@ -1,5 +1,5 @@
 import { WordAndImage } from './data'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
@@ -13,6 +13,16 @@ library.add(fas, far, fab)
 export default function Popup({ onClose, item }: { onClose: () => void, item: WordAndImage | null }) {
   
   const contentRef = useRef<HTMLDivElement | null>(null)
+
+  function imageHeight() : number {
+  
+    const height = document.querySelector(".child-2-col-images-1");
+    
+    return height ? height.clientHeight : 0;
+    
+  }
+
+  
 
   useEffect(() => {
     let canceled = false
@@ -229,21 +239,56 @@ item?.video ? (
     {
     img.map((imgchild, index) =>
     {
+
+      const boxRef = useRef(null); // Reference to the DOM element
+  const [width, setWidth] = useState(""); // State to store computed width
+
+  useEffect(() => {
+    if (boxRef.current) {
+      // Get computed style of the element
+
+        const el = document.querySelector(".child-2-col-images-1");
+
+      const computedStyle = boxRef.current;
+      const currentWidth = computedStyle.clientHeight;
+
+      // Update state based on current style
+      setWidth(currentWidth);
+
+      
+    }
+  }, []);
+
+
+//       const imgRef = useRef<HTMLDivElement>(null);
+// const [imageHeight, setImageHeight] = useState(1300);
+
+// useEffect(() => {
+//   if (imgRef.current) {
+//     setImageHeight(imgRef.current.clientHeight);
+//   }
+// }, []);
+
+      
+
       if(index % 2 === 0) {
      return (
       <>
       {/* <div className="child-2-col-images-1"> */}
-      <img src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1"/>
+      <img ref={boxRef} src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1"/>
+      {/* <p style={{color: "black"}}>height: {deskTopImageHeight}</p> */}
       {/* </div> */}
       </>
      ) 
     }
       else {
+
+
         return (
         <>
-        {/* <div className="child-2-col-images-2"> */}
-        <img src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-2" />
-        {/* </div> */}
+        <div className="child-2-col-images-2"  style={{maxHeight: width}}>
+        <img src={"/images/" + imgchild} alt={index.toString()} />
+        </div>
         </>
         )
       }

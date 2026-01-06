@@ -157,16 +157,25 @@ p {
 
 /* First image takes most of the space */
 .child-2-col-images-1 {
-    flex: 95%;                    /* Larger portion */
+    flex: 4;                    /* Larger portion */
     width: 10%;
     object-fit: cover;          /* Maintain aspect ratio */
 }
 
 /* Second image smaller */
 .child-2-col-images-2  {
-    flex: 5%;                    /* Smaller portion */
-    object-fit: cover;
+    flex: 1;                    /* Smaller portion */
+
+    overflow: hidden;  
 }
+
+.child-2-col-images-2 img {
+    width: 100%;            /* Fill container width */
+    height: 100%;           /* Fill container height */
+    object-fit: cover;      /* Crop while keeping aspect ratio */
+    display: block;         /* Remove inline gap */
+}
+
 
 /* Responsive: stack images on small screens */
 @media (max-width: 600px) {

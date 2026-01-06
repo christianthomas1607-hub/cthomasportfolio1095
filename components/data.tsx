@@ -39,7 +39,7 @@ export const WordAndImageData: WordAndImage[] = [
     imgMain: "chubb.jpg",
     // imgChild: "esis-1.jpeg",
     twoColumnImages: [
-      ["Chubb-Special-Gift Store-3-edge.jpeg", "chubb-mobilev2.png"]
+      ["Chubb-Special-Gift Store-3-edge.jpeg", "chubb-mobile-design.jpeg"]
     ]
   },
   { 
