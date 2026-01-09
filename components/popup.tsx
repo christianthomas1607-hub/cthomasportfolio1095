@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
+import ImageHeightSync from '../components/ImageHeightSync'
+
 /* import all the icons in Free Solid, Free Regular, and Brands styles */
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
@@ -170,7 +172,12 @@ item?.video ? (
 
 */}
 
-{item?.imgChild && <img className="w-full object-cover" src={"/images/" + item.imgChild} alt={item.imgChild}/>}
+{item?.imgChild && (
+<>
+{/* <ImageHeightSync firstimg="" secondimg=""/> */}
+<img className="w-full object-cover" src={"/images/" + item.imgChild} alt={item.imgChild}/>
+</>
+)}
 
 {item?.video && (
   <iframe
@@ -235,47 +242,20 @@ item?.video ? (
 
 
 {item?.twoColumnImages?.map((img, index) => (
+  
   <div className="parent-2-col-images">
+    
     {
     img.map((imgchild, index) =>
     {
-
-      const boxRef = useRef(null); // Reference to the DOM element
-  const [width, setWidth] = useState(""); // State to store computed width
-
-  useEffect(() => {
-    if (boxRef.current) {
-      // Get computed style of the element
-
-        const el = document.querySelector(".child-2-col-images-1");
-
-      const computedStyle = boxRef.current;
-      const currentWidth = computedStyle.clientHeight;
-
-      // Update state based on current style
-      setWidth(currentWidth);
+     
 
       
-    }
-  }, []);
-
-
-//       const imgRef = useRef<HTMLDivElement>(null);
-// const [imageHeight, setImageHeight] = useState(1300);
-
-// useEffect(() => {
-//   if (imgRef.current) {
-//     setImageHeight(imgRef.current.clientHeight);
-//   }
-// }, []);
-
-      
-
       if(index % 2 === 0) {
      return (
       <>
       {/* <div className="child-2-col-images-1"> */}
-      <img ref={boxRef} src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1"/>
+      <img  src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1"/>
       {/* <p style={{color: "black"}}>height: {deskTopImageHeight}</p> */}
       {/* </div> */}
       </>
@@ -286,7 +266,7 @@ item?.video ? (
 
         return (
         <>
-        <div className="child-2-col-images-2"  style={{maxHeight: width}}>
+        <div className="child-2-col-images-2" >
         <img src={"/images/" + imgchild} alt={index.toString()} />
         </div>
         </>
