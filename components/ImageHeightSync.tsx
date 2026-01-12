@@ -37,15 +37,16 @@ export default function ImageHeightSync(props) {
     <div className="parent-2-col-images">
       <img
         ref={imgRef}
-        // src={props.firstimg}
-        src="/images/Chubb-Special-Gift Store-3-edge.jpeg"
+        src={props.firstimg}
+        // src="/images/Chubb-Special-Gift Store-3-edge.jpeg"
         alt="Example"
         className="child-2-col-images-1"
       />
       <div className="child-2-col-images-2">
         <img
         ref={boxRef}
-        src="/images/chubb-mobile-design.jpeg"
+        src={props.secondimg}
+        // src="/images/chubb-mobile-design.jpeg"
         
       />
       </div>

@@ -174,7 +174,7 @@ item?.video ? (
 
 {item?.imgChild && (
 <>
-{/* <ImageHeightSync firstimg="" secondimg=""/> */}
+{/* <ImageHeightSync firstimg="/images/Chubb-Special-Gift Store-3-edge.jpeg" secondimg="/images/chubb-mobile-design.jpeg"/> */}
 <img className="w-full object-cover" src={"/images/" + item.imgChild} alt={item.imgChild}/>
 </>
 )}
