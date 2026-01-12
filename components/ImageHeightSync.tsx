@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-export default function ImageHeightSync(props) {
+export default function ImageHeightSync(props : string[]) {
   const imgRef = useRef(null); // Reference to the image
   const boxRef = useRef(null); // Reference to the element we want to update
   const [imgHeight, setImgHeight] = useState(0);
@@ -33,25 +33,48 @@ export default function ImageHeightSync(props) {
     };
   }, []);
 
-  return (
-    <div className="parent-2-col-images">
-      <img
-        ref={imgRef}
-        src={props.firstimg}
-        // src="/images/Chubb-Special-Gift Store-3-edge.jpeg"
-        alt="Example"
-        className="child-2-col-images-1"
-      />
-      <div className="child-2-col-images-2">
-        <img
-        ref={boxRef}
-        src={props.secondimg}
-        // src="/images/chubb-mobile-design.jpeg"
+  props.map((imgchild, index) =>
+  {
+      if(index % 2 === 0) {
+     return (
+      <>
+      {/* <div className="child-2-col-images-1"> */}
+      <img  src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1"/>
+      {/* <p style={{color: "black"}}>height: {deskTopImageHeight}</p> */}
+      {/* </div> */}
+      </>
+     ) 
+    }
+      else {
+        return (
+        <>
+        <div className="child-2-col-images-2" >
+        <img src={"/images/" + imgchild} alt={index.toString()} />
+        </div>
+        </>
+        )
+      }
+  })
+
+  // return (
+  //   <div className="parent-2-col-images">
+  //     <img
+  //       ref={imgRef}
+  //       // src={props.firstimg}
+  //       src="/images/Chubb-Special-Gift Store-3-edge.jpeg"
+  //       alt="Example"
+  //       className="child-2-col-images-1"
+  //     />
+  //     <div className="child-2-col-images-2">
+  //       <img
+  //       ref={boxRef}
+  //       // src={props.secondimg}
+  //       src="/images/chubb-mobile-design.jpeg"
         
-      />
-      </div>
+  //     />
+  //     </div>
       
       
-    </div>
-  );
+  //   </div>
+  // );
 }

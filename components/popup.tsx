@@ -246,34 +246,30 @@ item?.video ? (
   <div className="parent-2-col-images">
     
     {
-    img.map((imgchild, index) =>
-    {
-     
-
-      
-      if(index % 2 === 0) {
-     return (
-      <>
-      {/* <div className="child-2-col-images-1"> */}
-      <img  src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1"/>
-      {/* <p style={{color: "black"}}>height: {deskTopImageHeight}</p> */}
-      {/* </div> */}
-      </>
-     ) 
-    }
-      else {
-
-
-        return (
-        <>
-        <div className="child-2-col-images-2" >
-        <img src={"/images/" + imgchild} alt={index.toString()} />
-        </div>
-        </>
-        )
-      }
-    }
-    )
+      // <ImageHeightSync prop={img} />
+    // img.map((imgchild, index) =>
+    // {
+    //   if(index % 2 === 0) {
+    //  return (
+    //   <>
+    //   {/* <div className="child-2-col-images-1"> */}
+    //   <img  src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1"/>
+    //   {/* <p style={{color: "black"}}>height: {deskTopImageHeight}</p> */}
+    //   {/* </div> */}
+    //   </>
+    //  ) 
+    // }
+    //   else {
+    //     return (
+    //     <>
+    //     <div className="child-2-col-images-2" >
+    //     <img src={"/images/" + imgchild} alt={index.toString()} />
+    //     </div>
+    //     </>
+    //     )
+    //   }
+    // }
+    // )
   }
 </div>
 )
