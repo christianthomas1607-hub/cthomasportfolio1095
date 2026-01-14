@@ -246,12 +246,18 @@ item?.video ? (
   <div className="parent-2-col-images">
     
     {
-      // <ImageHeightSync prop={img} />
+      <ImageHeightSync imgs={img} />
+
+
+      
+    //   // <ImageHeightSync prop={img} />
     // img.map((imgchild, index) =>
     // {
+      
     //   if(index % 2 === 0) {
     //  return (
     //   <>
+      
     //   {/* <div className="child-2-col-images-1"> */}
     //   <img  src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1"/>
     //   {/* <p style={{color: "black"}}>height: {deskTopImageHeight}</p> */}
@@ -273,7 +279,8 @@ item?.video ? (
   }
 </div>
 )
-)}
+)
+}
 
 
 {item?.twoColumnImgandDescription && (

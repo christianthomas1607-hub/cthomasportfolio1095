@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 
-export default function ImageHeightSync(props : string[]) {
+type Props = { imgs: string[]; };
+
+
+export default function ImageHeightSync({ imgs }: Props) {
   const imgRef = useRef(null); // Reference to the image
   const boxRef = useRef(null); // Reference to the element we want to update
   const [imgHeight, setImgHeight] = useState(0);
@@ -33,7 +36,23 @@ export default function ImageHeightSync(props : string[]) {
     };
   }, []);
 
-  props.map((imgchild, index) =>
+  return (
+    <>
+      {imgs.map((imgchild, index) => (
+        <>
+          {index % 2 === 0 ? (
+            <img src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1" ref={imgRef} />
+          ) : (
+            <div className="child-2-col-images-2">
+              <img src={"/images/" + imgchild} alt={index.toString()} ref={boxRef} />
+            </div>
+          )}
+        </>
+      ))}
+    </>
+  )
+  
+  imgs.map((imgchild, index) =>
   {
       if(index % 2 === 0) {
      return (
