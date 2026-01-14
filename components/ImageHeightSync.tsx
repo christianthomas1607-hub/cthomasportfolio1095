@@ -8,20 +8,29 @@ export default function ImageHeightSync({ imgs }: Props) {
   const boxRef = useRef(null); // Reference to the element we want to update
   const [imgHeight, setImgHeight] = useState(0);
 
-  useEffect(() => {
-    const updateHeight = () => {
-      if (imgRef.current) {
-        const height = imgRef.current.clientHeight;
-        setImgHeight(height);
 
-        // Example: update another element's height to match the image
-        if (boxRef.current) {
-          boxRef.current.style.height = `${height}px`;
-        }
+
+const [originalHeight, setoriginalHeight] = useState(0);
+
+
+
+
+useEffect(() => {
+
+   const updateHeight = () => {
+    if (imgRef.current){
+          // Do what you want to do when the size of the element changes
+
+      const newHeight = imgRef.current.clientHeight;
+      setoriginalHeight(newHeight);
+
+      if(boxRef.current){
+        boxRef.current.style.height = `${newHeight}px`;
       }
-    };
+    }
+  };
 
-    // Run once after image loads
+   // Run once after image loads
     if (imgRef.current && imgRef.current.complete) {
       updateHeight();
     } else if (imgRef.current) {
@@ -34,10 +43,15 @@ export default function ImageHeightSync({ imgs }: Props) {
     return () => {
       window.removeEventListener("resize", updateHeight);
     };
-  }, []);
+
+}, []);
+
+
+
 
   return (
     <>
+    <p>{originalHeight}</p>
       {imgs.map((imgchild, index) => (
         <>
           {index % 2 === 0 ? (
