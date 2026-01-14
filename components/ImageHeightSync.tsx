@@ -51,7 +51,7 @@ useEffect(() => {
 
   return (
     <>
-    <p>{originalHeight}</p>
+ 
       {imgs.map((imgchild, index) => (
         <>
           {index % 2 === 0 ? (
