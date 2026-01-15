@@ -27,6 +27,8 @@ export interface WordAndImage {
   twoColumn?: Map<string, string>;
   OneColumnImgandDescription?: OneColumnImgandDescription[];
 
+  // Recommended desktop image dimensions: 1755 px x 1876 px
+  // Recommended mobile image dimensions: 430 px x 3123 px
   twoColumnImages?: string[][];
 }
 
@@ -39,15 +41,17 @@ export const WordAndImageData: WordAndImage[] = [
     imgMain: "chubb.jpg",
     // imgChild: "esis-1.jpeg",
     twoColumnImages: [
-      ["Chubb-Special-Gift Store-3-edge.jpeg", "chubb-mobile-design.jpeg"]
+      ["chubb_desktop.jpeg", "chubb_mobile.jpeg"]
     ]
   },
   { 
     category: "Websites",
     title: "Akamai", 
     imgMain: "akamai.jpg",
-    imgChild: "akamai-1.jpeg" 
-
+    // imgChild: "akamai-1.jpeg"
+    twoColumnImages: [
+      ["akamai_desktop.jpeg", "akamai_mobile.jpeg"]
+    ]
   }
   // ,{ 
   //   category: "Websites", 

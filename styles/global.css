@@ -178,58 +178,20 @@ p {
 }
 
 
-/* Responsive: stack images on small screens */
-@media (max-width: 600px) {
-    .parent-2-col-images {
-        flex-direction: column;
-    }
+.popup {  
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        z-index: 10;
+        width: 90%;
+        overflow-y: auto;
+        max-height: 80vh;
 }
 
 
-
-@media screen and (max-width: 600px) {
-
-#noteTop {
-padding: .25rem 1rem 0 1rem;
-}
-
-
-#notetitle {
-font-size: 1.25rem; color: #193cb8; font-weight: 650;
-}
-
-
-#noteText {
-  font-size: 1.25rem;
-  text-align: left; 
-  padding: 0 1rem .25rem 1rem; 
-}
-
-  p {
-    font-size: 0.875rem;
-  }
-
-
-  #topNote {
-  margin-top: 1rem;
-  }
-
-
-  #topDescription {
-  margin-top: 1rem;
-  }
-  
-
-
-  #emailCode {
-  margin-top: .25rem;
-  }
-
-}
-
-
-
-.popup {
+/* .popup {
         
         position: fixed;
         top: 50%;
@@ -239,15 +201,17 @@ font-size: 1.25rem; color: #193cb8; font-weight: 650;
         z-index: 10;
         width: 90%;
 
-        /* position: fixed;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: white;
         border: 1px solid #ccc;
         z-index: 10;
-        width: 90%; */
+        width: 90%;
 }
+*/
+
 
 #popUpCloseButton {
   position: absolute;
@@ -261,6 +225,11 @@ font-size: 1.25rem; color: #193cb8; font-weight: 650;
     grid-gap: 2px; /* Adjust the value to add space between the image and text */
     align-items: center;
 }
+
+.close-text {
+  margin-top: -.12rem;
+}
+
 
 .popupimage1 {
   width: 60%;
@@ -320,3 +289,85 @@ img {
   display: block;
 } */
 
+
+
+/* Responsive: stack images on small screens */
+@media (max-width: 600px) {
+
+.popup { 
+  top: 10%; 
+  transform: translateX(-50%); /* only center horizontally */
+}
+
+
+    /* Container for images */
+.parent-2-col-images {
+    display: flex;              /* Arrange images in a row */
+    gap: 2px;                  /* Space between images */
+    align-items: flex-start;
+}
+
+/* First image takes most of the space */
+.child-2-col-images-1 {
+    flex: 4;                    /* Larger portion */
+    width: 10%;
+    object-fit: cover;          /* Maintain aspect ratio */
+}
+
+/* Second image smaller */
+.child-2-col-images-2  {
+    flex: 1;                    /* Smaller portion */
+    overflow: hidden;  
+}
+
+.child-2-col-images-2 img {
+    width: 100%;            /* Fill container width */
+    height: 100%;           /* Fill container height */
+    object-fit: cover;      /* Crop while keeping aspect ratio */
+    display: block;         /* Remove inline gap */
+    object-position: 50% 0%;
+}
+
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+#noteTop {
+padding: .25rem 1rem 0 1rem;
+}
+
+
+#notetitle {
+font-size: 1.25rem; color: #193cb8; font-weight: 650;
+}
+
+
+#noteText {
+  font-size: 1.25rem;
+  text-align: left; 
+  padding: 0 1rem .25rem 1rem; 
+}
+
+  p {
+    font-size: 0.875rem;
+  }
+
+
+  #topNote {
+  margin-top: 1rem;
+  }
+
+
+  #topDescription {
+  margin-top: 1rem;
+  }
+  
+
+
+  #emailCode {
+  margin-top: .25rem;
+  }
+
+}

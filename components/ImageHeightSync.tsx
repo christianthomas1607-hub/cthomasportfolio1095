@@ -33,7 +33,8 @@ useEffect(() => {
    // Run once after image loads
     if (imgRef.current && imgRef.current.complete) {
       updateHeight();
-    } else if (imgRef.current) {
+    } 
+    else if (imgRef.current) {
       imgRef.current.onload = updateHeight;
     }
 
@@ -50,7 +51,7 @@ useEffect(() => {
 
 
   return (
-    <>
+      <div className="parent-2-col-images">
  
       {imgs.map((imgchild, index) => (
         <>
@@ -63,7 +64,7 @@ useEffect(() => {
           )}
         </>
       ))}
-    </>
+    </div>
   )
   
   imgs.map((imgchild, index) =>

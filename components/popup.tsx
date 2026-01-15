@@ -62,9 +62,9 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Wo
           className="rounded-md bg-blue-800 px-3.5 py-2.5 text-4xl font-semibold text-white shadow-sm hover:bg-bg-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 shadow-xl/30 fixed top-4 right-4 z-50"
         >
      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="4" strokeLinecap="butt" strokeLinejoin="miter"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-Close
+      <span className="close-text">Close</span>      
        </button>
-  <div className="popup max-h-[80vh] overflow-y-auto rounded-lg shadow-lg">
+  <div className="popup rounded-lg shadow-lg">
     
   <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-3 lg:pt-10 pb-5 lg:overflow-visible lg:px-10">
  
@@ -242,44 +242,9 @@ item?.video ? (
 
 
 {item?.twoColumnImages?.map((img, index) => (
-  
-  <div className="parent-2-col-images">
+  <ImageHeightSync imgs={img} />
     
-    {
-      <ImageHeightSync imgs={img} />
-
-
-      
-    //   // <ImageHeightSync prop={img} />
-    // img.map((imgchild, index) =>
-    // {
-      
-    //   if(index % 2 === 0) {
-    //  return (
-    //   <>
-      
-    //   {/* <div className="child-2-col-images-1"> */}
-    //   <img  src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1"/>
-    //   {/* <p style={{color: "black"}}>height: {deskTopImageHeight}</p> */}
-    //   {/* </div> */}
-    //   </>
-    //  ) 
-    // }
-    //   else {
-    //     return (
-    //     <>
-    //     <div className="child-2-col-images-2" >
-    //     <img src={"/images/" + imgchild} alt={index.toString()} />
-    //     </div>
-    //     </>
-    //     )
-    //   }
-    // }
-    // )
-  }
-</div>
-)
-)
+))
 }
 
 
