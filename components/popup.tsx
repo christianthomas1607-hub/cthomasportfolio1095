@@ -179,6 +179,9 @@ item?.video ? (
 </>
 )}
 
+
+
+
 {item?.video && (
   <iframe
     style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
@@ -218,6 +221,41 @@ item?.video ? (
 )} */}
 
 
+{item?.twoColumnImages?.map((img, index) => (
+  <ImageHeightSync imgs={img} />
+))
+}
+
+
+{item?.OneColumnTwoImgandDescription && (
+  <div className="">
+    
+      {item.OneColumnTwoImgandDescription.map((p, idx) => (
+        <>
+          <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-5 px-3 lg:px-0">
+             {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
+                <>
+                <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{title}</h3>
+                <p className="text-xl text-black">{desc}</p>
+                </>
+            ))}  
+          </div>
+          <div className="flex flex-col items-center mt-5">
+            {
+              p.img.map((img, index) => (
+                <ImageHeightSync imgs={img} />
+              ))
+            }
+
+            {/* <img src={"/images/" + p.img} alt={p.img} className="my-2" /> */}
+          </div>
+        </>
+      ))}
+ 
+  </div>
+)}
+
+
 {item?.OneColumnImgandDescription && (
   <div className="">
     
@@ -241,11 +279,7 @@ item?.video ? (
 )}
 
 
-{item?.twoColumnImages?.map((img, index) => (
-  <ImageHeightSync imgs={img} />
-    
-))
-}
+
 
 
 {item?.twoColumnImgandDescription && (

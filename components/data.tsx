@@ -10,6 +10,11 @@ export interface OneColumnImgandDescription {
 }
 
 
+export interface OneColumnTwoImgandDescription {
+  img?: string[][];
+  titleDescription?: Map<string, string>;
+}
+
 
 
 export interface WordAndImage {
@@ -30,6 +35,8 @@ export interface WordAndImage {
   // Recommended desktop image dimensions: 1755 px x 1876 px
   // Recommended mobile image dimensions: 430 px x 3123 px
   twoColumnImages?: string[][];
+
+  OneColumnTwoImgandDescription?: OneColumnTwoImgandDescription[];
 }
 
 
@@ -37,33 +44,19 @@ export interface WordAndImage {
 export const WordAndImageData: WordAndImage[] = [
   { 
     category: "Websites", 
-    title: "Chubb", 
-    imgMain: "chubb.jpg",
-    // imgChild: "esis-1.jpeg",
-    twoColumnImages: [
-      ["chubb_desktop.jpeg", "chubb_mobile.jpeg"]
-    ]
-  },
-  { 
-    category: "Websites",
-    title: "Akamai", 
-    imgMain: "akamai.jpg",
-    // imgChild: "akamai-1.jpeg"
-    twoColumnImages: [
-      ["akamai_desktop.jpeg", "akamai_mobile.jpeg"]
-    ]
-  }
-  // ,{ 
-  //   category: "Websites", 
-  //   title: "Boston Dynamics", 
-  //   imgMain: "boston-dynamics.jpg",
-  //   // multipleImages: ["holiday-2025-boston-dynamics.jpeg", "holiday-2025-products-boston-dynamics.jpeg"]
-  //   imgChild: "holiday-2025-boston-dynamics.jpeg"
-  // }
-  ,{ 
-    category: "Websites", 
     title: "Boston Dynamics", 
     imgMain: "boston-dynamics.jpg",
+    OneColumnTwoImgandDescription: [{
+        img: [
+              ["boston_dynamics__atlas_desktop.jpeg", "boston_dynamics__atlas_mobile.jpeg"]
+        ],
+        titleDescription: new Map([
+          ["New Atlas Theme & Products",
+            "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas."
+          ]
+        ])
+      }
+    ],
     // topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
     OneColumnImgandDescription: [{
         img: "holiday-2025-boston-dynamics.jpeg",
@@ -81,6 +74,25 @@ export const WordAndImageData: WordAndImage[] = [
           ]
         ])
       }
+    ]
+  },
+
+  { 
+    category: "Websites", 
+    title: "Chubb", 
+    imgMain: "chubb.jpg",
+    // imgChild: "esis-1.jpeg",
+    twoColumnImages: [
+      ["chubb_desktop.jpeg", "chubb_mobile.jpeg"]
+    ]
+  },
+  { 
+    category: "Websites",
+    title: "Akamai", 
+    imgMain: "akamai.jpg",
+    // imgChild: "akamai-1.jpeg"
+    twoColumnImages: [
+      ["akamai_desktop.jpeg", "akamai_mobile.jpeg"]
     ]
   },
   { 
