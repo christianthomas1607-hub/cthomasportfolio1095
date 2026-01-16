@@ -66,7 +66,7 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Wo
        </button>
   <div className="popup rounded-lg shadow-lg">
     
-  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-3 lg:pt-10 pb-5 lg:overflow-visible lg:px-10">
+  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-5 lg:pt-5 pb-5 lg:overflow-visible lg:px-10">
  
   {/* Outer container */}
   <div className="mx-auto max-w-7xl">
