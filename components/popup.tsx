@@ -100,7 +100,7 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Wo
 {item?.twoColumn && (
   <div>
     {Array.from(item.twoColumn.entries()).map(([outerKey, innerMap], outerIndex) => (
-      <div key={outerIndex} className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+      <div key={outerIndex} className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4 p-4">
         <div className="flex flex-col items-center">
         <img src={outerKey} alt={outerKey} className="mb-2 max-h-96 object-contain"/>
       </div>
@@ -202,24 +202,6 @@ item?.video ? (
   <img key={index} className="w-full object-cover" src={"/images/" + img} alt={img}/>
 ))}
 
-{/* {item?.twoColumn && (
-  <div>
-    {Array.from(item.twoColumn.entries()).map(([outerKey, innerMap], outerIndex) => (
-      <div key={outerIndex} className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-        <div className="flex flex-col items-center">
-        <img src={outerKey} alt={outerKey} className="mb-2 max-h-96 object-contain"/>
-      </div>
-        {Array.from(innerMap.entries()).map(([innerKey, innerValue], innerIndex) => (
-          <div key={innerIndex} className="flex flex-col items-center">
-            <h3 className="text-xl font-semibold mb-1 text-black">{innerKey}</h3>
-            <p className="text-black">{innerValue}</p>
-          </div>
-        ))}
-      </div>
-    ))}
-  </div>
-)} */}
-
 
 {item?.twoColumnImages?.map((img, index) => (
   <ImageHeightSync imgs={img} />
@@ -283,7 +265,7 @@ item?.video ? (
 
 
 {item?.twoColumnImgandDescription && (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4 p-4">
     
       {item.twoColumnImgandDescription.map((p, idx) => (
         <>    
@@ -305,42 +287,6 @@ item?.video ? (
   </div>
 )}
 
-{/* {item.twoColumn &&
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-    
-    {Array.from(item.twoColumn.entries()).map(([img, desc], index) => (
-      <>
-      <div className="flex flex-col items-center">
-        <img src={img} alt={`Image ${index + 1}`} className="mb-2 max-h-96 object-contain"/>
-      </div>
-      <div className="flex flex-col items-center">
-        <p className="text-black">{desc}</p>
-      </div>
-     </>
-    ))}
-    </div>
-} */}
-
-{/* {item?.post && (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-    
-      {item.post.map((p, idx) => (
-        <>    
-          <div className="flex flex-col items-center">
-            <img src={p.img} alt={p.img} className="my-2 max-h-64 object-contain" />
-          </div>
-          <div className="flex flex-col items-center">
-            {p.title.map((p, idx) => (
-              <h3 className="text-xl font-semibold text-black text-left ml-0 mr-auto">{p}</h3>
-           
-            ))}
-            
-          </div>
-          </>
-      ))}
- 
-  </div>
-)} */}
 
 
   </div>

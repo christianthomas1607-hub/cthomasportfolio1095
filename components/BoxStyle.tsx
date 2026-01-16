@@ -92,8 +92,8 @@ const borderSizes = () => {
             <boxGeometry args={boxGeometryArgs} />
             <meshStandardMaterial map={texture} 
             transparent={true} // Allows transparency if the PNG has it
-        opacity={1} // Fully opaque
-        color="#ffffff" // White background
+            opacity={1} // Fully opaque
+            color="#ffffff" // White background
         //     emissive={'white'}
         // emissiveIntensity={2}
         // toneMapped={false}
