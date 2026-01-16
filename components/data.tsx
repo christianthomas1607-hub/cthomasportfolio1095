@@ -52,7 +52,7 @@ export const WordAndImageData: WordAndImage[] = [
         ],
         titleDescription: new Map([
           ["New Atlas Theme & Products",
-            "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas."
+            "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. \nPrimary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas."
           ]
         ])
       }
@@ -69,7 +69,7 @@ export const WordAndImageData: WordAndImage[] = [
       {
         img: "holiday-2025-products-boston-dynamics.jpeg",
         titleDescription: new Map([
-          ["2025 Complete List of Products",
+          ["Complete List of Products",
             "Much of the web content was added by me. Some images were provided by Boston Dynamics. Content was formatted to have proper performance, SEO, and verified for accuracy."
           ]
         ])

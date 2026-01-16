@@ -145,6 +145,7 @@ font-size: 1.25rem; color: #193cb8; font-weight: 650;
 p {
   max-width: 65ch;
   line-height: 1.5;
+  white-space: pre-line;
 }
 
 

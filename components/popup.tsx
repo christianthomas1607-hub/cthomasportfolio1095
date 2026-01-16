@@ -73,8 +73,8 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Wo
     {/* Inner content */}
     <div className="">
       <div className="flex flex-col items-center">
-        <p className="text-2xl font-extrabold text-gray-600">{item.category}</p>
-        <h1 className="mt-1 font-semibold tracking-tight text-gray-900 text-4xl sm:text-9xl text-center">
+        {/* <p className="text-2xl font-extrabold text-gray-600">{item.category}</p> */}
+        <h1 className="font-semibold tracking-tight text-gray-900 text-4xl sm:text-9xl text-center">
           {item?.title ?? ''}
         </h1>
 
