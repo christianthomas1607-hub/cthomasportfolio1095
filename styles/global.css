@@ -112,6 +112,9 @@ padding: .5rem 1rem 0 1rem;
 color: #193cb8;
 }
 
+.svg-inline--fa {
+vertical-align: -.1em;
+}
 
 #noteEmIcon {
 font-size: 1.25rem; color: #193cb8; padding-right: .5em;

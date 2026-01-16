@@ -293,7 +293,7 @@ export const WordAndImageData: WordAndImage[] = [
   { 
     category: "Email Design",
     title: "October Events 🎃",
-    topNote: "None of the images were designed by me except the bottom image.",
+    topNote: "None of the images were designed by me except the bottom image for a discount code.",
     imgMain: "halloween-first_image.jpg"
     ,HTMLFile:"/emails/9_24_AAP_trick_or_treat_tickets_V16.html"
   }
