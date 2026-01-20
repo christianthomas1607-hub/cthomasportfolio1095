@@ -56,9 +56,17 @@ useEffect(() => {
       {imgs.map((imgchild, index) => (
         <>
           {index % 2 === 0 ? (
-            <img src={"/images/" + imgchild} alt={index.toString()} className="child-2-col-images-1" ref={imgRef} />
+            <div className="child-2-col-images-1">
+                <div className="desktop-header-background header-background">
+                <h3 className="desktop-header">Desktop Image</h3>
+              </div>
+            <img src={"/images/" + imgchild} alt={index.toString()}  ref={imgRef} />
+            </div>
           ) : (
             <div className="child-2-col-images-2">
+              <div className="mobile-header-background header-background">
+                <h3 className="mobile-header">Mobile Image</h3>
+              </div>
               <img src={"/images/" + imgchild} alt={index.toString()} ref={boxRef} />
             </div>
           )}

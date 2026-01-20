@@ -59,9 +59,13 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Wo
     <button
         id="popUpCloseButton"
           onClick={onClose}
-          className="rounded-md bg-blue-800 px-3.5 py-2.5 text-4xl font-semibold text-white shadow-sm hover:bg-bg-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 shadow-xl/30 fixed top-4 right-4 z-50"
+          className="rounded-md bg-blue-800 px-3.5 py-2.5 text-4xl font-semibold text-white 
+          shadow-sm hover:bg-bg-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 shadow-xl/30 fixed top-4 right-4 z-50"
         >
-     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="4" strokeLinecap="butt" strokeLinejoin="miter"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" 
+     fill="none" stroke="#ffffff" strokeWidth="4" strokeLinecap="butt" 
+     strokeLinejoin="miter"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+     </svg>
       <span className="close-text">Close</span>      
        </button>
   <div className="popup rounded-lg shadow-lg">

@@ -152,6 +152,32 @@ p {
 }
 
 
+.desktop-header {
+  text-align: center;
+  margin: auto auto auto auto;
+  font-size: x-large;
+}
+
+.mobile-header {
+  font-size: x-large;
+  text-align: center;
+  margin: auto auto auto auto;
+}
+
+.header-background {
+  padding: 1rem 1rem 1rem 1rem;
+    background-color: #f7f7f7;
+  color: #000000;
+}
+
+.desktop-header-background {
+
+}
+
+.mobile-header-background {
+
+}
+
 /* Container for images */
 .parent-2-col-images {
     display: flex;              /* Arrange images in a row */
@@ -162,7 +188,7 @@ p {
 /* First image takes most of the space */
 .child-2-col-images-1 {
     flex: 4;                    /* Larger portion */
-    width: 10%;
+
     object-fit: cover;          /* Maintain aspect ratio */
 }
 
@@ -180,6 +206,55 @@ p {
     display: block;         /* Remove inline gap */
     object-position: 50% 0%;
 }
+
+@media (max-width: 600px) {
+  .desktop-header {
+  font-size: 1rem;
+  }
+
+  .mobile-header {
+   font-size: 1rem;
+  }
+
+  .header-background {
+    padding: .5rem .25rem .5rem .25rem;
+    background-color: #f7f7f7;
+    color: #000000;
+  }
+
+    /* Container for images */
+.parent-2-col-images {
+    display: flex;              /* Arrange images in a row */
+    gap: 2px;                  /* Space between images */
+    align-items: flex-start;
+}
+
+/* First image takes most of the space */
+.child-2-col-images-1 {
+    flex: 3;                    /* Larger portion */
+    width: 80%;
+    object-fit: cover;          /* Maintain aspect ratio */
+}
+
+/* Second image smaller */
+.child-2-col-images-2  {
+    flex: 2;                    /* Smaller portion */
+    overflow: hidden;  
+}
+
+.child-2-col-images-2 img {
+    width: 100%;            /* Fill container width */
+    height: 100%;           /* Fill container height */
+    object-fit: cover;      /* Crop while keeping aspect ratio */
+    display: block;         /* Remove inline gap */
+    object-position: 50% 0%;
+}
+
+}
+
+
+
+
 
 
 .popup {  
@@ -224,10 +299,12 @@ p {
   border: none;
   cursor: pointer;
   z-index: 11;
-   display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 2px; /* Adjust the value to add space between the image and text */
-    align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 2px; /* Adjust the value to add space between the image and text */
+  align-items: center;
+  padding: .5rem 1.25rem .5rem 1rem;
+
 }
 
 .close-text {
@@ -301,36 +378,30 @@ img {
 .popup { 
   top: 10%; 
   transform: translateX(-50%); /* only center horizontally */
+  width: 96%;
+}
+
+#popUpCloseButton {
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 11;
+    grid-gap: 2px;
+    border: none;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    display: grid;
+    position: absolute;
+    top: 7.75%;
+    right: 1.75%;
+    padding: .25rem .5rem .25rem .35rem;
+
+    & svg {
+    width: 1.25rem !important; 
+    height: auto;
+}
 }
 
 
-    /* Container for images */
-.parent-2-col-images {
-    display: flex;              /* Arrange images in a row */
-    gap: 2px;                  /* Space between images */
-    align-items: flex-start;
-}
-
-/* First image takes most of the space */
-.child-2-col-images-1 {
-    flex: 4;                    /* Larger portion */
-    width: 10%;
-    object-fit: cover;          /* Maintain aspect ratio */
-}
-
-/* Second image smaller */
-.child-2-col-images-2  {
-    flex: 1;                    /* Smaller portion */
-    overflow: hidden;  
-}
-
-.child-2-col-images-2 img {
-    width: 100%;            /* Fill container width */
-    height: 100%;           /* Fill container height */
-    object-fit: cover;      /* Crop while keeping aspect ratio */
-    display: block;         /* Remove inline gap */
-    object-position: 50% 0%;
-}
 
 }
 
