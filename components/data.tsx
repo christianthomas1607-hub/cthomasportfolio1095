@@ -75,29 +75,29 @@ export const WordAndImageData: WordAndImage[] = [
             "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas."
           ]
         ])
-      },
-      {
-        img: new Map([
-          [
-            "2 New Atlas",
-            new Map([
-            [
-            "boston_dynamics__atlas_desktop.jpeg",
-            "2 Atlas Desktop"
-            ],
-            [
-            "boston_dynamics__atlas_mobile.jpeg",
-            "2 Atlas mobile"
-            ]
-            ])
-          ]
-        ]),
-        titleDescription: new Map([
-          ["2 New Atlas Theme & Products",
-            "2 Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas."
-          ]
-        ])
       }
+      // ,{
+      //   img: new Map([
+      //     [
+      //       "2 New Atlas",
+      //       new Map([
+      //       [
+      //       "boston_dynamics__atlas_desktop.jpeg",
+      //       "2 Atlas Desktop"
+      //       ],
+      //       [
+      //       "boston_dynamics__atlas_mobile.jpeg",
+      //       "2 Atlas mobile"
+      //       ]
+      //       ])
+      //     ]
+      //   ]),
+      //   titleDescription: new Map([
+      //     ["2 New Atlas Theme & Products",
+      //       "2 Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas."
+      //     ]
+      //   ])
+      // }
     ],
     
     OneColumnTwoImgandDescription: [{
