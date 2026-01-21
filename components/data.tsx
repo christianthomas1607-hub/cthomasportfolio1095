@@ -15,6 +15,11 @@ export interface OneColumnTwoImgandDescription {
   titleDescription?: Map<string, string>;
 }
 
+export interface OneColumnTwoImgandDescription2 {
+  img?: Map<string, Map<string, string>>;
+  titleDescription?: Map<string, string>;
+}
+
 
 
 export interface WordAndImage {
@@ -37,6 +42,8 @@ export interface WordAndImage {
   twoColumnImages?: string[][];
 
   OneColumnTwoImgandDescription?: OneColumnTwoImgandDescription[];
+
+  OneColumnTwoImgandDescription2?: OneColumnTwoImgandDescription2[];
 }
 
 
@@ -46,6 +53,53 @@ export const WordAndImageData: WordAndImage[] = [
     category: "Websites", 
     title: "Boston Dynamics", 
     imgMain: "boston-dynamics.jpg",
+    OneColumnTwoImgandDescription2: [
+      {
+        img: new Map([
+          [
+            "New Atlas",
+            new Map([
+            [
+            "boston_dynamics__atlas_desktop.jpeg",
+            "Atlas Desktop"
+            ],
+            [
+            "boston_dynamics__atlas_mobile.jpeg",
+            "Atlas mobile"
+            ]
+            ])
+          ]
+        ]),
+        titleDescription: new Map([
+          ["New Atlas Theme & Products",
+            "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas."
+          ]
+        ])
+      },
+      {
+        img: new Map([
+          [
+            "2 New Atlas",
+            new Map([
+            [
+            "boston_dynamics__atlas_desktop.jpeg",
+            "2 Atlas Desktop"
+            ],
+            [
+            "boston_dynamics__atlas_mobile.jpeg",
+            "2 Atlas mobile"
+            ]
+            ])
+          ]
+        ]),
+        titleDescription: new Map([
+          ["2 New Atlas Theme & Products",
+            "2 Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas."
+          ]
+        ])
+      }
+    ],
+    
     OneColumnTwoImgandDescription: [{
         img: [
               ["boston_dynamics__atlas_desktop.jpeg", "boston_dynamics__atlas_mobile.jpeg"]

@@ -5,6 +5,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 
 import ImageHeightSync from '../components/ImageHeightSync'
 
+import ImageHeightSync2 from '../components/ImageHeightSync2'
+
 /* import all the icons in Free Solid, Free Regular, and Brands styles */
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
@@ -212,8 +214,44 @@ item?.video ? (
 ))
 }
 
+{item?.OneColumnTwoImgandDescription2 && (
+  <div className="">
+    
+      {item.OneColumnTwoImgandDescription2.map((p, idx) => (
+        <>
+          <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-5 px-3 lg:px-0">
+             {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
+                <>
+                <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{title}</h3>
+                <p className="text-xl text-black">{desc}</p>
+                </>
+            ))}  
+          </div>
+          <div className="flex flex-col items-center mt-5">
+            {Array.from(p.img.entries()).map(([imgTitle, imgAlt], index) => (
+                <>
+                {/* <h5>{imgTitle}</h5> */}
+                <ImageHeightSync2 imgs={imgAlt} />
+                {/* {Array.from(imgAlt.entries()).map(([imgSrc, alt], index) => (
+                <>
+                <img src={"/images/" + imgSrc} alt={alt} className="my-2" />
+                
+                </>
+            ))} */}
+                </>
+            ))}
 
-{item?.OneColumnTwoImgandDescription && (
+            {/* <img src={"/images/" + p.img} alt={p.img} className="my-2" /> */}
+          </div>
+        </>
+      ))}
+ 
+  </div>
+)}
+
+
+
+{/* {item?.OneColumnTwoImgandDescription && (
   <div className="">
     
       {item.OneColumnTwoImgandDescription.map((p, idx) => (
@@ -233,13 +271,13 @@ item?.video ? (
               ))
             }
 
-            {/* <img src={"/images/" + p.img} alt={p.img} className="my-2" /> */}
+           
           </div>
         </>
       ))}
  
   </div>
-)}
+)} */}
 
 
 {item?.OneColumnImgandDescription && (
