@@ -27,7 +27,9 @@ export default function BoxStyle({ x, y, z, rotationY, image, title, category, i
 
 // const tex = useTexture(image);
 //   tex.encoding = THREE.sRGBEncoding;
-const texture = useLoader(TextureLoader, "/images/" + image); // 
+const texture = useLoader(TextureLoader, "/images/" + image);
+
+texture.colorSpace = THREE.SRGBColorSpace;
 
 const calculateScaleFactors = (texture, containerSize) => {
   const containerAspect = containerSize.x / containerSize.y
@@ -88,9 +90,13 @@ const borderSizes = () => {
       </mesh> */}
       {/* <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} /> */}
+            {/* <mesh position={[0, boxPositionY + 1, 0]}>
+            <boxGeometry args={[1, 1, 0]} />
+            <meshBasicMaterial map={useTexture("/images/chubb.png")}/>
+            </mesh> */}
            <mesh position={[0, boxPositionY, 0]}>
             <boxGeometry args={boxGeometryArgs} />
-            <meshStandardMaterial map={texture} 
+            <meshBasicMaterial map={texture} 
             transparent={true} // Allows transparency if the PNG has it
             opacity={1} // Fully opaque
             color="#ffffff" // White background
