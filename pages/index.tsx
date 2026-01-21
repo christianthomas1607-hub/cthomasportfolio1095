@@ -136,7 +136,7 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
             <Controller ref={controllerRef}
             linearDamping={5}
              //No gravity 
-            maxVelLimit={30} 
+            maxVelLimit={10} 
             position={spawnPosition}
             >
               {/* <Gltf castShadow receiveShadow scale={.1} position={[0, -.75, 0]} src="/images/probe-transformed.glb" /> */}
