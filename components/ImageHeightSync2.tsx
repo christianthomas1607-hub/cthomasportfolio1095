@@ -66,7 +66,9 @@ useEffect(() => {
               <div className="mobile-header-background header-background">
                 <h3 className="mobile-header">Mobile Image</h3>
               </div>
-              <img src={"/images/" + imgSrc} alt={alt} ref={boxRef} />
+              <div className="mobileimageparent" ref={boxRef}>
+                <img src={"/images/" + imgSrc} alt={alt} />
+              </div>
             </div>
           )}
         </>

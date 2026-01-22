@@ -236,18 +236,23 @@ p {
     object-fit: cover;          /* Maintain aspect ratio */
 }
 
+
+
 /* Second image smaller */
 .child-2-col-images-2  {
     flex: 2;                    /* Smaller portion */
     overflow: hidden;  
 }
 
+.mobileimageparent {
+  overflow-y: auto; /* enables vertical scrolling */
+}
+
+
 .child-2-col-images-2 img {
     width: 100%;            /* Fill container width */
-    height: 100%;           /* Fill container height */
-    object-fit: cover;      /* Crop while keeping aspect ratio */
+    height: auto;           /* Fill container height */
     display: block;         /* Remove inline gap */
-    object-position: 50% 0%;
 }
 
 }
