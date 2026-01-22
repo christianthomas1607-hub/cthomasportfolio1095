@@ -244,7 +244,7 @@ p {
 
 /* First image takes most of the space */
 .child-2-col-images-1 {
-    flex: 3;                    /* Larger portion */
+    flex: 4;                    /* Larger portion */
     width: 80%;
     object-fit: cover;          /* Maintain aspect ratio */
 }
@@ -253,7 +253,7 @@ p {
 
 /* Second image smaller */
 .child-2-col-images-2  {
-    flex: 2;                    /* Smaller portion */
+    flex: 1;                    /* Smaller portion */
     overflow: hidden;  
 }
 
