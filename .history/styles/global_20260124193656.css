@@ -26,7 +26,7 @@
 /* 2. Remove the margin for any element of the class that has a sibling with the same class before it */
 .my-class:not(:first-child) {
   /* styles for second, third, etc. elements with the class */
-  margin-top: 2.5rem !important; /* Adjust the value as needed */
+  margin-top: 1rem; /* Adjust the value as needed */
 }
 
 /* .controls-button {

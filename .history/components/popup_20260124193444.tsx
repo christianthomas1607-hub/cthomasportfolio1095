@@ -307,11 +307,11 @@ item?.video ? (
 
 
 {item?.twoColumnImgandDescription && (
-  <div className="grid grid-cols-1 md:grid-cols-2 md:gap-y-6 gap-x-4 pb-4 px-4 md:p-4">
+  <div className="grid grid-cols-1 md:grid-cols-2 md:gap-y-6 gap-x-4 pb-4 px-4 md:p-4 2col-image-description">
     
       {item.twoColumnImgandDescription.map((p, idx) => (
         <>    
-          <div className="flex flex-col items-center md:mt-5 my-class">
+          <div className="flex flex-col items-center mt-7 md:mt-5">
             <img src={"/images/" + p.img} alt={p.img} className="my-2 object-contain" />
           </div>
           <div className="flex flex-col items-left md:mt-5 lg:mx-13">

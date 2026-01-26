@@ -311,7 +311,7 @@ item?.video ? (
     
       {item.twoColumnImgandDescription.map((p, idx) => (
         <>    
-          <div className="flex flex-col items-center md:mt-5 my-class">
+          <div className="flex flex-col items-center md:mt-5 my-classmy-classmy-class">
             <img src={"/images/" + p.img} alt={p.img} className="my-2 object-contain" />
           </div>
           <div className="flex flex-col items-left md:mt-5 lg:mx-13">
