@@ -229,7 +229,7 @@ p {
 
 @media (max-width: 600px) {
   .desktop-header {
-  font-size: .875rem;
+  font-size: .75rem;
   }
 
   .mobile-header {
