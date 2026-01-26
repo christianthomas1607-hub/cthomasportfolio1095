@@ -72,7 +72,12 @@ export const WordAndImageData: WordAndImage[] = [
         ]),
         titleDescription: new Map([
           ["New Atlas Theme & Products",
-            "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas."
+            "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026."
+            + " " + "Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the" 
+            + " " + "new Atlas themed content and products to the store, bringing awareness of the new Atlas."
+            + " " + "\n\nThere are some big improvements I would like to make. I would like to make the top banner display" 
+            + " " + "bigger on mobile. The marketing team would rather ensure the image is consistent though." 
+            + " " + "I would also like to make the initially seen content load faster with lazy loading when I get the time."
           ]
         ])
       }
