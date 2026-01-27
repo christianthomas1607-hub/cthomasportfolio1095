@@ -284,9 +284,9 @@ p {
 
 .popup {  
         position: fixed;
-        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        top: 9.5%;
+        transform: translateX(-50%);
         background: white;
         z-index: 10;
         width: 90%;
