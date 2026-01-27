@@ -4,6 +4,9 @@ import { WordAndImageData } from '../components/data'
 import BoxStyle from '../components/BoxStyle'
 import CategoryTitle from './CategoryTitle';
 
+import { A11y } from '@react-three/a11y'
+
+
 export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAndImageData[0]) => void }) {
   // Keep a counter per category so we can reset the index for each group
   const categoryCounts: Record<string, number> = {};
@@ -152,6 +155,8 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
         }
 
         return (
+          <>
+          <A11y role="content" focusCall={()=> console.log("in focus")} description="A rotating red square">
           <CategoryTitle
             key={`${category}-${idx}`}
             x={titleX}
@@ -160,6 +165,8 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             rotationY={titleRotationY}
             title={category}
           />
+          </A11y>
+          </>
         );
       })}
 

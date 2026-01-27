@@ -5,7 +5,7 @@ import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import GlowMaterial from '../components/GlowMaterial';
 import React, { useMemo } from "react";
-
+import { A11y } from '@react-three/a11y'
 
 type BoxStyleProps = {
   x: number;

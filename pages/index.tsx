@@ -9,6 +9,7 @@ import Popup from '../components/popup'
 import Controls from '../components/Controls'
 import { WordAndImage as WordAndImageType } from '../components/data'
 
+
 // function simulateKeyEvent(key: string, type: 'keydown' | 'keyup') {
 //   window.dispatchEvent(new KeyboardEvent(type, { key }))
 // }
