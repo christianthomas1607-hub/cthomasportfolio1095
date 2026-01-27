@@ -219,7 +219,7 @@ item?.video ? (
     
       {item.OneColumnTwoImgandDescription2.map((p, idx) => (
         <>
-          <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
+          <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-5 lg:py-5 px-3 lg:px-0">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
                 <>
                 <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{title}</h3>
@@ -285,7 +285,7 @@ item?.video ? (
     
       {item.OneColumnImgandDescription.map((p, idx) => (
         <>
-          <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
+          <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-5 px-3 lg:px-0">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
                 <>
                 <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{title}</h3>
@@ -307,7 +307,7 @@ item?.video ? (
 
 
 {item?.twoColumnImgandDescription && (
-  <div className="grid grid-cols-1 md:grid-cols-2 md:gap-y-6 gap-x-4 pb-4 lg:pb-5 px-4 md:p-3">
+  <div className="grid grid-cols-1 md:grid-cols-2 md:gap-y-6 gap-x-4 pb-4 px-4 md:p-4">
     
       {item.twoColumnImgandDescription.map((p, idx) => (
         <>    

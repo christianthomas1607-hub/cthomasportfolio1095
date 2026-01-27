@@ -307,7 +307,7 @@ item?.video ? (
 
 
 {item?.twoColumnImgandDescription && (
-  <div className="grid grid-cols-1 md:grid-cols-2 md:gap-y-6 gap-x-4 pb-4 lg:pb-5 px-4 md:p-3">
+  <div className="grid grid-cols-1 md:grid-cols-2 md:gap-y-6 gap-x-4 pb-4 pb-4px-4 md:p-4">
     
       {item.twoColumnImgandDescription.map((p, idx) => (
         <>    
