@@ -66,9 +66,9 @@ const trianglePositionArray = useMemo(() => {
 }, [triTopY, triBottomY, halfWidth, triZ]);
 
 
-const maxBorderSize: number = 40;
 
-const borderSizes = () => {
+
+const borderSizes = (maxBorderSize) => {
   const edgesArray = [];
   for (let i = 1; i <= maxBorderSize; i++) {
     edgesArray.push(
@@ -104,7 +104,7 @@ const borderSizes = () => {
           // emissiveIntensity={2}
         // toneMapped={false}
             />
-            {borderSizes()}
+            {borderSizes(40)}
           </mesh>
           {category && (
             <mesh position={[0, boxPositionY, 0]}>

@@ -83,7 +83,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
 
         return (
           <>
-          
+          <A11y role="button" actionCall={()=> console.log(`${item.title}`)} description="A rotating red square">
           <BoxStyle
             key={`${cat}-${perCategoryIndex}-${index}`}
             x={positionX}
@@ -100,6 +100,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             boxGeometryArgs={boxGeometryArgs}
             textPosition={textPosition}
           />
+          </A11y>
           </>
         );
       })}
@@ -156,7 +157,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
 
         return (
           <>
-          <A11y role="content" focusCall={()=> console.log("in focus")} description="A rotating red square">
+          
           <CategoryTitle
             key={`${category}-${idx}`}
             x={titleX}
@@ -165,7 +166,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             rotationY={titleRotationY}
             title={category}
           />
-          </A11y>
+          
           </>
         );
       })}
