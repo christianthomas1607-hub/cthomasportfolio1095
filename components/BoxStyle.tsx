@@ -23,6 +23,18 @@ type BoxStyleProps = {
   textPosition: [number, number, number];
 };
 
+
+export const borderSizesFocus = (maxBorderSize) => {
+  const edgesArray = [];
+  for (let i = 1; i <= maxBorderSize; i++) {
+    edgesArray.push(
+      <Edges key={i} scale={1 + i * 0.001} color="red" transparent opacity={.75} />
+    );
+  }
+  return edgesArray;
+};
+
+
 export default function BoxStyle({ x, y, z, rotationY, image, title, category, index, onClick, boxPositionY, triangleWidth, boxGeometryArgs, textPosition }: BoxStyleProps) {
 
 // const tex = useTexture(image);
@@ -64,6 +76,9 @@ const trianglePositionArray = useMemo(() => {
     +halfWidth, triTopY, triZ // top-right
   ]);
 }, [triTopY, triBottomY, halfWidth, triZ]);
+
+
+
 
 
 
