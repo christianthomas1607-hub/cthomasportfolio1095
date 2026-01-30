@@ -98,16 +98,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
         return (
           <>
       
-          <A11y
-            role="button"
-            actionCall={() => {
-              focused = true;
-              // console.log(`${item.title} focus is ${focused}`)
-              borderChildFunction(item.title);
-              }
-            }
-            description="A rotating red square"
-          >
+          
           <BoxStyle
             key={`${cat}-${perCategoryIndex}-${index}`}
             x={positionX}
@@ -126,7 +117,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             borderFocus={focused}
             focusFunction={borderChildFunction}
           />
-          </A11y>
+          
           </>
         );
       })}

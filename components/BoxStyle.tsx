@@ -127,6 +127,14 @@ const borderSizes = (maxBorderSize) => {
   return (
     <>
         <>
+        <A11y
+            role="button"
+            actionCall={() => {
+              console.log(`${title} focused`)
+              }
+            }
+            description="A rotating red square"
+          >
         <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
           {/* <mesh scale={1.1}>
         <boxGeometry args={[0, 1, 1]} />
@@ -200,6 +208,7 @@ const borderSizes = (maxBorderSize) => {
             <meshBasicMaterial transparent opacity={.75} color="red" side={THREE.DoubleSide} />
       </mesh>
         </group>
+        </A11y>
         </>
     </>
   )
