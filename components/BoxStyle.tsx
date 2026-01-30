@@ -6,6 +6,7 @@ import { TextureLoader } from "three";
 import GlowMaterial from '../components/GlowMaterial';
 import { useMemo, useState } from "react";
 import { A11y } from '@react-three/a11y'
+import { Console } from 'console';
 
 
 
@@ -82,41 +83,39 @@ const trianglePositionArray = useMemo(() => {
 }, [triTopY, triBottomY, halfWidth, triZ]);
 
 
-// const [focus, setFocus] = useState(false);
-
-let focusColor : string;
-
-// const borderFocusFunction = () => {
-//     setFocus(c => c = true);
-//     console.log(`new log count ${focus}`);
-//       if(focus ==  true) {
-//         focusColor = "yellow"
-//       }
-//       else {
-//           focusColor = "red"
-//       }
-//   };
-if(borderFocus == false) {
-  focusColor = "red"
-  // console.log(`${borderFocus} red shown`)
-}
-else if(borderFocus == true) {
-  focusColor = "yellow"
-  //  console.log(`${borderFocus} yellow shown`)
-}
-else {
-  focusColor = "blue"
-  // console.log("neither")
-}
+const [borderColor, setBorderColor] = useState("red");
 
 
 
-const borderSizes = (maxBorderSize) => {
+const borderFocusFunction = () => {
+    setBorderColor("yellow");
+
+    console.log(borderColor);
+    
+};
+
+
+// if(borderFocus == false) {
+//   focusColor = "red"
+//   // console.log(`${borderFocus} red shown`)
+// }
+// else if(borderFocus == true) {
+//   focusColor = "yellow"
+//   //  console.log(`${borderFocus} yellow shown`)
+// }
+// else {
+//   focusColor = "blue"
+//   // console.log("neither")
+// }
+
+
+
+const borderSizes = (maxBorderSize, color) => {
   const edgesArray = [];
 
   for (let i = 1; i <= maxBorderSize; i++) {
     edgesArray.push(
-      <Edges key={i} scale={1 + i * 0.001} color={focusColor} transparent opacity={.75} />
+      <Edges key={i} scale={1 + i * 0.001} color={color} transparent opacity={.75} />
     );
   }
   return edgesArray;
@@ -130,7 +129,8 @@ const borderSizes = (maxBorderSize) => {
         <A11y
             role="button"
             actionCall={() => {
-              console.log(`${title} focused`)
+              console.log(`${title} focused`);
+              borderFocusFunction();
               }
             }
             description="A rotating red square"
@@ -156,7 +156,7 @@ const borderSizes = (maxBorderSize) => {
           // emissiveIntensity={2}
         // toneMapped={false}
             />
-            {borderSizes(40)}
+            {borderSizes(40, "red")}
           </mesh>
           {category && (
             <mesh position={[0, boxPositionY, 0]}>
