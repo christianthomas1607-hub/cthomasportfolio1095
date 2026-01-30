@@ -4,8 +4,10 @@ import * as THREE from 'three';
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import GlowMaterial from '../components/GlowMaterial';
-import React, { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { A11y } from '@react-three/a11y'
+
+
 
 type BoxStyleProps = {
   x: number;
@@ -21,21 +23,26 @@ type BoxStyleProps = {
   triangleWidth: number;
   boxGeometryArgs: [number, number, number];
   textPosition: [number, number, number];
+  borderFocus: boolean;
+  focusFunction:  (string) => void;
 };
 
 
-export const borderSizesFocus = (maxBorderSize) => {
-  const edgesArray = [];
-  for (let i = 1; i <= maxBorderSize; i++) {
-    edgesArray.push(
-      <Edges key={i} scale={1 + i * 0.001} color="red" transparent opacity={.75} />
-    );
-  }
-  return edgesArray;
-};
+
+export function useBorderSizes() {
+  const [bool, setBool] = useState(false);
+
+  const borderSizesFocus = (projTitle: string) => {
+    setBool(c => c = true);
+    console.log(`${projTitle} new log count ${bool}`);
+  };
+
+  return { bool, borderSizesFocus };
+}
 
 
-export default function BoxStyle({ x, y, z, rotationY, image, title, category, index, onClick, boxPositionY, triangleWidth, boxGeometryArgs, textPosition }: BoxStyleProps) {
+
+export function BoxStyle({ x, y, z, rotationY, image, title, category, index, onClick, boxPositionY, triangleWidth, boxGeometryArgs, textPosition, borderFocus, focusFunction } : BoxStyleProps) {
 
 // const tex = useTexture(image);
 //   tex.encoding = THREE.sRGBEncoding;
@@ -59,9 +66,6 @@ const calculateScaleFactors = (texture, containerSize) => {
 }
 
 
-
-
-
 // inside component, near other hooks
 const triTopY = .24;         // vertical position of the two top points
 const triBottomY = -1.0;     // vertical position of the bottom apex
@@ -78,16 +82,41 @@ const trianglePositionArray = useMemo(() => {
 }, [triTopY, triBottomY, halfWidth, triZ]);
 
 
+// const [focus, setFocus] = useState(false);
 
+let focusColor : string;
 
+// const borderFocusFunction = () => {
+//     setFocus(c => c = true);
+//     console.log(`new log count ${focus}`);
+//       if(focus ==  true) {
+//         focusColor = "yellow"
+//       }
+//       else {
+//           focusColor = "red"
+//       }
+//   };
+if(borderFocus == false) {
+  focusColor = "red"
+  // console.log(`${borderFocus} red shown`)
+}
+else if(borderFocus == true) {
+  focusColor = "yellow"
+  //  console.log(`${borderFocus} yellow shown`)
+}
+else {
+  focusColor = "blue"
+  // console.log("neither")
+}
 
 
 
 const borderSizes = (maxBorderSize) => {
   const edgesArray = [];
+
   for (let i = 1; i <= maxBorderSize; i++) {
     edgesArray.push(
-      <Edges key={i} scale={1 + i * 0.001} color="red" transparent opacity={.75} />
+      <Edges key={i} scale={1 + i * 0.001} color={focusColor} transparent opacity={.75} />
     );
   }
   return edgesArray;

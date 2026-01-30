@@ -1,7 +1,15 @@
 import { useTexture, Text, Box  } from '@react-three/drei'
 import { WordAndImageData } from '../components/data'
 
-import BoxStyle from '../components/BoxStyle'
+import 
+{
+BoxStyle,
+useBorderSizes
+}
+from '../components/BoxStyle'
+
+// import borderSizesFocus from '../components/BoxStyle';
+
 import CategoryTitle from './CategoryTitle';
 
 import { A11y } from '@react-three/a11y'
@@ -29,6 +37,8 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
         let triangleWidth = 0;
         let boxGeometryArgs: [number, number, number] = [0, 0, 0];
         let textPosition: [number, number, number] = [0, 0, 0];
+
+        let focused = false;
 
         switch(item.category) {
           case 'Websites':
@@ -81,9 +91,23 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
           textPosition = [0, .64, 0];
         }
 
+        const useBorderExportFunction = useBorderSizes();
+        const borderBool = useBorderExportFunction.bool;
+        const borderChildFunction = useBorderExportFunction.borderSizesFocus;
+
         return (
           <>
-          <A11y role="button" actionCall={()=> console.log(`${item.title}`)} description="A rotating red square">
+      
+          <A11y
+            role="button"
+            actionCall={() => {
+              focused = true;
+              // console.log(`${item.title} focus is ${focused}`)
+              borderChildFunction(item.title);
+              }
+            }
+            description="A rotating red square"
+          >
           <BoxStyle
             key={`${cat}-${perCategoryIndex}-${index}`}
             x={positionX}
@@ -99,6 +123,8 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
             triangleWidth={triangleWidth}
             boxGeometryArgs={boxGeometryArgs}
             textPosition={textPosition}
+            borderFocus={focused}
+            focusFunction={borderChildFunction}
           />
           </A11y>
           </>
