@@ -23,6 +23,51 @@
 }
 
 
+.controls .keyText {
+    color: #ffffff;
+    
+    text-align: center;
+    line-height: .5;
+}
+
+
+.controls .topText {
+  margin-bottom: .5rem;
+}
+
+.leftText {
+  margin-top: .1rem;
+  margin-right: .5rem;
+}
+
+.rightText {
+  margin-top: .1rem;
+  margin-left: .5rem;
+}
+
+.bottomText {
+  margin-top: .5rem;
+}
+
+
+.optional{
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.directionText{
+  font-size: 1rem;
+  font-weight: 800;
+  margin-top: -.25rem;
+}
+
+@media (max-width: 600px) {
+  .keyText {
+    display: none;
+  }
+}
+
 /* 2. Remove the margin for any element of the class that has a sibling with the same class before it */
 .my-class:not(:first-child) {
   /* styles for second, third, etc. elements with the class */

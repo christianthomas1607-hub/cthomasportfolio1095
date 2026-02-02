@@ -11,6 +11,15 @@ return (
 <>
   <div className="controls-parent">
     <div className="controls">
+        <div className='topText keyText'>
+          <p className='optional'>
+            Optional
+          </p>
+          <p className='topKeys directionText'>
+            W or ↑ Keys
+          </p>
+        </div>
+      
         <button className="controls-button text-gray-800 font-black mx-2 py-2 pl-4 pr-1 w-32 rounded inline-flex items-center"
           onPointerDown={() => { simulateKeyEvent('w', 'keydown'); simulateKeyEvent('ArrowUp', 'keydown') }}
           onPointerUp={() => { simulateKeyEvent('w', 'keyup'); simulateKeyEvent('ArrowUp', 'keyup') }}
@@ -21,6 +30,15 @@ return (
           forward
         </button>
         <div className="controls-middle-row">
+
+          <div className='leftText keyText'>
+          <p className='optional'>
+            Optional
+          </p>
+          <p className='leftKeys directionText'>
+            A or ← Keys 
+          </p>
+        </div>
         <button className="controls-button text-gray-800 font-black mx-2 py-2 pl-5 pr-4 w-24 rounded inline-flex items-center text-center"
           onPointerDown={() => { simulateKeyEvent('a', 'keydown'); simulateKeyEvent('ArrowLeft', 'keydown') }}
           onPointerUp={() => { simulateKeyEvent('a', 'keyup'); simulateKeyEvent('ArrowLeft', 'keyup') }}
@@ -39,6 +57,14 @@ return (
           <svg className="ml-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#193cb8" strokeWidth="3.25" strokeLinecap="butt" strokeLinejoin="miter"><path d="M5 12h13M12 5l7 7-7 7"/>
           </svg>
         </button>
+        <div className='rightText keyText'>
+          <p className='optional'>
+            Optional
+          </p>
+          <p className='rightKeys directionText'>
+            D or → Keys
+          </p>
+        </div>
         </div>
         <button className="controls-button text-gray-800 font-black mx-2 py-2 pl-3 pr-2 w-32 rounded inline-flex items-center"
           onPointerDown={() => { simulateKeyEvent('s', 'keydown'); simulateKeyEvent('ArrowDown', 'keydown') }}
@@ -49,6 +75,14 @@ return (
            </svg>
           backward
         </button>
+        <div className='bottomText keyText'>
+          <p className='optional'>
+            Optional
+          </p>
+          <p className='bottomKeys directionText'>
+            S or ↓ Keys
+          </p>
+        </div>
       </div>
   </div>
 </>
