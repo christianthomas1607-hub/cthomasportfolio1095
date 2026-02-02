@@ -249,6 +249,26 @@ export const WordAndImageData: WordAndImage[] = [
       },
       {
         img: new Map([
+          ["r6gamingguide-1.png",
+            "Light Button, Name and Icon, Operator Description"
+          ]
+        ]),
+        // img: "r6gamingguide-1.png",
+        titleDescription: new Map([
+          ["Light Button",
+            "Shows currently what page the user is on. This not only shows a difference in color, but also shows a difference in shape. Using a lighter color also works similarly to how the video game works when buttons are highlighted."
+          ],
+          ["Name and Icon",
+            "The name and icon are supposed to help communicate what operator is being talked about through horizontal and vertical spacing. The icon is very similar to the real operator icons, but still fully designed by me."
+          ]
+          ,
+          ["Operator Description",
+            "The description helps communicate what strategies each operator specifically excels at."
+          ]
+        ])
+      },
+      {
+        img: new Map([
           ["r6gamingguide-2.png",
             "Name and GIF, Operator Tip"
           ]
