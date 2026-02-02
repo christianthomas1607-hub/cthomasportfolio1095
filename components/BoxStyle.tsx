@@ -5,7 +5,7 @@ import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import GlowMaterial from '../components/GlowMaterial';
 import { useMemo, useState } from "react";
-import { A11y } from '@react-three/a11y'
+import { A11y, useA11y, A11yAnnouncer } from '@react-three/a11y'
 import { Console } from 'console';
 
 
@@ -95,6 +95,10 @@ const borderFocusFunction = () => {
 };
 
 
+const a11y = useA11y() // gives you focus, hover, pressed states 
+const color: string = a11y.focus ? 'red' : 'white'
+const textSize: number = a11y.focus ? .23 : .2
+
 // if(borderFocus == false) {
 //   focusColor = "red"
 //   // console.log(`${borderFocus} red shown`)
@@ -127,8 +131,8 @@ const borderSizes = (maxBorderSize, color) => {
     <>
         <>
         {/* <A11y
-            role="button"
-            actionCall={() => {
+            role="content"
+            focusCall={() => {
               console.log(`${title} focused`);
               borderFocusFunction();
               }
@@ -174,11 +178,11 @@ const borderSizes = (maxBorderSize, color) => {
           position={textPosition} // above the image
           lineHeight={1}
           maxWidth={2.5}
-          fontSize={0.2}
+          fontSize={textSize}
            font="/MavenPro-Bold.ttf"
           fontWeight={'800'}
           
-          color="white"
+          color={color}
           textAlign="center"
           anchorX="center"
           anchorY="bottom"
