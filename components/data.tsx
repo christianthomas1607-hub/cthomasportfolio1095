@@ -35,6 +35,7 @@ export interface WordAndImage {
   category?: string;
   title?: string;
   imgMain?: string;
+  link?: string;
   imgChild?: string;
   Alt?: string;
   topDescription?: string;
