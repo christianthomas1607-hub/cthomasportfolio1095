@@ -10,6 +10,12 @@ export interface OneColumnImgandDescription {
 }
 
 
+export interface OneColumnImgAltTitleDescription {
+  img?: Map<string, string>;
+  titleDescription?: Map<string, string>;
+}
+
+
 export interface OneColumnTwoImgandDescription {
   img?: string[][];
   titleDescription?: Map<string, string>;
@@ -27,6 +33,7 @@ export interface WordAndImage {
   title?: string;
   imgMain?: string;
   imgChild?: string;
+  Alt?: string;
   topDescription?: string;
   topNote?: string;
   HTMLFile?: string;
@@ -36,7 +43,7 @@ export interface WordAndImage {
   twoColumnImgandDescription?: TwoColumnImgandDescription[];
   twoColumn?: Map<string, string>;
   OneColumnImgandDescription?: OneColumnImgandDescription[];
-
+  OneColumnImgAltTitleDescription?: OneColumnImgAltTitleDescription[];
   // Recommended desktop image dimensions: 1755 px x 1876 px
   // Recommended mobile image dimensions: 430 px x 3123 px
   twoColumnImages?: string[][];
@@ -81,44 +88,14 @@ export const WordAndImageData: WordAndImage[] = [
           ]
         ])
       }
-      // ,{
-      //   img: new Map([
-      //     [
-      //       "2 New Atlas",
-      //       new Map([
-      //       [
-      //       "boston_dynamics__atlas_desktop.jpeg",
-      //       "2 Atlas Desktop"
-      //       ],
-      //       [
-      //       "boston_dynamics__atlas_mobile.jpeg",
-      //       "2 Atlas mobile"
-      //       ]
-      //       ])
-      //     ]
-      //   ]),
-      //   titleDescription: new Map([
-      //     ["2 New Atlas Theme & Products",
-      //       "2 Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas."
-      //     ]
-      //   ])
-      // }
+      
     ],
-    
-    OneColumnTwoImgandDescription: [{
-        img: [
-              ["boston_dynamics__atlas_desktop.jpeg", "boston_dynamics__atlas_mobile.jpeg"]
-        ],
-        titleDescription: new Map([
-          ["New Atlas Theme & Products",
-            "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas."
+    OneColumnImgAltTitleDescription: [{
+        img: new Map([
+          ["holiday-2025-boston-dynamics.jpeg",
+            "2025 Holiday Sale Setup"
           ]
-        ])
-      }
-    ],
-    // topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
-    OneColumnImgandDescription: [{
-        img: "holiday-2025-boston-dynamics.jpeg",
+        ]),
         titleDescription: new Map([
           ["2025 Holiday Sale Setup",
             "A banner, 5 new products, and 2 discounts were set up. Boston Dynamics promoted the sale on social media."
@@ -126,7 +103,11 @@ export const WordAndImageData: WordAndImage[] = [
         ])
       },
       {
-        img: "holiday-2025-products-boston-dynamics.jpeg",
+        img: new Map([
+          ["holiday-2025-products-boston-dynamics.jpeg",
+            "2025 Holiday Sale Setup Products"
+          ]
+        ]),
         titleDescription: new Map([
           ["Complete List of Products",
             "Much of the web content was added by me. Some images were provided by Boston Dynamics. Content was formatted to have proper performance, SEO, and verified for accuracy."
@@ -134,6 +115,25 @@ export const WordAndImageData: WordAndImage[] = [
         ])
       }
     ]
+    // topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
+    // ,
+    // OneColumnImgandDescription: [{
+    //     img: "holiday-2025-boston-dynamics.jpeg",
+    //     titleDescription: new Map([
+    //       ["2025 Holiday Sale Setup",
+    //         "A banner, 5 new products, and 2 discounts were set up. Boston Dynamics promoted the sale on social media."
+    //       ]
+    //     ])
+    //   },
+    //   {
+    //     img: "holiday-2025-products-boston-dynamics.jpeg",
+    //     titleDescription: new Map([
+    //       ["Complete List of Products",
+    //         "Much of the web content was added by me. Some images were provided by Boston Dynamics. Content was formatted to have proper performance, SEO, and verified for accuracy."
+    //       ]
+    //     ])
+    //   }
+    // ]
   },
 
   { 

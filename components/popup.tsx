@@ -279,6 +279,34 @@ item?.video ? (
   </div>
 )} */}
 
+{item?.OneColumnImgAltTitleDescription && (
+  <div className="">
+    
+      {item.OneColumnImgAltTitleDescription.map((p, idx) => (
+        <>
+          <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
+             {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
+                <>
+                <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{title}</h3>
+                <p className="text-xl text-black">{desc}</p>
+                </>
+            ))}  
+          </div>
+          <div className="flex flex-col items-center mt-5">
+            {Array.from(p.img.entries()).map(([img, alt], index) => (
+                <>
+                <img src={"/images/" + img} alt={alt} className="my-2" />
+                </>
+            ))}  
+            
+          </div>
+        </>
+      ))}
+ 
+  </div>
+)}
+
+
 
 {item?.OneColumnImgandDescription && (
   <div className="">
