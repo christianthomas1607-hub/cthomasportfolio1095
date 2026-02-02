@@ -41,7 +41,7 @@ export interface WordAndImage {
   topNote?: string;
   HTMLFile?: string;
   figma?: string;
-  multipleImages?: string[];
+  multipleImages?: Map<string, string>;
   video?: string;
   twoColumnImgandDescription?: TwoColumnImgandDescription[];
   twoColumn?: Map<string, string>;
@@ -307,7 +307,19 @@ export const WordAndImageData: WordAndImage[] = [
     category: "Websites", 
     title: "The Captains", 
     imgMain: "captains.jpg",
-    multipleImages: ["captains-1.jpg", "captains-2.jpg", "captains-3.jpg"],
+    multipleImages: new Map([
+          ["captains-1.jpg",
+            "Logo"
+          ],
+          ["captains-2.jpg",
+            "Typefaces"
+          ],
+          ["captains-3.jpg",
+            "Colors"
+          ],
+        ])
+        ,
+    // multipleImages: ["captains-1.jpg", "captains-2.jpg", "captains-3.jpg"],
     figma:"https://embed.figma.com/proto/K1COfsd3YbRV25TEvviRCq/Captains_Homepage?kind=proto&node-id=1-13&page-id=0%3A1&scaling=min-zoom&embed-host=share"
   }
   // ,

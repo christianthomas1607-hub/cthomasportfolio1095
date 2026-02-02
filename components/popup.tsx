@@ -206,9 +206,17 @@ item?.video ? (
 )}
 
 
-{item?.multipleImages?.map((img, index) => (
+
+{/* {item?.multipleImages?.map((img, index) => (
   <img key={index} className="w-full object-cover" src={"/images/" + img} alt={img}/>
-))}
+))} */}
+
+{item?.multipleImages && (
+  Array.from(item.multipleImages.entries()).map(([img, alt], index) => (
+    <img key={index} className="w-full object-cover" src={"/images/" + img} alt={alt}/>
+    ))
+  )
+}
 
 
 {item?.twoColumnImages?.map((img, index) => (
