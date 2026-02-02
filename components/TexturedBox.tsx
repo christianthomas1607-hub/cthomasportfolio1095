@@ -97,7 +97,6 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
 
         return (
           <>
-      
           <A11y
           role="button"
           description={item.title}
