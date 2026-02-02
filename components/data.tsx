@@ -374,13 +374,34 @@ export const WordAndImageData: WordAndImage[] = [
     imgMain: "Digital Card Game Prototype.gif",
     topDescription: "This project is a digital card game that involves graphic design theories. The topics covered are typefaces, color theory, and poster grid theory. To win the game, the first player to have no cards left over, wins.",
     video: "https://www-ccv.adobe.io/v1/player/ccv/4AQaxIMmJ9z/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View",
-    multipleImages: ["card-game.jpg", "digital-card-game-1.jpg", "digital-card-game.jpg"]
+    multipleImages: new Map([
+          ["card-game.jpg",
+            "Design Theory: Shows a list of types of cards. One group is textual and one is group is visual that shows what the associated textual card communicates."
+          ],
+          ["digital-card-game-1.jpg",
+            "A diagram that shows the steps of how the card game works."
+          ],
+          ["digital-card-game.jpg",
+            "A visual representation of how the card game was built in Figma."
+          ]
+        ])
+        
+    // multipleImages: ["card-game.jpg", "digital-card-game-1.jpg", "digital-card-game.jpg"]
   },
   { 
     category: "Motion Design",
     title: "\"Ice & Fire\" Kinetic Lettering", 
     imgMain: "ice-&-fire-kinetic-lettering-0.gif",
-    multipleImages: ["ice-&-fire-kinetic-lettering-0.gif", "ice-&-fire-kinetic-lettering-1.gif"]
+    multipleImages: new Map([
+          ["ice-&-fire-kinetic-lettering-0.gif",
+            "Logo"
+          ],
+          ["ice-&-fire-kinetic-lettering-1.gif",
+            "Typefaces"
+          ]
+        ])
+        ,
+    // multipleImages: ["ice-&-fire-kinetic-lettering-0.gif", "ice-&-fire-kinetic-lettering-1.gif"]
   }
   // ,
   // { 
