@@ -4,6 +4,9 @@ export interface TwoColumnImgandDescription {
 }
 
 
+
+
+
 export interface OneColumnImgandDescription {
   img?: string;
   titleDescription?: Map<string, string>;
@@ -51,6 +54,8 @@ export interface WordAndImage {
   OneColumnTwoImgandDescription?: OneColumnTwoImgandDescription[];
 
   OneColumnTwoImgandDescription2?: OneColumnTwoImgandDescription2[];
+
+  TwoColumnImgandAlt?: Map<string, string>;
 }
 
 
@@ -72,7 +77,7 @@ export const WordAndImageData: WordAndImage[] = [
             ],
             [
             "boston_dynamics__atlas_mobile.jpeg",
-            "Atlas mobile"
+            "Atlas Mobile"
             ]
             ])
           ]
@@ -115,25 +120,7 @@ export const WordAndImageData: WordAndImage[] = [
         ])
       }
     ]
-    // topDescription: "My primary responsibility of the internship involved solving bugs. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
-    // ,
-    // OneColumnImgandDescription: [{
-    //     img: "holiday-2025-boston-dynamics.jpeg",
-    //     titleDescription: new Map([
-    //       ["2025 Holiday Sale Setup",
-    //         "A banner, 5 new products, and 2 discounts were set up. Boston Dynamics promoted the sale on social media."
-    //       ]
-    //     ])
-    //   },
-    //   {
-    //     img: "holiday-2025-products-boston-dynamics.jpeg",
-    //     titleDescription: new Map([
-    //       ["Complete List of Products",
-    //         "Much of the web content was added by me. Some images were provided by Boston Dynamics. Content was formatted to have proper performance, SEO, and verified for accuracy."
-    //       ]
-    //     ])
-    //   }
-    // ]
+    
   },
 
   { 
@@ -141,18 +128,31 @@ export const WordAndImageData: WordAndImage[] = [
     title: "Chubb", 
     imgMain: "chubb.jpg",
     // imgChild: "esis-1.jpeg",
-    twoColumnImages: [
-      ["chubb_desktop.jpeg", "chubb_mobile.jpeg"]
-    ]
+    TwoColumnImgandAlt: new Map([
+          ["chubb_desktop.jpeg",
+            "Chubb Desktop"
+          ],
+          ["chubb_mobile.jpeg",
+            "Chubb Mobile"
+          ]
+        ])
   },
   { 
     category: "Websites",
     title: "Akamai", 
     imgMain: "akamai.jpg",
     // imgChild: "akamai-1.jpeg"
-    twoColumnImages: [
-      ["akamai_desktop.jpeg", "akamai_mobile.jpeg"]
-    ]
+    TwoColumnImgandAlt: new Map([
+          ["akamai_desktop.jpeg",
+            "Akamai Desktop"
+          ],
+          ["akamai_mobile.jpeg",
+            "Akamai Mobile"
+          ]
+        ])
+    // twoColumnImages: [
+    //   ["akamai_desktop.jpeg", "akamai_mobile.jpeg"]
+    // ]
   },
   { 
     category: "Websites", 

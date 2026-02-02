@@ -197,6 +197,8 @@ item?.video ? (
     allowFullScreen
   />
 )}
+
+
 {item?.figma && (
   <iframe style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }} width="800" height="450" src={item.figma}
   allowFullScreen>
@@ -213,6 +215,13 @@ item?.video ? (
   <ImageHeightSync imgs={img} />
 ))
 }
+
+
+{item?.TwoColumnImgandAlt && (
+<ImageHeightSync2 imgs={item.TwoColumnImgandAlt} />
+)
+}
+
 
 {item?.OneColumnTwoImgandDescription2 && (
   <div className="">
