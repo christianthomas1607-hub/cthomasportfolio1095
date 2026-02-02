@@ -349,7 +349,12 @@ item?.video ? (
       {item.twoColumnImgandDescription.map((p, idx) => (
         <>    
           <div className="flex flex-col items-center md:mt-5 my-class">
-            <img src={"/images/" + p.img} alt={p.img} className="my-2 object-contain" />
+            {Array.from(p.img.entries()).map(([img, alt], index) => (
+              <>
+              <img src={"/images/" + img} alt={alt} className="my-2 object-contain" />
+              </>
+              ))}
+            {/* <img src={"/images/" + p.img} alt={p.img} className="my-2 object-contain" /> */}
           </div>
           <div className="flex flex-col items-left md:mt-5 lg:mx-13">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (

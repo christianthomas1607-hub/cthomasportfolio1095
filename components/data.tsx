@@ -1,5 +1,5 @@
 export interface TwoColumnImgandDescription {
-  img?: string;
+  img?: Map<string, string>;
   titleDescription?: Map<string, string>;
 }
 
@@ -159,35 +159,35 @@ export const WordAndImageData: WordAndImage[] = [
     title: "Resilence, Inc", 
     imgMain: "resilence.jpg",
     topDescription: "My primary responsibility of the internship involved solving bugs through WordPress. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
-    twoColumnImgandDescription: [{
-        img: "resilence-0.png",
-        titleDescription: new Map([
-          ["Sharp Corners",
-            "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
-          ],
-          ["Donate Button",
-            "Many company meetings were about how to receive donations to expand. The donate button used to require scrolling. I recommended we have it visible once the user enters. This caused an increase in donations."
-          ]
-        ])
-      },
-      {
-        img: "resilence-1.png",
-        titleDescription: new Map([
-          ["Title",
-            "The large, bold, and yellow title or heading looks fairly hard to read. Yellow text on a white background has a very low contrast."
-          ],
-          ["Colors",
-            "The colors have a very low contrast on white. Increasing the contrast also causes a very swampy look of colors. The yellow turns to dark brown and the green turns to a muddy dark green."
-          ],
-          ["Logo",
-            "The logo does not look as professional compared to many other logos. There is too much going on, causing less readability as this logo is scaled down."
-          ],
-          ["Explanation/Mission",
-            "Moving the explanation above the buttons lets possible customers know why they should be interested in this company. Scrolling down requires extra effort from the customer. The last sentence is also a list with grammatical errors."
-          ]
-        ])
-      }
-    ]
+    // twoColumnImgandDescription: [{
+    //     img: "resilence-0.png",
+    //     titleDescription: new Map([
+    //       ["Sharp Corners",
+    //         "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
+    //       ],
+    //       ["Donate Button",
+    //         "Many company meetings were about how to receive donations to expand. The donate button used to require scrolling. I recommended we have it visible once the user enters. This caused an increase in donations."
+    //       ]
+    //     ])
+    //   },
+    //   {
+    //     img: "resilence-1.png",
+    //     titleDescription: new Map([
+    //       ["Title",
+    //         "The large, bold, and yellow title or heading looks fairly hard to read. Yellow text on a white background has a very low contrast."
+    //       ],
+    //       ["Colors",
+    //         "The colors have a very low contrast on white. Increasing the contrast also causes a very swampy look of colors. The yellow turns to dark brown and the green turns to a muddy dark green."
+    //       ],
+    //       ["Logo",
+    //         "The logo does not look as professional compared to many other logos. There is too much going on, causing less readability as this logo is scaled down."
+    //       ],
+    //       ["Explanation/Mission",
+    //         "Moving the explanation above the buttons lets possible customers know why they should be interested in this company. Scrolling down requires extra effort from the customer. The last sentence is also a list with grammatical errors."
+    //       ]
+    //     ])
+    //   }
+    // ]
   },
     
   //   twoColumn: new Map([
@@ -220,7 +220,12 @@ export const WordAndImageData: WordAndImage[] = [
     imgMain: "r6gamingguide.png",
     topDescription: "This project was coded, designed, and written by me. HTML 5, CSS 3, and Vanilla JavaScript were used to code this project. This website is supposed to be responsive to various screen sizes. The SEO and accessibility still needs to be worked on. This website was created to assist entry-level to mid-level gamers of a video game called Rainbow Six Siege. Certain data may be outdated, due to constant updates of the game."
     ,twoColumnImgandDescription: [{
-        img: "r6gamingguide-0.png",
+        img: new Map([
+          ["r6gamingguide-0.png",
+            "Dark Theme, Grabbing Attention, Top 3"
+          ]
+        ]),
+        // img: "r6gamingguide-0.png",
         titleDescription: new Map([
           ["Dark Theme",
             "Using a dark theme helps the user when gaming at night, while having this on their phone. Having a light theme is too distracting when multitasking. A theme switcher could be added to help the user choose. A light theme is although preferred by older populations and for reading. This website has a target audience of young adults and has light reading."
@@ -234,7 +239,12 @@ export const WordAndImageData: WordAndImage[] = [
         ])
       },
       {
-        img: "r6gamingguide-1.png",
+        img: new Map([
+          ["r6gamingguide-2.png",
+            "Name and GIF, Operator Tip"
+          ]
+        ]),
+        // img: "r6gamingguide-1.png",
         titleDescription: new Map([
           ["Name and GIF",
             "The name helps identify the operator. The GIF shows how the operator's ability works."
@@ -245,7 +255,12 @@ export const WordAndImageData: WordAndImage[] = [
         ])
       },
       {
-        img: "r6gamingguide-2.png",
+        img: new Map([
+          ["r6gamingguide-3.png",
+            "Key, Camera Location"
+          ]
+        ]),
+        // img: "r6gamingguide-2.png",
         titleDescription: new Map([
           ["Key",
             "I chose red as it is the most saturated color. Circles would be a good shape for me to hint locations. Adding shadows may help add more contrast to the circles, but may also add visual noise."
@@ -254,9 +269,14 @@ export const WordAndImageData: WordAndImage[] = [
             "Cameras are ways in which the enemy team who defends the building, spy on what the attacking team does. It is important to destroy these cameras by shooting them. If destroyed, the enemy team cannot spy on the attacking player."
           ]
         ])
-      },
-      {
-        img: "r6gamingguide-3.png",
+      }
+      ,{
+        img: new Map([
+          ["r6gamingguide-4.png",
+            "Map Name, Spawn Peeks GIF"
+          ]
+        ]),
+        // img: "r6gamingguide-3.png",
         titleDescription: new Map([
           ["Map Name",
             "The map name helps clarify what map the GIF is on. This section is more for mid-level players because it is dangerous to peek through a window. An enemy could kill the player peeking a window easily, if not well trained."
