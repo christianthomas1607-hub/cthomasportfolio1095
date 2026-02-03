@@ -153,6 +153,51 @@ h2, h3, h4, h5 {
 }
 
 
+#liveSiteLink {
+    background-color: #193cb8;
+    color: #ffffff;
+    border-radius: 60px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 2.5em 10px 2.3em;
+    text-decoration: none;
+    transition: transform .2s cubic-bezier(.215, .61, .355, 1), box-shadow 1s cubic-bezier(.215, .61, .355, 1), background-color .3s cubic-bezier(.215, .61, .355, 1);
+    display: inline-block;
+    margin: 3rem auto auto auto;
+
+    &:hover {
+      background-color: #1f1f1c;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    }
+
+    &:focus {
+      outline: .25rem solid #ebedf2 !important;
+      background-color: #1f1f1c;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    }
+}
+
+
+#liveSiteButton {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.buttonicon {
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-45deg) skew(0deg, 0deg); 
+  transform-style: preserve-3d;
+  color: #ffffff;
+  flex: none;
+  align-self: center;
+  margin-right: .5em;
+  display: flex;
+  transform: rotate(-45deg);
+}
+
+
 #topDescription {
   margin-top: 2rem;
 }
@@ -348,11 +393,21 @@ p {
   grid-gap: 2px; /* Adjust the value to add space between the image and text */
   align-items: center;
   padding: .5rem 1.25rem .5rem 1rem;
+  
+  &:hover {
+    outline: .25rem solid #ff0000d7 !important;
+    box-shadow: 0 0 .5em 0 red;
+  }
+
+  &:focus {
+    background-color: #ff0000 !important;
+    outline: .25rem solid #193cb8 !important;
+    box-shadow: 0 0 .5em 0 #193cb8;
+  }
+
 }
 
-#popUpCloseButton:focus {
-  background-color: #ff0000 !important;
-}
+
 
 
 

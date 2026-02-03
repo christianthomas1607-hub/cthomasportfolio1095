@@ -66,6 +66,7 @@ export const WordAndImageData: WordAndImage[] = [
     category: "Websites", 
     title: "Boston Dynamics", 
     imgMain: "boston-dynamics.jpg",
+    // link:"https://shop.bostondynamics.com",
     OneColumnTwoImgandDescription2: [
       {
         img: new Map([
