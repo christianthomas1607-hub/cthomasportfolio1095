@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import GlowMaterial from '../components/GlowMaterial';
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { A11y, useA11y, A11yAnnouncer } from '@react-three/a11y'
 import { Console } from 'console';
 
@@ -96,8 +96,32 @@ const borderFocusFunction = () => {
 
 
 const a11y = useA11y() // gives you focus, hover, pressed states 
+
+
+
 const color: string = a11y.focus ? 'red' : 'white'
 const textSize: number = a11y.focus ? .23 : .2
+
+// const [clicked, setClick] = useState(false);
+
+// function checkIfClicked() {
+//   if(onClick) {
+//     setClick(true)
+    
+//     const a11yButtons = document.querySelectorAll('[r3f-a11y="true"]');
+
+//     a11yButtons.forEach(a11yButton => {
+//         a11yButton.classList.add("hide-r3f-a11y");
+//     });
+
+//     console.log(`No useeffect true Clicked happened`)
+//   }
+// }
+
+// useEffect(() => {
+// console.log(`${clicked} clicked happened`)
+// },[clicked]);
+
 
 // if(borderFocus == false) {
 //   focusColor = "red"
@@ -131,7 +155,14 @@ const borderSizes = (maxBorderSize, color) => {
     <>
         <>
         
-        <group position={[x, y, z]} rotation={[0, 0, 0]} onClick={onClick}>
+        <group position={[x, y, z]} rotation={[0, 0, 0]} 
+        onClick={
+          (e) => {
+            // checkIfClicked();
+            onClick();
+          }
+        }
+        >
           {/* <mesh scale={1.1}>
         <boxGeometry args={[0, 1, 1]} />
         <meshBasicMaterial color="red" transparent opacity={0.5} />

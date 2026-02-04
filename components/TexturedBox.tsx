@@ -1,6 +1,8 @@
 import { useTexture, Text, Box  } from '@react-three/drei'
 import { WordAndImageData } from '../components/data'
 
+import { useState } from 'react'; 
+
 import 
 {
 BoxStyle,
@@ -94,7 +96,7 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
         const useBorderExportFunction = useBorderSizes();
         const borderBool = useBorderExportFunction.bool;
         const borderChildFunction = useBorderExportFunction.borderSizesFocus;
-
+        
         return (
           <>
           <A11y
@@ -105,7 +107,6 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
               onClick(item);
             }
           }
-          
           >
           <BoxStyle
             key={`${cat}-${perCategoryIndex}-${index}`}

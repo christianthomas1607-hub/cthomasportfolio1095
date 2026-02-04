@@ -48,12 +48,34 @@ const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
   function handleBoxClick(item: WordAndImageType) {
     setSelectedItem(item)
     setShowPopup(true)
+
+    const a11yButtons = document.querySelectorAll('[r3f-a11y="true"]');
+
+
+    //Removes project titles’ accessibility because they interfere with pop up accessible navigation.
+    a11yButtons.forEach(a11yButton => {
+        a11yButton.setAttribute("aria-hidden", "true");
+        a11yButton.setAttribute("role", "presentation"); 
+        (a11yButton as HTMLElement).tabIndex = -1; // prevents keyboard focus
+    });
+
   }
 
   // Handler to close popup
   function handleClosePopup() {
     setShowPopup(false)
+
+
+    //Gives project titles’ accessibility back.
+    const a11yButtons = document.querySelectorAll('[r3f-a11y="true"]');
+
+    a11yButtons.forEach(a11yButton => {
+        a11yButton.setAttribute("aria-hidden", "false");
+        (a11yButton as HTMLElement).tabIndex = 1; // prevents keyboard focus
+    });
+
   }
+
 
 
   return (

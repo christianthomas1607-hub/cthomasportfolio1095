@@ -82,6 +82,12 @@
   opacity: 0 !important;
 }
 
+.hide-r3f-a11y {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+
 
 
 /* 2. Remove the margin for any element of the class that has a sibling with the same class before it */
