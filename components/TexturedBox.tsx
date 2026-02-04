@@ -100,8 +100,12 @@ export default function TexturedBox({ onClick }: { onClick: (item: typeof WordAn
           <A11y
           role="button"
           description={item.title}
-          actionCall={() => onClick(item)}
-         
+          actionCall={() => 
+            {
+              onClick(item);
+            }
+          }
+          
           >
           <BoxStyle
             key={`${cat}-${perCategoryIndex}-${index}`}

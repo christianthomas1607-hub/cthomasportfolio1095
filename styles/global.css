@@ -25,7 +25,7 @@
 
 .controls .keyText {
     color: #ffffff;
-    
+    text-shadow: 0px 0px 2px #000000;
     text-align: center;
     line-height: .5;
 }
@@ -95,8 +95,7 @@
   color: #193cb8;
 
   &:hover {
-    box-shadow: 0 0 0.5em 0em #ff0000;
-    border-color: #ff0000;
+    box-shadow: 0 0 .5rem .125rem #ff0000;
   }
 
 }

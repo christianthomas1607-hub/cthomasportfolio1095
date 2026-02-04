@@ -30,7 +30,7 @@ export default function Page() {
     { name: 'rightward', keys: ['ArrowRight', 'KeyD'] }
   ]
   
-  const [showPopup, setShowPopup] = useState(false)
+const [showPopup, setShowPopup] = useState(false)
 const [selectedItem, setSelectedItem] = useState<WordAndImageType | null>(null)
   // spawn position for the player (x, y, z)
   // const spawnPosition: [number, number, number] = [0, 1.3, 0];
