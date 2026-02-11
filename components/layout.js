@@ -26,6 +26,7 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <title>Christian Thomas’ Portfolio</title>
       </Head>
       <Script
         src="https://connect.facebook.net/en_US/sdk.js"
