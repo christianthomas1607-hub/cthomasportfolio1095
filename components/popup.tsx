@@ -121,7 +121,7 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Wo
     {Array.from(item.twoColumn.entries()).map(([outerKey, innerMap], outerIndex) => (
       <div key={outerIndex} className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4 p-4">
         <div className="flex flex-col items-center">
-        <img src={outerKey} alt={outerKey} className="mb-2 max-h-96 object-contain"/>
+        <img loading="lazy" src={outerKey} alt={outerKey} className="mb-2 max-h-96 object-contain"/>
       </div>
         {/* {Array.from(innerMap.entries()).map(([innerKey, innerValue], innerIndex) => (
           <div key={innerIndex} className="flex flex-col items-center">
@@ -137,6 +137,7 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Wo
 
           {/* {item?.video && (
   <iframe
+    loading="lazy"
     style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
     width="800"
     height="450"
@@ -167,6 +168,7 @@ With &&:
 {
 item?.video && (
     <iframe
+    loading="lazy"
     style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
     width="800"
     height="450"
@@ -180,6 +182,7 @@ Without &&:
 {
 item?.video ? (
     <iframe
+    loading="lazy"
     style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
     width="800"
     height="450"
@@ -194,7 +197,7 @@ item?.video ? (
 {item?.imgChild && (
 <>
 {/* <ImageHeightSync firstimg="/images/Chubb-Special-Gift Store-3-edge.jpeg" secondimg="/images/chubb-mobile-design.jpeg"/> */}
-<img className="w-full object-cover" src={"/images/" + item.imgChild} alt={item.imgChild}/>
+<img loading="lazy" className="w-full object-cover" src={"/images/" + item.imgChild} alt={item.imgChild}/>
 </>
 )}
 
@@ -203,6 +206,7 @@ item?.video ? (
 
 {item?.video && (
   <iframe
+    loading="lazy"
     style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
     width="800"
     height="450"
@@ -213,7 +217,8 @@ item?.video ? (
 
 
 {item?.figma && (
-  <iframe style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }} width="800" height="450" src={item.figma}
+  <iframe
+    loading="lazy" style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }} width="800" height="450" src={item.figma}
   allowFullScreen>
   </iframe>
 )}
@@ -221,12 +226,12 @@ item?.video ? (
 
 
 {/* {item?.multipleImages?.map((img, index) => (
-  <img key={index} className="w-full object-cover" src={"/images/" + img} alt={img}/>
+  <img loading="lazy" key={index} className="w-full object-cover" src={"/images/" + img} alt={img}/>
 ))} */}
 
 {item?.multipleImages && (
   Array.from(item.multipleImages.entries()).map(([img, alt], index) => (
-    <img key={index} className="w-full object-cover" src={"/images/" + img} alt={alt}/>
+    <img loading="lazy" key={index} className="w-full object-cover" src={"/images/" + img} alt={alt}/>
     ))
   )
 }
@@ -264,14 +269,14 @@ item?.video ? (
                 <ImageHeightSync2 imgs={imgAlt} />
                 {/* {Array.from(imgAlt.entries()).map(([imgSrc, alt], index) => (
                 <>
-                <img src={"/images/" + imgSrc} alt={alt} className="my-2" />
+                <img loading="lazy" src={"/images/" + imgSrc} alt={alt} className="my-2" />
                 
                 </>
             ))} */}
                 </>
             ))}
 
-            {/* <img src={"/images/" + p.img} alt={p.img} className="my-2" /> */}
+            {/* <img loading="lazy" src={"/images/" + p.img} alt={p.img} className="my-2" /> */}
           </div>
         </>
       ))}
@@ -325,7 +330,7 @@ item?.video ? (
           <div className="flex flex-col items-center mt-5">
             {Array.from(p.img.entries()).map(([img, alt], index) => (
                 <>
-                <img src={"/images/" + img} alt={alt} className="my-2" />
+                <img loading="lazy" src={"/images/" + img} alt={alt} className="my-2" />
                 </>
             ))}  
             
@@ -352,7 +357,7 @@ item?.video ? (
             ))}  
           </div>
           <div className="flex flex-col items-center mt-5">
-            <img src={"/images/" + p.img} alt={p.img} className="my-2" />
+            <img loading="lazy" src={"/images/" + p.img} alt={p.img} className="my-2" />
           </div>
         </>
       ))}
@@ -372,10 +377,10 @@ item?.video ? (
           <div className="flex flex-col items-center md:mt-5 my-class">
             {Array.from(p.img.entries()).map(([img, alt], index) => (
               <>
-              <img src={"/images/" + img} alt={alt} className="my-2 object-contain" />
+              <img loading="lazy" src={"/images/" + img} alt={alt} className="my-2 object-contain" />
               </>
               ))}
-            {/* <img src={"/images/" + p.img} alt={p.img} className="my-2 object-contain" /> */}
+            {/* <img loading="lazy" src={"/images/" + p.img} alt={p.img} className="my-2 object-contain" /> */}
           </div>
           <div className="flex flex-col items-left md:mt-5 lg:mx-13">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
