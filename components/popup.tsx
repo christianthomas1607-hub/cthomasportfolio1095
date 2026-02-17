@@ -12,6 +12,9 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
+import { Fragment } from 'react';
+
+
 library.add(fas, far, fab)
 
 export default function Popup({ onClose, item }: { onClose: () => void, item: WordAndImage | null }) {
@@ -238,7 +241,7 @@ item?.video ? (
 
 
 {item?.twoColumnImages?.map((img, index) => (
-  <ImageHeightSync imgs={img} />
+  <ImageHeightSync imgs={img} key={index}/>
 ))
 }
 
@@ -253,18 +256,18 @@ item?.video ? (
   <div className="">
     
       {item.OneColumnTwoImgandDescription2.map((p, idx) => (
-        <>
+        <Fragment key={idx}>
           <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
-                <>
+                <Fragment key={index}>
                 <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{title}</h3>
                 <p className="text-xl text-black">{desc}</p>
-                </>
+                </Fragment>
             ))}  
           </div>
           <div className="flex flex-col items-center mt-5">
-            {Array.from(p.img.entries()).map(([imgTitle, imgAlt], index) => (
-                <>
+            {Array.from(p.img.entries()).map(([imgTitle, imgAlt], idx) => (
+                <Fragment key={idx}>
                 {/* <h5>{imgTitle}</h5> */}
                 <ImageHeightSync2 imgs={imgAlt} />
                 {/* {Array.from(imgAlt.entries()).map(([imgSrc, alt], index) => (
@@ -273,12 +276,12 @@ item?.video ? (
                 
                 </>
             ))} */}
-                </>
+                </Fragment>
             ))}
 
             {/* <img loading="lazy" src={"/images/" + p.img} alt={p.img} className="my-2" /> */}
           </div>
-        </>
+        </Fragment>
       ))}
  
   </div>
@@ -318,24 +321,24 @@ item?.video ? (
   <div className="">
     
       {item.OneColumnImgAltTitleDescription.map((p, idx) => (
-        <>
+        <Fragment key={idx}>
           <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
-                <>
+                <Fragment key={index}>
                 <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{title}</h3>
                 <p className="text-xl text-black">{desc}</p>
-                </>
+                </Fragment>
             ))}  
           </div>
           <div className="flex flex-col items-center mt-5">
             {Array.from(p.img.entries()).map(([img, alt], index) => (
-                <>
+                <Fragment key={index}>
                 <img loading="lazy" src={"/images/" + img} alt={alt} className="my-2" />
-                </>
+                </Fragment>
             ))}  
             
           </div>
-        </>
+        </Fragment>
       ))}
  
   </div>
@@ -347,19 +350,19 @@ item?.video ? (
   <div className="">
     
       {item.OneColumnImgandDescription.map((p, idx) => (
-        <>
+        <Fragment key={idx}>
           <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
-                <>
+                <Fragment key={index}>
                 <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{title}</h3>
                 <p className="text-xl text-black">{desc}</p>
-                </>
+                </Fragment>
             ))}  
           </div>
           <div className="flex flex-col items-center mt-5">
             <img loading="lazy" src={"/images/" + p.img} alt={p.img} className="my-2" />
           </div>
-        </>
+        </Fragment>
       ))}
  
   </div>
@@ -373,25 +376,25 @@ item?.video ? (
   <div className="grid grid-cols-1 md:grid-cols-2 md:gap-y-6 gap-x-4 pb-4 lg:pb-5 px-4 md:p-3">
     
       {item.twoColumnImgandDescription.map((p, idx) => (
-        <>    
+        <Fragment key={idx}>   
           <div className="flex flex-col items-center md:mt-5 my-class">
             {Array.from(p.img.entries()).map(([img, alt], index) => (
-              <>
+              <Fragment key={index}>  
               <img loading="lazy" src={"/images/" + img} alt={alt} className="my-2 object-contain" />
-              </>
+              </Fragment>
               ))}
             {/* <img loading="lazy" src={"/images/" + p.img} alt={p.img} className="my-2 object-contain" /> */}
           </div>
           <div className="flex flex-col items-left md:mt-5 lg:mx-13">
-             {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
-                <>
+             {Array.from(p.titleDescription.entries()).map(([title, desc], idx) => (
+                <Fragment key={idx}> 
                 <h3 className="text-xl font-semibold mb-1 text-black mt-3 ml-0 mr-auto">{title}</h3>
                 <p className="text-black ml-0 mr-auto">{desc}</p> 
-                </>
+                </Fragment>
             ))}
             
           </div>
-          </>
+          </Fragment>
       ))}
  
   </div>

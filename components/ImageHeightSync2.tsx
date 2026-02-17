@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 type Props = { imgs: Map<string, string>; };
 
+import { Fragment } from 'react';
 
 export default function ImageHeightSync2({ imgs }: Props) {
   const imgRef = useRef(null); // Reference to the image
@@ -53,7 +54,7 @@ useEffect(() => {
   return (
       <div className="parent-2-col-images">
       {Array.from(imgs.entries()).map(([imgSrc, alt], index) => (
-        <>
+        <Fragment key={index}>
           {index % 2 === 0 ? (
             <div className="child-2-col-images-1">
                 <div className="desktop-header-background header-background">
@@ -71,7 +72,7 @@ useEffect(() => {
               </div>
             </div>
           )}
-        </>
+        </Fragment>
                 // <>
                 // <img src={"/images/" + imgSrc} alt={alt} className="my-2" />
                 // </>
