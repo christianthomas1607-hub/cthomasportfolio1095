@@ -1,12 +1,14 @@
 "use client"
+
+import dynamic from 'next/dynamic'
 import { Canvas } from '@react-three/fiber'
 import { Physics, RigidBody } from '@react-three/rapier'
 import { Gltf, KeyboardControls, GradientTexture, Environment } from '@react-three/drei'
 import Controller from 'ecctrl'
 import { useRef, useState } from 'react'
-import TexturedBox from '../components/TexturedBox'
-import Popup from '../components/popup'
-import Controls from '../components/Controls'
+// import TexturedBox from '../components/TexturedBox'
+// import Popup from '../components/popup'
+// import Controls from '../components/Controls'
 import { WordAndImage as WordAndImageType } from '../components/data'
 
 import { A11y } from '@react-three/a11y'
@@ -15,6 +17,11 @@ import { A11y } from '@react-three/a11y'
 // function simulateKeyEvent(key: string, type: 'keydown' | 'keyup') {
 //   window.dispatchEvent(new KeyboardEvent(type, { key }))
 // }
+
+//Lazy loading in components
+const TexturedBox = dynamic(() => import('../components/TexturedBox'), { ssr: false })
+const Popup = dynamic(() => import('../components/popup'), { ssr: false })
+const Controls = dynamic(() => import('../components/Controls'), { ssr: false })
 
 
 
