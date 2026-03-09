@@ -75,7 +75,7 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Wo
        </button>
   <div className="popup rounded-lg shadow-lg">
     
-  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-5 lg:pt-5 pb-5 lg:overflow-visible lg:px-10">
+  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-5 pb-5 lg:pt-5 lg:pb-5 lg:overflow-visible lg:px-10">
  
   {/* Outer container */}
   <div className="mx-auto max-w-7xl">
@@ -257,7 +257,7 @@ item?.video ? (
     
       {item.OneColumnTwoImgandDescription2.map((p, idx) => (
         <Fragment key={idx}>
-          <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
+          <div className="flex flex-col items-center lg:mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
              {Array.from(p.titleDescription.entries()).map(([title, desc], index) => (
                 <Fragment key={index}>
                 <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{title}</h3>
