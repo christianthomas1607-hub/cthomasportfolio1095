@@ -129,6 +129,7 @@ export const WordAndImageData: WordAndImage[] = [
     category: "Websites", 
     title: "Chubb", 
     imgMain: "chubb.jpg",
+    topDescription: "Chubb is our top revenue generating client and is a client that I am most involved with. My responsibilities involve setting up new websites, adding products, adding product images, adding Chubb logos, designing banners, styling the sites, and fixing any bugs that can be resolved quickly.",
     // imgChild: "esis-1.jpeg",
     TwoColumnImgandAlt: new Map([
           ["chubb_desktop.jpeg",
@@ -160,7 +161,7 @@ export const WordAndImageData: WordAndImage[] = [
     category: "Websites", 
     title: "Resilence, Inc", 
     imgMain: "resilence.jpg",
-    topDescription: "My primary responsibility of the internship involved solving bugs through WordPress. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
+    topDescription: "My primary responsibility of this internship involved solving bugs through WordPress. The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
     twoColumnImgandDescription: [{
         img: new Map([
           ["resilence-0.png",
