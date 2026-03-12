@@ -144,6 +144,7 @@ export const WordAndImageData: WordAndImage[] = [
     category: "Websites",
     title: "Akamai", 
     imgMain: "akamai.jpg",
+    topDescription: "Akamai is a client that primarily focuses on using products and services for sales teams. My role with this client primarily involves adding product pictures and adding product details. I initially set up their entire customer facing site with site settings and styling changes to meet the client’s requirements.",
     // imgChild: "akamai-1.jpeg"
     TwoColumnImgandAlt: new Map([
           ["akamai_desktop.jpeg",
