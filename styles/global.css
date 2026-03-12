@@ -418,6 +418,12 @@ p {
     box-shadow: 0 0 .5em 0 #193cb8;
   }
 
+  &:active {
+    background-color: var(--color-blue-800) !important;
+    outline: .25rem solid #ff0000d7 !important;
+    box-shadow: 0 0 .5em 0 red;
+  }
+
 }
 
 
