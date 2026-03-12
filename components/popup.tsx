@@ -75,19 +75,13 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Wo
        </button>
   <div className="popup rounded-lg shadow-lg">
     
-  <div className="relative isolate overflow-hidden bg-white pl-6 px-6 pt-5 pb-5 lg:pt-5 lg:pb-5 lg:overflow-visible lg:px-10">
- 
-  {/* Outer container */}
-  <div className="mx-auto max-w-7xl">
-    {/* Inner content */}
-    <div className="">
-      <div className="flex flex-col items-center">
-        {/* <p className="text-2xl font-extrabold text-gray-600">{item.category}</p> */}
-        <h1 className="font-semibold tracking-tight text-gray-900 text-4xl sm:text-9xl text-center">
-          {item?.title ?? ''}
-        </h1>
 
-        {item?.link && 
+<h1 className="font-semibold tracking-tight text-gray-900 text-4xl sm:text-9xl text-center mx-auto lg:pb-0 mt-3 mb-3 lg:mt-3 lg:mb-7">
+  {item?.title ?? ''}
+</h1>
+
+
+{item?.link && 
         <a href={item.link} id='liveSiteLink'>
           <div id='liveSiteButton'>
             <div className="buttonicon w-embed">
@@ -101,21 +95,20 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Wo
           </div>
         </a>
         }
-  
-        {item?.topNote && 
-        <div id="noteInfo">
-        <p id="noteTop">
-          <FontAwesomeIcon icon={['fas', 'exclamation-circle']}/> <strong id="notetitle">Note</strong>
-        </p>
-        <p id="noteText">{item.topNote}</p>
-        </div>
+
+
+{item?.topNote && 
+  <div id="noteInfo">
+    <p id="noteTop">
+      <FontAwesomeIcon icon={['fas', 'exclamation-circle']}/> <strong id="notetitle">Note</strong>
+    </p>
+    <p id="noteText">
+      {item.topNote}
+    </p>
+  </div>
         }
 
-        {item?.topDescription && <p className="text-xl text-gray-700" id="topDescription">{item.topDescription}</p>}
-      </div>
-    </div>
-  </div>
-</div>
+{item?.topDescription && <p className="text-xl text-gray-700 mx-auto" id="topDescription">{item.topDescription}</p>}
 
 
 

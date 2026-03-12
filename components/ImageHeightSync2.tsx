@@ -52,7 +52,7 @@ useEffect(() => {
 
 
   return (
-      <div className="parent-2-col-images mt-2">
+      <div className="parent-2-col-images mt-2 lg:mt-4">
       {Array.from(imgs.entries()).map(([imgSrc, alt], index) => (
         <Fragment key={index}>
           {index % 2 === 0 ? (
