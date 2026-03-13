@@ -76,7 +76,7 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Wo
   <div className="popup rounded-lg shadow-lg">
     
 
-<h1 className="font-semibold tracking-tight text-gray-900 text-4xl sm:text-9xl text-center mx-auto lg:pb-0 mt-3 mb-3 lg:mt-3 lg:mb-7">
+<h1 className="font-semibold tracking-tight text-gray-900 text-4xl sm:text-9xl text-center mx-auto lg:pb-0 mt-3 mb-2 lg:mt-3 lg:mb-7">
   {item?.title ?? ''}
 </h1>
 
