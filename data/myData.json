@@ -1,0 +1,111 @@
+[
+  {
+    "category": "Websites",
+    "title": "Boston Dynamics",
+    "imgMain": "boston-dynamics.jpg",
+    "titleDescription2Images": {
+      "title": "New Atlas Theme & Products",
+      "description": "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas. There are some big improvements I would like to make. I would like to make the top banner display bigger on mobile. The marketing team would rather ensure the image is consistent though. I would also like to make the initially seen content load faster with lazy loading when I get the time.",
+      "TwoColumnImgandAlt": {
+      "desktop": {
+        "imagefile": "boston_dynamics__atlas_desktop.jpeg",
+        "Alt": "Atlas Desktop"
+      },
+      "mobile": {
+        "imagefile": "boston_dynamics__atlas_mobile.jpeg",
+        "Alt": "Atlas Mobile"
+      }
+    }
+    }
+  }
+  ,
+  {
+    "category": "Websites",
+    "title": "Chubb",
+    "imgMain": "chubb.jpg",
+    "topDescription": "Chubb is our top revenue generating client and is a client that I am most involved with. My responsibilities involve setting up new websites, adding products, adding product images, adding Chubb logos, designing banners, styling the sites, and fixing any bugs that can be resolved quickly.",
+    "TwoColumnImgandAlt": {
+      "desktop": {
+        "imagefile": "chubb_desktop.jpeg",
+        "Alt": "Chubb Desktop"
+      },
+      "mobile": {
+        "imagefile": "chubb_mobile.jpeg",
+        "Alt": "Chubb Mobile"
+      }
+    }
+  }
+  ,
+  {
+    "category": "Websites",
+    "title": "Akamai",
+    "imgMain": "akamai.jpg",
+    "topDescription": "Akamai is a client that primarily focuses on using products and services for sales teams. My role with this client primarily involves adding product pictures and adding product details. I initially set up their entire customer facing site with site settings and styling changes to meet the client’s requirements.",
+    "TwoColumnImgandAlt": {
+      "desktop": {
+        "imagefile": "akamai_desktop.jpeg",
+        "Alt": "Akamai Desktop"
+      },
+      "mobile": {
+        "imagefile": "akamai_mobile.jpeg",
+        "Alt": "Akamai Mobile"
+      }
+    }
+  }
+
+  ,
+  {
+    "category": "Websites",
+    "title": "Resilence, Inc",
+    "imgMain": "resilence.jpg",
+    "topDescription": "My primary responsibility of this internship involved solving bugs through WordPress.The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
+    "titleDescription2Images": {
+      "title": "New Atlas Theme & Products",
+      "description": "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas. There are some big improvements I would like to make. I would like to make the top banner display bigger on mobile. The marketing team would rather ensure the image is consistent though. I would also like to make the initially seen content load faster with lazy loading when I get the time.",
+      "TwoColumnImgandAlt": {
+      "desktop": {
+        "imagefile": "boston_dynamics__atlas_desktop.jpeg",
+        "Alt": "Atlas Desktop"
+      },
+      "mobile": {
+        "imagefile": "boston_dynamics__atlas_mobile.jpeg",
+        "Alt": "Atlas Mobile"
+      }
+    }
+    }
+  }
+  
+  ,
+  {
+    "category": "Email Design",
+    "title": "October Events 🎃",
+    "imgMain": "captains-0.jpg",
+    "TwoColumnImgandAlt": {
+      "desktop": {
+        "imagefile": "Akamai Desktop.jpg",
+        "Alt": "This is a Akamai dekstop image"
+      },
+      "mobile": {
+        "imagefile": "Akamai Mobile.jpg",
+        "Alt": "This is a Akamai mobile image"
+      }
+    }
+  }
+  
+  ,
+  {
+    "category": "Email Design",
+    "title": "Save Your Cords w/ Heavy Duty Promos",
+    "imgMain": "card-game.jpg",
+    "TwoColumnImgandAlt": {
+      "desktop": {
+        "imagefile": "Akamai Desktop.jpg",
+        "Alt": "This is a Akamai dekstop image"
+      },
+      "mobile": {
+        "imagefile": "Akamai Mobile.jpg",
+        "Alt": "This is a Akamai mobile image"
+      }
+    }
+  }
+]

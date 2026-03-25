@@ -24,8 +24,6 @@ type BoxStyleProps = {
   triangleWidth: number;
   boxGeometryArgs: [number, number, number];
   textPosition: [number, number, number];
-  borderFocus: boolean;
-  focusFunction:  (string) => void;
 };
 
 
@@ -43,7 +41,7 @@ export function useBorderSizes() {
 
 
 
-export function BoxStyle({ x, y, z, rotationY, image, title, category, index, onClick, boxPositionY, triangleWidth, boxGeometryArgs, textPosition, borderFocus, focusFunction } : BoxStyleProps) {
+export function BoxStyle({ x, y, z, rotationY, image, title, category, index, onClick, boxPositionY, triangleWidth, boxGeometryArgs, textPosition} : BoxStyleProps) {
 
 // const tex = useTexture(image);
 //   tex.encoding = THREE.sRGBEncoding;
@@ -155,7 +153,7 @@ const borderSizes = (maxBorderSize, color) => {
     <>
         <>
         
-        <group position={[x, y, z]} rotation={[0, 0, 0]} 
+        <group position={[x, y, z]} rotation={[0, 0, 0]}
         onClick={
           (e) => {
             // checkIfClicked();
@@ -163,25 +161,13 @@ const borderSizes = (maxBorderSize, color) => {
           }
         }
         >
-          {/* <mesh scale={1.1}>
-        <boxGeometry args={[0, 1, 1]} />
-        <meshBasicMaterial color="red" transparent opacity={0.5} />
-      </mesh> */}
-      {/* <ambientLight intensity={0.5} />
-      <directionalLight position={[5, 5, 5]} /> */}
-            {/* <mesh position={[0, boxPositionY + 1, 0]}>
-            <boxGeometry args={[1, 1, 0]} />
-            <meshBasicMaterial map={useTexture("/images/chubb.png")}/>
-            </mesh> */}
+
            <mesh position={[0, boxPositionY, 0]}>
             <boxGeometry args={boxGeometryArgs} />
             <meshBasicMaterial map={texture} 
             transparent={true} // Allows transparency if the PNG has it
             opacity={1} // Fully opaque
             color="#ffffff" // White background
-          //   emissive={'white'}
-          // emissiveIntensity={2}
-        // toneMapped={false}
             />
             {borderSizes(40, "red")}
           </mesh>
