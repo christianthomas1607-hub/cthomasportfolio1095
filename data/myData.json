@@ -3,21 +3,24 @@
     "category": "Websites",
     "title": "Boston Dynamics",
     "imgMain": "boston-dynamics.jpg",
-    "titleDescription2Images": {
-      "title": "New Atlas Theme & Products",
-      "description": "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas. There are some big improvements I would like to make. I would like to make the top banner display bigger on mobile. The marketing team would rather ensure the image is consistent though. I would also like to make the initially seen content load faster with lazy loading when I get the time.",
-      "TwoColumnImgandAlt": {
-      "desktop": {
-        "imagefile": "boston_dynamics__atlas_desktop.jpeg",
-        "Alt": "Atlas Desktop"
-      },
-      "mobile": {
-        "imagefile": "boston_dynamics__atlas_mobile.jpeg",
-        "Alt": "Atlas Mobile"
+    "titleDescriptionTwoImages": [
+      {
+        "title": "New Atlas Theme & Products",
+        "description": "Boston Dynamics had a huge marketing campaign for the new Atlas at the beginning of January 2026. Primary aspects were YouTube videos, display shows, and it was featured on 60 Minutes. I added the new Atlas themed content and products to the store, bringing awareness of the new Atlas. There are some big improvements I would like to make. I would like to make the top banner display bigger on mobile. The marketing team would rather ensure the image is consistent though. I would also like to make the initially seen content load faster with lazy loading when I get the time.",
+        "TwoColumnImgandAlt": {
+          "desktop": {
+            "imagefile": "boston_dynamics__atlas_desktop.jpeg",
+            "Alt": "Atlas Desktop"
+          },
+          "mobile": {
+            "imagefile": "boston_dynamics__atlas_mobile.jpeg",
+            "Alt": "Atlas Mobile"
+          }
+        }
       }
-    }
-    }
+    ] 
   }
+
   ,
   {
     "category": "Websites",
@@ -35,6 +38,7 @@
       }
     }
   }
+
   ,
   {
     "category": "Websites",
@@ -53,59 +57,255 @@
     }
   }
 
-  ,
+,
+
   {
     "category": "Websites",
     "title": "Resilence, Inc",
     "imgMain": "resilence.jpg",
     "topDescription": "My primary responsibility of this internship involved solving bugs through WordPress.The design part of the internship mostly involved making sure the website worked on mobile and tablet devices. I was not supposed to focus primarily on designing or writing. This company is a non-profit startup with a focus on assisting in social health wellness for K–12 mental health.",
-    "titleDescriptionOneImage": {
-      "title": "Sharp Corners",
-      "description": "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions.",
-      "TwoColumnImgandAlt": {
-      "desktop": {
-        "imagefile": "resilence-0.png",
-        "Alt": "Sharp Corners, Donate Button"
-      },
-      "mobile": {
-        "imagefile": "boston_dynamics__atlas_mobile.jpeg",
-        "Alt": "Atlas Mobile"
+    "titleDescriptionOneImage": [
+      {
+        "titleAndDescription": [
+          {
+            "title": "Sharp Corners",
+        "description": "According to various studies, sharp corners grab more attention. Using rounded corners on buttons that lead to sales would have less interactions."
+          }
+          ,
+          {
+            "title": "Donate Button",
+        "description": "Many company meetings were about how to receive donations to expand. The donate button used to require scrolling. I recommended we have it visible once the user enters. This caused an increase in donations."
+          }
+        ],
+          "TwoColumnImgandAlt": {
+            "desktop": {
+              "imagefile": "resilence-0.png",
+              "Alt": "Sharp Corners, Donate Button"
+            },
+          "mobile": {
+            "imagefile": "boston_dynamics__atlas_mobile.jpeg",
+            "Alt": "Sharp Corners mobile"
+          }
+        }
       }
-    }
-    }
+      ,
+      {
+        "titleAndDescription": [
+          {
+            "title": "Title",
+            "description": "The large, bold, and yellow title or heading looks fairly hard to read. Yellow text on a white background has a very low contrast."
+          }
+          ,
+          {
+            "title": "Colors",
+            "description": "The colors have a very low contrast on white. Increasing the contrast also causes a very swampy look of colors. The yellow turns to dark brown and the green turns to a muddy dark green."
+          }
+          ,
+          {
+            "title": "Logo",
+            "description": "The logo does not look as professional compared to many other logos. There is too much going on, causing less readability as this logo is scaled down."
+          }
+          ,
+          {
+            "title": "Explanation/Mission",
+            "description": "Moving the explanation above the buttons lets possible customers know why they should be interested in this company. Scrolling down requires extra effort from the customer. The last sentence is also a list with grammatical errors."
+          }
+        ],
+          "TwoColumnImgandAlt": {
+            "desktop": {
+              "imagefile": "resilence-1.png",
+              "Alt": "Title, Colors, Logo, Explanation/Mission"
+            },
+          "mobile": {
+            "imagefile": "boston_dynamics__atlas_mobile.jpeg",
+            "Alt": "Sharp Corners mobile"
+          }
+        }
+      }
+    ]
   }
-  
+
+  ,
+  {
+    "category": "Websites",
+    "title": "Rainbow Six Siege Gaming Guide",
+    "imgMain": "r6gamingguide.png",
+    "topDescription": "This project was coded, designed, and written by me. HTML 5, CSS 3, and Vanilla JavaScript were used to code this project. This website is supposed to be responsive to various screen sizes. The SEO and accessibility still needs to be worked on. This website was created to assist entry-level to mid-level gamers of a video game called Rainbow Six Siege. Certain data may be outdated, due to constant updates of the game.",
+    "titleDescriptionOneImage": [
+      {
+        "titleAndDescription": [
+          {
+            "title": "Dark Theme",
+            "description": "Using a dark theme helps the user when gaming at night, while having this on their phone. Having a light theme is too distracting when multitasking. A theme switcher could be added to help the user choose. A light theme is although preferred by older populations and for reading. This website has a target audience of young adults and has light reading."
+          }
+          ,
+          {
+            "title": "Grabbing Attention",
+            "description": "The illustrations are for grabbing attention but not too much. This was moreover recommended by my professor. It is something different to see over the actual images of the operators."
+          }
+          ,
+          {
+            "title": "Top 3",
+            "description": "This is more for knowing the top 3 operators and guns because of constant patch notes. Patch notes tend to be about balancing certain operators and guns."
+          }
+        ],
+          "TwoColumnImgandAlt": {
+            "desktop": {
+              "imagefile": "r6gamingguide-0.png",
+              "Alt": "Dark Theme, Grabbing Attention, Top 3"
+            },
+          "mobile": {
+            "imagefile": "boston_dynamics__atlas_mobile.jpeg",
+            "Alt": "Sharp Corners mobile"
+          }
+        }
+      }
+      ,
+      {
+        "titleAndDescription": [
+          {
+            "title": "Name and GIF",
+            "description": "The name helps identify the operator. The GIF shows how the operator's ability works."
+          }
+          ,
+          {
+            "title": "Operator Tip",
+            "description": "The tip provides the recommended ways on how to use an operator's ability. There are many tips about how to use an operator, but this section covers the most used tips."
+          }
+        ],
+          "TwoColumnImgandAlt": {
+            "desktop": {
+              "imagefile": "r6gamingguide-2.png",
+              "Alt": "Name and GIF, Operator Tip"
+            },
+          "mobile": {
+            "imagefile": "boston_dynamics__atlas_mobile.jpeg",
+            "Alt": "Sharp Corners mobile"
+          }
+        }
+      }
+      ,
+      {
+        "titleAndDescription": [
+          {
+            "title": "Key",
+            "description": "I chose red as it is the most saturated color. Circles would be a good shape for me to hint locations. Adding shadows may help add more contrast to the circles, but may also add visual noise."
+          }
+          ,
+          {
+            "title": "Camera Location",
+            "description": "Cameras are ways in which the enemy team who defends the building, spy on what the attacking team does. It is important to destroy these cameras by shooting them. If destroyed, the enemy team cannot spy on the attacking player."
+          }
+        ],
+          "TwoColumnImgandAlt": {
+            "desktop": {
+              "imagefile": "r6gamingguide-3.png",
+              "Alt": "Key, Camera Location"
+            },
+          "mobile": {
+            "imagefile": "boston_dynamics__atlas_mobile.jpeg",
+            "Alt": "Sharp Corners mobile"
+          }
+        }
+      }
+      ,
+      {
+        "titleAndDescription": [
+          {
+            "title": "Map Name",
+            "description": "The map name helps clarify what map the GIF is on. This section is more for mid-level players because it is dangerous to peek through a window. An enemy could kill the player peeking a window easily, if not well trained."
+          }
+          ,
+          {
+            "title": "Spawn Peeks GIF",
+            "description": "The GIF indicates quickly how to perform a peek at the best location on each map. It is a lot easier to use this website over searching through many YouTube videos, to find spawn peek locations for specific maps."
+          }
+        ],
+          "TwoColumnImgandAlt": {
+            "desktop": {
+              "imagefile": "r6gamingguide-4.png",
+              "Alt": "Map Name, Spawn Peeks GIF"
+            },
+          "mobile": {
+            "imagefile": "boston_dynamics__atlas_mobile.jpeg",
+            "Alt": "Sharp Corners mobile"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "category": "Websites",
+    "title": "The Captains",
+    "imgMain": "captains.jpg",
+    "multipleImages": [
+      {
+        "imagefile": "captains-1.jpg",
+        "Alt": "Logo"
+      },
+      {
+        "imagefile": "captains-2.jpg",
+        "Alt": "Typefaces"
+      },
+      {
+        "imagefile": "captains-3.jpg",
+        "Alt": "Colors"
+      }
+    ]
+    ,
+    "figma": "https://embed.figma.com/proto/K1COfsd3YbRV25TEvviRCq/Captains_Homepage?kind=proto&node-id=1-13&page-id=0%3A1&scaling=min-zoom&embed-host=share"
+  }
+  ,
+  {
+    "category": "Websites",
+    "title": "Prime One",
+    "imgMain": "mobilewebdesign.png",
+    "figma": "https://embed.figma.com/proto/W0r4eQk95RhVOoeFRxIx24/IDT535_Final_Project?node-id=20-353&starting-point-node-id=20%3A353&embed-host=share"
+  }
+  ,
+  {
+    "category": "Email Design",
+    "title": "Back to School",
+    "imgMain": "backtoschool.png",
+    "HTMLFile": "/emails/8_11_back_to_school_V2_V3.html"
+  }
   ,
   {
     "category": "Email Design",
     "title": "October Events 🎃",
-    "imgMain": "captains-0.jpg",
-    "TwoColumnImgandAlt": {
-      "desktop": {
-        "imagefile": "Akamai Desktop.jpg",
-        "Alt": "This is a Akamai dekstop image"
-      },
-      "mobile": {
-        "imagefile": "Akamai Mobile.jpg",
-        "Alt": "This is a Akamai mobile image"
-      }
-    }
+    "imgMain": "halloween-first_image.jpg",
+    "topNote": "None of the images were designed by me except the bottom image for a discount code.",
+    "HTMLFile": "/emails/9_24_AAP_trick_or_treat_tickets_V16.html"
   }
-  
   ,
   {
     "category": "Email Design",
     "title": "Save Your Cords w/ Heavy Duty Promos",
-    "imgMain": "card-game.jpg",
-    "TwoColumnImgandAlt": {
-      "desktop": {
-        "imagefile": "Akamai Desktop.jpg",
-        "Alt": "This is a Akamai dekstop image"
-      },
-      "mobile": {
-        "imagefile": "Akamai Mobile.jpg",
-        "Alt": "This is a Akamai mobile image"
-      }
-    }
+    "imgMain": "Cordsemail.jpg",
+    "HTMLFile": "/emails/09_08_HDP_Cable_Verified_By_Henry.html"
+  }
+  ,
+  {
+    "category": "Email Design",
+    "title": "Wine for Wolves 🐺",
+    "imgMain": "Wine for Wolves.jpg",
+    "topNote": "None of the images were designed by me, except the encounters image.",
+    "HTMLFile": "/emails/8_21_AAP_wine_for_wolves_tickets_V31.html"
+  }
+  ,
+  {
+    "category": "Email Design",
+    "title": "Get Cool-er with Heavy Duty Promos",
+    "imgMain": "Get Cool-er with Heavy Duty Promos.jpg",
+    "HTMLFile": "/emails/7_21_cooler_HDP_V5.html"
+  }
+  ,
+  {
+    "category": "Email Design",
+    "title": "Summer Events",
+    "imgMain": "summerevents.jpg",
+    "topNote": "None of the images were designed by me, except the “Oh Baby! Animal Meet & Greet” image.",
+    "HTMLFile": "/emails/8_13_summer_events_V14.html"
   }
 ]

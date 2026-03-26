@@ -20,7 +20,9 @@ import { Fragment } from 'react';
 
 library.add(fas, far, fab)
 
-export default function Popup({ onClose, item }: { onClose: () => void, item: Datatypes | null }) {
+import { HTMLRender } from '../components/HTMLRender';
+
+export default async function Popup({ onClose, item }: { onClose: () => void, item: Datatypes | null }) {
   
   
   return (
@@ -43,23 +45,123 @@ export default function Popup({ onClose, item }: { onClose: () => void, item: Da
       {item?.title ?? ''}
     </h1>
 
+    {item?.topNote && 
+    <div id="noteInfo">
+      <p id="noteTop">
+        <FontAwesomeIcon icon={['fas', 'exclamation-circle']}/> <strong id="notetitle">Note</strong>
+      </p>
+      <p id="noteText">
+        {item.topNote}
+      </p>
+    </div>
+    }
+
     {item?.topDescription && <p className="text-xl text-gray-700 mx-auto" id="topDescription">{item.topDescription}</p>}
+
+    {
+      item?.HTMLFile && (
+        <>
+        {
+          <iframe
+            loading="lazy" style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }} 
+            width="800" height="450" src={item.HTMLFile}
+            allowFullScreen>
+          </iframe>
+        }
+        </>
+      )
+    }
 
     {item?.TwoColumnImgandAlt && (
       <ImageHeightSync2 imgs={item.TwoColumnImgandAlt} />
       )
     }
 
-    {item?.titleDescription2Images && (
+    {/* {item?.titleDescriptionTwoImages && (
       <>
         <div className="flex flex-col items-center lg:mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
-                <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{item.titleDescription2Images.title}</h3>
-                <p className="text-xl text-black">{item.titleDescription2Images.description}</p>
+                <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{item.titleDescriptionTwoImages.title}</h3>
+                <p className="text-xl text-black">{item.titleDescriptionTwoImages.description}</p>
         </div>
         <div className="flex flex-col items-center mt-5">
-          <ImageHeightSync2 imgs={item.titleDescription2Images.TwoColumnImgandAlt} />
+          <ImageHeightSync2 imgs={item.titleDescriptionTwoImages.TwoColumnImgandAlt} />
         </div>
       </>
+      )
+    } */}
+
+    {item?.titleDescriptionTwoImages && (
+      <>
+        {
+          item.titleDescriptionTwoImages.map((innerItem, index) => (
+            <div key={index}>
+              <div className="flex flex-col items-center lg:mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
+                <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{innerItem.title}</h3>
+                <p className="text-xl text-black">{innerItem.description}</p>
+              </div>
+              <div className="flex flex-col items-center mt-5">
+                <ImageHeightSync2 imgs={innerItem.TwoColumnImgandAlt} />
+              </div>
+            </div>
+          ))
+        }
+      </>
+      )
+    }
+
+    {
+     item.titleDescriptionOneImage && (
+      <>
+      {
+        item.titleDescriptionOneImage.map((innerItem, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-y-6 gap-x-4 pb-4 lg:pb-5 px-4 md:p-3" key={index}>
+            <div className="flex flex-col items-center md:mt-5 my-class">
+              <img loading="lazy" src={"/images/" + innerItem.TwoColumnImgandAlt.desktop.imagefile} alt={innerItem.TwoColumnImgandAlt.desktop.Alt} className="my-2 object-contain" />
+            </div>
+            <div className="flex flex-col items-left md:mt-5 lg:mx-13">
+              {
+                innerItem.titleAndDescription.map((titleAndDescription, titleAndDescriptionId) => (
+                 <div key={titleAndDescriptionId}>
+                    <h3 className="text-xl font-semibold mb-1 text-black mt-3 ml-0 mr-auto">{titleAndDescription.title}</h3>
+                    <p className="text-black ml-0 mr-auto">{titleAndDescription.description}</p> 
+                  </div>
+                ))
+              }
+              {/* <h3 className="text-xl font-semibold mb-1 text-black mt-3 ml-0 mr-auto">{innerItem.title}</h3>
+              <p className="text-black ml-0 mr-auto">{innerItem.description}</p>  */}
+            </div>
+          </div>
+        ))
+      }
+      </>
+     )
+    }
+
+    {
+      item.figma && (
+        <>
+        {
+          <iframe
+            loading="lazy" style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }} 
+            width="800" height="450" src={item.figma}
+            allowFullScreen>
+          </iframe>
+        }
+        </>
+      )
+    }
+
+    {
+      item.multipleImages && (
+        <>
+        {
+          item.multipleImages.map((image, index) => (
+            <div key={index}>
+              <img loading="lazy" key={index} className="w-full object-cover" src={"/images/" + image.imagefile} alt={image.Alt}/>
+            </div>
+          ))
+        }
+        </>
       )
     }
 
