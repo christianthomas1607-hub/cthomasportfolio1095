@@ -10,6 +10,9 @@ import ImageHeightSync from '../components/ImageHeightSync';
 
 import ImageHeightSync2 from '../components/ImageHeightSync2';
 
+import {HTMLFile} from '../components/HTMLFile'
+
+
 /* import all the icons in Free Solid, Free Regular, and Brands styles */
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
@@ -20,7 +23,7 @@ import { Fragment } from 'react';
 
 library.add(fas, far, fab)
 
-import { HTMLRender } from '../components/HTMLRender';
+
 
 export default async function Popup({ onClose, item }: { onClose: () => void, item: Datatypes | null }) {
   
@@ -58,15 +61,12 @@ export default async function Popup({ onClose, item }: { onClose: () => void, it
 
     {item?.topDescription && <p className="text-xl text-gray-700 mx-auto" id="topDescription">{item.topDescription}</p>}
 
+
     {
       item?.HTMLFile && (
         <>
         {
-          <iframe
-            loading="lazy" style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }} 
-            width="800" height="450" src={item.HTMLFile}
-            allowFullScreen>
-          </iframe>
+          HTMLFile(item.HTMLFile)
         }
         </>
       )
@@ -77,18 +77,6 @@ export default async function Popup({ onClose, item }: { onClose: () => void, it
       )
     }
 
-    {/* {item?.titleDescriptionTwoImages && (
-      <>
-        <div className="flex flex-col items-center lg:mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
-                <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{item.titleDescriptionTwoImages.title}</h3>
-                <p className="text-xl text-black">{item.titleDescriptionTwoImages.description}</p>
-        </div>
-        <div className="flex flex-col items-center mt-5">
-          <ImageHeightSync2 imgs={item.titleDescriptionTwoImages.TwoColumnImgandAlt} />
-        </div>
-      </>
-      )
-    } */}
 
     {item?.titleDescriptionTwoImages && (
       <>

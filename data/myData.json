@@ -18,7 +18,37 @@
           }
         }
       }
-    ] 
+      ,
+      {
+        "title": "2025 Holiday Sale Setup",
+        "description": "A banner, 5 new products, and 2 discounts were set up. Boston Dynamics promoted the sale on social media.",
+        "TwoColumnImgandAlt": {
+          "desktop": {
+            "imagefile": "holiday-2025-boston-dynamics.jpeg",
+            "Alt": "2025 Holiday Sale Setup"
+          },
+          "mobile": {
+            "imagefile": "boston_dynamics__atlas_mobile.jpeg",
+            "Alt": "Atlas Mobile"
+          }
+        }
+      }
+      ,
+      {
+        "title": "Complete List of Products",
+        "description": "Much of the web content was added by me. Some images were provided by Boston Dynamics. Content was formatted to have proper performance, SEO, and verified for accuracy.",
+        "TwoColumnImgandAlt": {
+          "desktop": {
+            "imagefile": "holiday-2025-products-boston-dynamics.jpeg",
+            "Alt": "2025 Holiday Sale Setup Products"
+          },
+          "mobile": {
+            "imagefile": "boston_dynamics__atlas_mobile.jpeg",
+            "Alt": "Atlas Mobile"
+          }
+        }
+      }
+    ]
   }
 
   ,
