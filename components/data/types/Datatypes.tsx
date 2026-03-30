@@ -51,6 +51,7 @@ export interface Datatypes {
     titleDescriptionOneImageTwoColumn: titleDescriptionOneImageTwoColumn[];
     multipleImages: ImgandAlt[];
     figma: string;
+    video: string;
     HTMLFile: string;
     HTMLFileTest: string;
     topNote: string;

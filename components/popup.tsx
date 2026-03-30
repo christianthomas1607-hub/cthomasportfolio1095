@@ -25,7 +25,7 @@ library.add(fas, far, fab)
 
 
 
-export default async function Popup({ onClose, item }: { onClose: () => void, item: Datatypes | null }) {
+export default function Popup({ onClose, item }: { onClose: () => void, item: Datatypes | null }) {
   
   
   return (
@@ -42,7 +42,7 @@ export default async function Popup({ onClose, item }: { onClose: () => void, it
      </svg>
       <span className="close-text">Close</span>      
        </button>
-  <div className="popup rounded-lg shadow-lg">
+    <div className="popup rounded-lg shadow-lg">
 
     <h1 className="font-semibold tracking-tight text-gray-900 text-4xl sm:text-9xl text-center mx-auto lg:pb-0 mt-3 mb-2 lg:mt-3 lg:mb-7">
       {item?.title ?? ''}
@@ -72,16 +72,6 @@ export default async function Popup({ onClose, item }: { onClose: () => void, it
       )
     }
 
-
-    {/* {
-      item?.HTMLFileTest && (
-        <>
-        {
-          HTMLFileTest(item.HTMLFile)
-        }
-        </>
-      )
-    } */}
 
     {item?.TwoColumnImgandAlt && (
       <ImageHeightSync imgs={item.TwoColumnImgandAlt} />
@@ -151,6 +141,19 @@ export default async function Popup({ onClose, item }: { onClose: () => void, it
       }
       </>
      )
+    }
+
+    {
+    item?.video && (
+          <iframe
+            loading="lazy"
+            style={{ border: "1px solid rgba(0, 0, 0, 0.1)", margin: "auto", width: "-webkit-fill-available" }}
+            width="800"
+            height="450"
+            src={item.video}
+            allowFullScreen
+          />
+    )
     }
 
     {

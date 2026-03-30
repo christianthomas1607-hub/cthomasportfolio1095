@@ -90,7 +90,7 @@ const [selectedItem, setSelectedItem] = useState<Datatypes | null>(null)
 
   }
 
-const data = Data();
+
 
   return (
 <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', margin: 0 }}>

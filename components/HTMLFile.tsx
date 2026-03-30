@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export async function HTMLFile(htmlPath) {
+export function HTMLFile(htmlPath) {
 
       const contentRef = useRef<HTMLDivElement | null>(null)
 
