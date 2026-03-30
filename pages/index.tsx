@@ -93,24 +93,8 @@ const [selectedItem, setSelectedItem] = useState<Datatypes | null>(null)
 const data = Data();
 
   return (
-    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', margin: 0 }}>
-      {/* {
-      
-      data.map((project, index) => (
-  <div key={index}>
-    <h2>{project.title}</h2>
+<div style={{ width: '100vw', height: '100vh', overflow: 'hidden', margin: 0 }}>
 
-
-    {Object.entries(project.TwoColumnImgandAlt).map(([key, value]) => (
-      <div key={key}>
-        <img src={`/images/${value.imagefile}`} alt={value.Alt} />
-        <p>{value.Alt}</p>
-      </div>
-    ))}
-  </div>
-))
-
-} */}
 {showPopup ? <Popup onClose={handleClosePopup} item={selectedItem}  /> : null}     
       <Controls />
       <Canvas>

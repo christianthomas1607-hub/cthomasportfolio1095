@@ -6,11 +6,11 @@ import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-import ImageHeightSync from '../components/ImageHeightSync';
 
-import ImageHeightSync2 from '../components/ImageHeightSync2';
+import ImageHeightSync from './ImageHeightSync';
 
 import {HTMLFile} from '../components/HTMLFile'
+
 
 
 /* import all the icons in Free Solid, Free Regular, and Brands styles */
@@ -72,23 +72,53 @@ export default async function Popup({ onClose, item }: { onClose: () => void, it
       )
     }
 
+
+    {/* {
+      item?.HTMLFileTest && (
+        <>
+        {
+          HTMLFileTest(item.HTMLFile)
+        }
+        </>
+      )
+    } */}
+
     {item?.TwoColumnImgandAlt && (
-      <ImageHeightSync2 imgs={item.TwoColumnImgandAlt} />
+      <ImageHeightSync imgs={item.TwoColumnImgandAlt} />
       )
     }
 
 
-    {item?.titleDescriptionTwoImages && (
+    {item?.titleDescriptionTwoImagesOneColumn && (
       <>
         {
-          item.titleDescriptionTwoImages.map((innerItem, index) => (
+          item.titleDescriptionTwoImagesOneColumn.map((innerItem, index) => (
             <div key={index}>
               <div className="flex flex-col items-center lg:mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
                 <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{innerItem.title}</h3>
                 <p className="text-xl text-black">{innerItem.description}</p>
               </div>
               <div className="flex flex-col items-center mt-5">
-                <ImageHeightSync2 imgs={innerItem.TwoColumnImgandAlt} />
+                <ImageHeightSync imgs={innerItem.TwoColumnImgandAlt} />
+              </div>
+            </div>
+          ))
+        }
+      </>
+      )
+    }
+
+    {item?.titleDescriptionOneImageOneColumn && (
+      <>
+        {
+          item.titleDescriptionOneImageOneColumn.map((innerItem, index) => (
+            <div key={index}>
+              <div className="flex flex-col items-center mt-5 bg-[#f7f7f7] py-3 lg:py-5 px-3 lg:px-0">
+                <h3 className="lg:text-5xl font-semibold mb-3 text-gray-900">{innerItem.title}</h3>
+                <p className="text-xl text-black">{innerItem.description}</p>
+              </div>
+              <div className="flex flex-col items-center mt-5">
+                <img loading="lazy" src={"/images/" + innerItem.imagefile} alt={innerItem.Alt} className="my-2" />
               </div>
             </div>
           ))
@@ -98,10 +128,10 @@ export default async function Popup({ onClose, item }: { onClose: () => void, it
     }
 
     {
-     item.titleDescriptionOneImage && (
+     item.titleDescriptionOneImageTwoColumn && (
       <>
       {
-        item.titleDescriptionOneImage.map((innerItem, index) => (
+        item.titleDescriptionOneImageTwoColumn.map((innerItem, index) => (
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-y-6 gap-x-4 pb-4 lg:pb-5 px-4 md:p-3" key={index}>
             <div className="flex flex-col items-center md:mt-5 my-class">
               <img loading="lazy" src={"/images/" + innerItem.TwoColumnImgandAlt.desktop.imagefile} alt={innerItem.TwoColumnImgandAlt.desktop.Alt} className="my-2 object-contain" />
@@ -115,8 +145,6 @@ export default async function Popup({ onClose, item }: { onClose: () => void, it
                   </div>
                 ))
               }
-              {/* <h3 className="text-xl font-semibold mb-1 text-black mt-3 ml-0 mr-auto">{innerItem.title}</h3>
-              <p className="text-black ml-0 mr-auto">{innerItem.description}</p>  */}
             </div>
           </div>
         ))

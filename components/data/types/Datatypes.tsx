@@ -9,10 +9,17 @@ export interface TwoColumnImgandAlt {
 }
 
 
-export interface titleDescriptionTwoImages {
+export interface titleDescriptionTwoImagesOneColumn {
   title: string;
   description: string;
   TwoColumnImgandAlt: TwoColumnImgandAlt;
+}
+
+export interface titleDescriptionOneImageOneColumn {
+  title: string;
+  description: string;
+  imagefile: string;
+  Alt: string;
 }
 
 
@@ -22,10 +29,12 @@ export interface titleAndDescription {
 }
 
 
-export interface titleDescriptionOneImage {
+export interface titleDescriptionOneImageTwoColumn {
   titleAndDescription: titleAndDescription[];
   TwoColumnImgandAlt: TwoColumnImgandAlt;
 }
+
+
 
 export interface Datatypes {
     category: string;
@@ -33,10 +42,16 @@ export interface Datatypes {
     imgMain: string;
     topDescription: string;
     TwoColumnImgandAlt: TwoColumnImgandAlt;
-    titleDescriptionTwoImages: titleDescriptionTwoImages[];
-    titleDescriptionOneImage: titleDescriptionOneImage[];
+
+
+    titleDescriptionTwoImagesOneColumn: titleDescriptionTwoImagesOneColumn[];
+
+    titleDescriptionOneImageOneColumn: titleDescriptionOneImageOneColumn[];
+
+    titleDescriptionOneImageTwoColumn: titleDescriptionOneImageTwoColumn[];
     multipleImages: ImgandAlt[];
     figma: string;
     HTMLFile: string;
+    HTMLFileTest: string;
     topNote: string;
 }
