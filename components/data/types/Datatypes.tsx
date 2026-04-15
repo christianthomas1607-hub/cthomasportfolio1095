@@ -55,4 +55,5 @@ export interface Datatypes {
     HTMLFile: string;
     HTMLFileTest: string;
     topNote: string;
+    link: string;
 }
